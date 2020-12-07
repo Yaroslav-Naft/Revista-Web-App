@@ -1,5 +1,19 @@
 # .Net Project
 
+### Description
+
+### Installation Instructions
+
+### Function/Non-Functional Requirments
+
+### Feature List
+
+### Prototype
+<a href="#">Figma Prototype</a>
+
+### ERD
+<a href="#">ERD</a>
+
 Note: This is a group assignment so please nominate ONE person to accept the assignment first and create your team so that others can join after and have access to the shared repository.
 
 In your assigned teams, you will build a Web Application using a Microsoft SQL Server Database, Identity Authentication, a .NET Core backend, and either Server-Side rendered views (Razor Pages or MVC) OR Web API with Client-Side rendered views.
