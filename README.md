@@ -1,20 +1,56 @@
 # .Net Project
 
+### Name:
+- Revista
+
 ### Description:
-- 
+- An online movie database website using a movie api where a user can register for an account to login to rate, favourite, and review movies.
 
 ### Installation Instructions:
-- 
+- Add/build to this as small changes are made/created, finalize and refine as you go.
 
 ### Function/Non-Functional Requirments:
-- 
+- Functional
+    - Home page with User Auth
+        - Register/Login
+    - Database
+        - API 
+    - Individual movie pages including info (Title, release date, genre etc.)
+- Non-Functional
+    - Social aspect that allows the user to follow other users and 
+    - The ability to share to other social media
+    - Login with Google, Facebook, Github etc.
+    - 
+
+### Must haves:
+- Home page
+    - Register
+    - Login
+- Movie selection page
+
+### Nice to haves:
+- Comment/Review text box with submit button
+- A favourite button to add specific movies to your profile
+- On individual movie pages, a link to the trailer of the movie
 ### Feature List:
-- 
+- Ability to filter by category/genre via dropdown list
+- Favourite button on each movie card
+- A profile page that includes the favourites chosen by the user
+- Navigation bar to switch to user home/profile/logout
+- Register page
+    - Confirm email
+- Login page
+    - Authentication (V2 or V3 or Two Factor)
+- Logout button
+
+<hr> 
+
 ### Prototype:
 <a href="#">Prototype</a>
 
 ### ERD:
-<a href="#">ERD</a>
+- Do today (Dec. 7)
+- <a href="#">ERD</a>
 
 <hr>
 
