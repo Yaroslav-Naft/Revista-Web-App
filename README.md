@@ -20,7 +20,6 @@
     - Social aspect that allows the user to follow other users and 
     - The ability to share to other social media
     - Login with Google, Facebook, Github etc.
-    - 
 
 ### Must haves:
 - Home page
