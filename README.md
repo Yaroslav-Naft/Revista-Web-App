@@ -1,17 +1,19 @@
 # .Net Project
 
-### Description
+### Description:
+- 
 
-### Installation Instructions
+### Installation Instructions:
+- 
 
-### Function/Non-Functional Requirments
-
-### Feature List
-
-### Prototype
+### Function/Non-Functional Requirments:
+- 
+### Feature List:
+- 
+### Prototype:
 <a href="#">Figma Prototype</a>
 
-### ERD
+### ERD:
 <a href="#">ERD</a>
 
 Note: This is a group assignment so please nominate ONE person to accept the assignment first and create your team so that others can join after and have access to the shared repository.
