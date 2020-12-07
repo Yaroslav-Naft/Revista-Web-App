@@ -11,7 +11,7 @@
 ### Feature List:
 - 
 ### Prototype:
-<a href="#">Figma Prototype</a>
+<a href="#">Prototype</a>
 
 ### ERD:
 <a href="#">ERD</a>
