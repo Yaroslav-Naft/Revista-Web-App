@@ -8,7 +8,6 @@ You can decide on the project within your group or consult with Phil to be provi
 
 
 ## Design Requirements
-<hr>
 All design docs hosted and maintained through out the project and embedded into the README.md file of your project repo. If you have a server and client repo, please use the project repo as your server and add a link to your client repo in the project repo's README. The README file should be nicely organized and presented as if a potential employer would see it. Design docs to include:
 
 - App Description
@@ -25,7 +24,6 @@ All design docs hosted and maintained through out the project and embedded into 
     - An ERD that accurately represents your database structure. Update the entities, attributes and relationships as you go.
 
 ## Build Requirements
-<hr>
 - An automated kanban templated Project Board must be maintained and connected to your repo(s).
 - All tasks broken into small (finished in a day or so) GitHub issues and delegated/assigned to specific developers daily.
 - All code is to be written on a "feature" branch
@@ -42,7 +40,6 @@ All design docs hosted and maintained through out the project and embedded into 
 - Modularize your code as much as possible and use appropriate service and repository classes and interfaces.
 
 ## Communication Requirements
-<hr>
 Each group will need to establish a schedule for daily "stand-up" meetings that all group members must participate in. If a member is unable to attend a meeting, they must post their "update" to slack prior to the start of the meeting.
 
 Format of a "stand-up" is that each person takes a minute or two to describe what they worked on the previous day, what they are currently working on and any blockers that they may be facing. Limit any back and forth discussion as most unless it affects the whole group, it can be taken "off-line" and dealt with while those not involved can get back to work.
@@ -52,7 +49,6 @@ I will leave the managment of issue creation and delegation to each group, but I
 If you are unable to live up to a deadline that has been assigned by the group, be sure to communicate this with the entire team prior to that deadline if possible. If this occurs more than once, please be sure to communicate this with your instructor (if you have not done so already), to discuss possible steps to help prevent further occurrences. It is important to set (and deliver on) regular and reasonable deadlines so that the team can manage the overall workload and progress of the project.
 
 ## Due Dates
-<hr>
 - Group Agreement on Project Idea/Scope
 
      - 11:00am PST December 7, 2020
