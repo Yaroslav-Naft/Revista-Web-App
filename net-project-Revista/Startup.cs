@@ -1,9 +1,11 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using net_project_Revista.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,6 +25,10 @@ namespace net_project_Revista
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContext<MovieDbContext>(options =>
+                options.UseSqlServer(
+                    Configuration.GetConnectionString("MovieDbContextConnection")));
+
             services.AddRazorPages();
         }
 
@@ -45,6 +51,7 @@ namespace net_project_Revista
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
