@@ -48,8 +48,7 @@
 <a href="#">Prototype</a>
 
 ### ERD:
-- Do today (Dec. 7)
-- <a href="#">ERD</a>
+<img src="assets/Revista_ERD.png" alt="Revista ERD"/>
 
 ### Extra Notes
 - Keep branch naming conventions simple
