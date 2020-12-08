@@ -13,13 +13,15 @@ namespace net_project_Revista.Models
         public string Genre { get; private set; }
         public int Runtime { get; private set; }
         public string PosterPath { get; private set; }
+        public string Category { get; private set; }
 
         public Movie(string title,
                      string overview,
                      DateTime releaseDate,
                      string genre,
                      int runtime,
-                     string posterPath)
+                     string posterPath,
+                     string category)
         {
             Title = title;
             Overview = overview;
@@ -27,6 +29,7 @@ namespace net_project_Revista.Models
             Genre = genre;
             Runtime = runtime;
             PosterPath = posterPath;
+            Category = category;
         }
     }
 }
