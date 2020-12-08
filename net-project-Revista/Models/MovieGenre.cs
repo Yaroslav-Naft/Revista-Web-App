@@ -7,13 +7,15 @@ namespace net_project_Revista.Models
 {
     public class MovieGenre : BaseEntity
     {
+        public int GenreId { get; set; }
         public string Genre { get; set; }
 
         // navigation properties
         public virtual ICollection<Movie> GenreMovies { get; set; }
 
-        public MovieGenre(string genre)
+        public MovieGenre(int genreId, string genre)
         {
+            GenreId = genreId;
             Genre = genre;
         }
     }
