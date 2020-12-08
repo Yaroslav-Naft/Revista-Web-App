@@ -44,8 +44,28 @@
 
 <hr> 
 
-### Prototype:
+### Revista Prototypes:
 <a href="#">Prototype</a>
+
+
+## Login Page
+
+![](https://i.imgur.com/ccEW1Ps.png)
+
+
+
+<br></br>
+
+## Favourite Movies Page
+
+![](https://i.imgur.com/L9SjSD4.png)
+
+
+
+
+
+
+
 
 ### ERD:
 <img src="assets/Revista_ERD.png" alt="Revista ERD"/>
