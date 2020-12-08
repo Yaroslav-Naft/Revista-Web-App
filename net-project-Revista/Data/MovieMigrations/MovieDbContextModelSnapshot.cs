@@ -29,8 +29,11 @@ namespace net_project_Revista.Data.MovieMigrations
                     b.Property<string>("Category")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Genre")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("GenreId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("MovieId")
+                        .HasColumnType("int");
 
                     b.Property<string>("Overview")
                         .HasColumnType("nvarchar(max)");
@@ -40,9 +43,6 @@ namespace net_project_Revista.Data.MovieMigrations
 
                     b.Property<DateTime>("ReleaseDate")
                         .HasColumnType("datetime2");
-
-                    b.Property<int>("Runtime")
-                        .HasColumnType("int");
 
                     b.Property<string>("Title")
                         .HasColumnType("nvarchar(max)");
