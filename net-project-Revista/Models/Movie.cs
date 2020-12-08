@@ -11,11 +11,11 @@ namespace net_project_Revista.Models
         public string PosterPath { get; private set; }
         public DateTime ReleaseDate { get; private set; }
         public string Title { get; private set; }
-        public int MovieId { get; private set; }
-        
-        public int GenreId { get; private set; }
-        
-        public string Category { get; private set; }
+        public int MovieId { get; private set; }      
+        public int GenreId { get; private set; }       
+        public int CategoryId { get; private set; }
+
+        public virtual MovieCategory MovieCategory { get; set; }
 
         public Movie(string title,
             int movieId,
@@ -23,7 +23,7 @@ namespace net_project_Revista.Models
                      DateTime releaseDate,
                      int genreId,
                      string posterPath,
-                     string category)
+                     int categoryId)
         {
             GenreId = genreId;
             MovieId = movieId;
@@ -31,7 +31,7 @@ namespace net_project_Revista.Models
             PosterPath = posterPath;
             ReleaseDate = releaseDate;
             Title = title;                  
-            Category = category;
+            CategoryId = categoryId;
         }
     }
 }

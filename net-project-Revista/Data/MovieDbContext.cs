@@ -12,5 +12,7 @@ namespace net_project_Revista.Data
         public MovieDbContext(DbContextOptions<MovieDbContext> options) : base(options) { }
 
         public DbSet<Movie> Movies { get; set; }
+        public DbSet<MovieCategory> MovieCategories { get; set; }
+        public DbSet<MovieGenre> MovieGenres { get; set; }
     }
 }
