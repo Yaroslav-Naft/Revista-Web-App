@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using net_project_Revista.Models;
 
 namespace net_project_Revista.Pages
 {
@@ -14,8 +15,12 @@ namespace net_project_Revista.Pages
         }
 
         //Need to add Movies testMovie inside Onpost
-        public IActionResult OnPost()
+        public IActionResult OnPost(Movie testMovie)
         {
+            if(testMovie?.Id == null)
+            {
+                return RedirectToPage("/Index");
+            }
             //Add If statement to redirect to home page
             //if item id is null
 
