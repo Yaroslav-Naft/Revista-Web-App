@@ -1,3 +1,14 @@
-﻿Support for ASP.NET Core Identity was added to your project.
+﻿# Revista Wireframes
 
-For setup and configuration information, see https://go.microsoft.com/fwlink/?linkid=2116645.
+
+## Login Page
+
+![](https://i.imgur.com/ccEW1Ps.png)
+
+
+
+<br></br>
+
+## Favourite Movies Page
+
+![](https://i.imgur.com/L9SjSD4.png)
