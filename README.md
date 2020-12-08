@@ -49,8 +49,7 @@
 <a href="#">Prototype</a>
 
 ### ERD:
-- Do today (Dec. 7)
-- <a href="#">ERD</a>
+<img src="Revista_ERD.png" alt="Revista ERD"/>
 
 <hr>
 
