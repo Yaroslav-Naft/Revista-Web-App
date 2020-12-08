@@ -49,7 +49,7 @@
 <a href="#">Prototype</a>
 
 ### ERD:
-<img src="Revista_ERD.png" alt="Revista ERD"/>
+<img src="assets/Revista_ERD.png" alt="Revista ERD"/>
 
 <hr>
 
