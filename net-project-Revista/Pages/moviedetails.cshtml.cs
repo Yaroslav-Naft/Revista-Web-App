@@ -13,8 +13,14 @@ namespace net_project_Revista.Pages
         {
         }
 
+        //Need to add Movies testMovie inside Onpost
         public IActionResult OnPost()
         {
+            //Add If statement to redirect to home page
+            //if item id is null
+
+            //Otherwise if there is an id
+            //redirect to correct page
             return RedirectToPage();
         }
 
