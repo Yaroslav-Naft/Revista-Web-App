@@ -1,0 +1,14 @@
+﻿@model net_project_Revista.ViewModels.MovieVM
+
+    <div class="card mb-4" style="width: 18rem;">
+        <img class="card-img-top" src="@Model.PosterPath" alt="Card image cap"/>
+        <div class="card-body">
+            <h5 class="card-title">@Model.Title</h5>
+            <p class="card-text">@Model.ReleaseDate</p>
+            @*<h3 class="card-title">@movie.Runtime</h3>*@
+            <input class="app-movie-addcart-button" type="submit" value="[ See More ]" />
+        </div>
+    </div>
+        <input type="hidden" asp-for="@Model.Id" name="id" />
+        <input type="hidden" asp-for="@Model.Title" name="title" />
+        <input type="hidden" asp-for="@Model.PosterPath" name="posterPath" />

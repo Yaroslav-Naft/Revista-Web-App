@@ -1,31 +1,33 @@
 ﻿@page
-@model Models.Movie
-@{
-    ViewData["Title"] = "Home page";
-}
-
-
-
-
-@*<div class="album py-5 bg-light">
+@model IndexModel
+<section class="app-movie-filters">
     <div class="container">
-        <div class="row">
-            @foreach (var movie in Model.Movies)
-            {
-                <div class="col-md-4">
-                    <div class="card mb-4" style="width: 18rem;">
-                        <img class="card-img-top" src="@movie.PosterPath" alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title">@movie.Title</h5>
-                            <p class="card-text">@movie.Overview</p>
-                            <h3 class="card-title">@movie.Runtime</h3>
-                        </div>
-                        
+        <form methd="get">
+            <label class="app-movie-label" data-title="category">
+                <select asp-for="@Model.MovieIndex.CategoriesFilterApplied" asp-items="@Model.MovieIndex.Categories" class="app-movie-filter"></select>
+            </label>
+            <input class="app-movie-addcart-button" type="submit" value="Apply" />
+        </form>
+    </div>
+</section>
+
+<div class="album py-5 bg-light">
+    <div class="container">
+        @if (Model.MovieIndex != null && Model.MovieIndex.Movies.Any())
+        {
+            <div class="row">
+                @foreach (var movie in Model.MovieIndex.Movies)
+                {
+                    <div class="col-md-3">
+                        <partial name="_MoviePartial" for="@movie" />
                     </div>
-                    
-                </div>
-            }
+                }
             </div>
+        }
+        else
+        {
+            <p>No Products!</p>
+        }
     </div>
 </div>*@
 
