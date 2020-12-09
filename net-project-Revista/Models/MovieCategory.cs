@@ -12,7 +12,6 @@ namespace net_project_Revista.Models
         // navigation properties
         public virtual ICollection<Movie> CategoryMovies { get; set; }
 
-        //change later when we actually get categoryId
         public MovieCategory(string category)
         {
             Category = category;

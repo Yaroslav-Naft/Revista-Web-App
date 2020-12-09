@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace net_project_Revista.Models
 {
-    public class Movie :BaseEntity
+    public class Movie : BaseEntity
     {
         public string Overview { get; private set; }
         public string PosterPath { get; private set; }
