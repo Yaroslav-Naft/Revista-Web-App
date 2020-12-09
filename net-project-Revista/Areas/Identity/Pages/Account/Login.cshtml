@@ -1,28 +1,24 @@
 ﻿@page
 @model LoginModel
 
-@{
-	ViewData["Title"] = "Log in";
-}
-
-<h1>@ViewData["Title"]</h1>
-<div class="wrapper">
-	<form class="form-signin">
-		<h2 class="form-signin-heading">Login</h2>
-		<p class="email">Email<p>
-			<input type="text" class="form-control" name="username" placeholder="philweier@revista.com" required="" autofocus="" />
-		<p class="password">Password<p>
-			<input type="password" class="form-control" name="password" placeholder="AnOfferYouCantRefuse1972" required="" />
-			<button class="btn btn-lg btn-light btn-block" type="submit">Login</button>
-			<button class="btn btn-lg btn-primary btn-block" type="submit">Login With Facebook</button>
-			<br />
-			<hr class="line">
-		<p class="or">OR</p>
-		<hr class="line">
-		<br />
-		<button class="btn btn-lg btn-danger btn-block" type="submit">Register Now</button>
-	</form>
-</div>
+	<div class="wrapper">
+		<form class="form-signin">
+			<h2 class="form-signin-heading">Login</h2>
+			<p class="email">Email<p>
+				<input type="text" class="form-control" name="username" placeholder="philweier@revista.com" required="" autofocus="" />
+			<p class="password">Password<p>
+				<input type="password" class="form-control" name="password" placeholder="jur@ss1cP@rk1993" required="" />
+				<button class="btn btn-lg btn-light btn-block" type="submit">Login</button>
+				<br />
+				<button class="btn btn-lg btn-light btn-block" type="submit">Login With Google</button>
+				<br />
+				<button class="btn btn-lg btn-light btn-block" type="submit">Login With Facebook</button>
+				<br />
+				<h3><span>OR</span></h3>
+				<br />
+				<button class="btn btn-lg btn-danger btn-block" type="submit">Register Now</button>
+		</form>
+	</div>
 
 @section Scripts {
 	<partial name="_ValidationScriptsPartial" />
