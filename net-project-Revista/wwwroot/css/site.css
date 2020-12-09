@@ -137,6 +137,8 @@ aside {
 
 /* Login page styles
 -------------------------------------------------- */
+@import "bourbon";
+
 body {
     background: #eee !important;
 }
@@ -152,9 +154,6 @@ body {
 
 .password {
     margin-bottom: 10px;
-}
-
-.line {
 }
 
 .or {
@@ -177,10 +176,6 @@ body {
     font-size: 3em;
 }
 
-.checkbox {
-    font-weight: normal;
-}
-
 .form-control {
     position: relative;
     font-size: 16px;
@@ -196,15 +191,31 @@ body {
 }
 
 input[type="text"] {
-    margin-bottom: -1px;
+    margin-bottom: 30px;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
 }
 
 input[type="password"] {
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 50px;
     border-top-left-radius: 0;
     border-top-right-radius: 0;
 }
+
 }
+
+h3 {
+    width: 100%;
+    text-align: center;
+    border-bottom: 3px solid #000;
+    line-height: 0.1em;
+    margin: 10px 0 20px;
+    margin-top: 40px;
+    margin-bottom: 60px;
+}
+
+    h3 span {
+        background: #fff;
+        padding: 0 100px;
+    }
+
