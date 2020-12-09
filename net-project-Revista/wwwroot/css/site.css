@@ -211,3 +211,16 @@ h3 span {
     background: #fff;
     padding: 0 100px;
 }
+
+
+/*details Page Styling*/
+
+.detailsheading {
+    font-weight:bold;
+    font-size: 24px;
+}
+
+.detailstext {
+    font-weight:bold;
+    font-size: 14px;
+}
