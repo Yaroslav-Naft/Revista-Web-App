@@ -11,21 +11,20 @@ namespace net_project_Revista.Models
         public string PosterPath { get; private set; }
         public DateTime ReleaseDate { get; private set; }
         public string Title { get; private set; }
-        public int MovieId { get; private set; }      
-        public int GenreId { get; private set; }       
+        public int MovieId { get; private set; }        
         public int CategoryId { get; private set; }
 
+        // navigation properties
+        public virtual ICollection<MovieGenre> MovieGenres { get; set; }
         public virtual MovieCategory MovieCategory { get; set; }
 
         public Movie(string title,
-            int movieId,
+                     int movieId,
                      string overview,
                      DateTime releaseDate,
-                     int genreId,
                      string posterPath,
                      int categoryId)
         {
-            GenreId = genreId;
             MovieId = movieId;
             Overview = overview;
             PosterPath = posterPath;
