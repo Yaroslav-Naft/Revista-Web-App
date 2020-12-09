@@ -22,15 +22,15 @@ namespace net_project_Revista.Pages
 
         public List<Movie> Movie = new List<Movie>();
 
-        //public void OnGet()
-        //{
-        //    Movie = _db.Movies.Select(
-        //        m => new Movie
-        //        {
-        //            Title = m.Title
-        //        }       
-        //        ).ToList();
-        //}
+        public void OnGet(string Title)
+        {
+            //Movie = _db.Movies.Select(
+            //    m => new Movie
+            //    {
+            //        Title = m.title
+            //    }
+            //    ).ToList();
+        }
         //Need to add Movies testMovie inside Onpost
         public IActionResult OnPost(Movie testMovie)
         {
