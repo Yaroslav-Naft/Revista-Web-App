@@ -14,6 +14,7 @@ namespace net_project_Revista.Pages
     {
         private readonly MovieDbContext _db;
 
+        public string Title { get; private set; }
         public moviedetailsModel(MovieDbContext db)
         {
             _db = db;
@@ -21,14 +22,15 @@ namespace net_project_Revista.Pages
 
         public List<Movie> Movie = new List<Movie>();
 
-        public void OnGet()
-        {
-            
-
-
-
-        }
-
+        //public void OnGet()
+        //{
+        //    Movie = _db.Movies.Select(
+        //        m => new Movie
+        //        {
+        //            Title = m.Title
+        //        }       
+        //        ).ToList();
+        //}
         //Need to add Movies testMovie inside Onpost
         public IActionResult OnPost(Movie testMovie)
         {
