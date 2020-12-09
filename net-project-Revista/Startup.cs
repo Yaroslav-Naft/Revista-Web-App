@@ -1,3 +1,5 @@
+using GoogleReCaptcha.V3.Interface;
+using GoogleReCaptcha.V3;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -34,6 +36,8 @@ namespace net_project_Revista
             services.AddScoped<IMovieVMService, MovieVMService>();
             services.AddScoped(typeof(IBaseRepository<>), typeof(BaseRepository<>));
             services.AddRazorPages();
+
+			services.AddHttpClient<ICaptchaValidator, GoogleReCaptchaValidator>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
