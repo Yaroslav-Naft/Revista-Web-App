@@ -1,9 +1,10 @@
 ﻿@model net_project_Revista.ViewModels.MovieVM
-<img class="app-product-thumbnail" src="@Model.PosterPath" />
-<input class="app-product-addcart-button" type="submit" value="[ Add To Cart ]" />
-<div class="app-product-name">
+
+<img class="app-movie-thumbnail" src="@Model.PosterPath" />
+<input class="app-movie-addcart-button" type="submit" value="[ See More ]" />
+<div class="app-movie-name">
     <span>@Model.Title</span>
 </div>
 <input type="hidden" asp-for="@Model.Id" name="id" />
-<input type="hidden" asp-for="@Model.Title" name="name" />
-<input type="hidden" asp-for="@Model.PosterPath" name="pictureUri" />
+<input type="hidden" asp-for="@Model.Title" name="title" />
+<input type="hidden" asp-for="@Model.PosterPath" name="posterPath" />
