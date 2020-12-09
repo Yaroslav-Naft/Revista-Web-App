@@ -95,17 +95,9 @@ namespace net_project_Revista.Data.MovieMigrations
                     b.Property<int>("GenreId")
                         .HasColumnType("int");
 
-                    b.Property<int>("GenreId1")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Id")
-                        .HasColumnType("int");
-
                     b.HasKey("MovieId", "GenreId");
 
                     b.HasIndex("GenreId");
-
-                    b.HasIndex("GenreId1");
 
                     b.ToTable("MovieGenres");
                 });
@@ -119,15 +111,15 @@ namespace net_project_Revista.Data.MovieMigrations
 
             modelBuilder.Entity("net_project_Revista.Models.MovieGenre", b =>
                 {
-                    b.HasOne("net_project_Revista.Models.Movie", "Movie")
+                    b.HasOne("net_project_Revista.Models.Genre", "Genre")
                         .WithMany("MovieGenres")
                         .HasForeignKey("GenreId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("net_project_Revista.Models.Genre", "Genre")
+                    b.HasOne("net_project_Revista.Models.Movie", "Movie")
                         .WithMany("MovieGenres")
-                        .HasForeignKey("GenreId1")
+                        .HasForeignKey("MovieId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

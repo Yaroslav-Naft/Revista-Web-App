@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace net_project_Revista.Models
 {
-    public class MovieGenre : BaseEntity
+    public class MovieGenre
     {
         [Key, Column(Order = 0)]
         public int MovieId { get; set; }

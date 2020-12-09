@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace net_project_Revista.Data.MovieMigrations
 {
-    public partial class InitMovieSchemaWithGenre : Migration
+    public partial class NewMovieSchemaWithGenre : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -64,23 +64,21 @@ namespace net_project_Revista.Data.MovieMigrations
                 columns: table => new
                 {
                     MovieId = table.Column<int>(nullable: false),
-                    GenreId = table.Column<int>(nullable: false),
-                    Id = table.Column<int>(nullable: false),
-                    GenreId1 = table.Column<int>(nullable: false)
+                    GenreId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_MovieGenres", x => new { x.MovieId, x.GenreId });
                     table.ForeignKey(
-                        name: "FK_MovieGenres_Movies_GenreId",
+                        name: "FK_MovieGenres_Genres_GenreId",
                         column: x => x.GenreId,
-                        principalTable: "Movies",
+                        principalTable: "Genres",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_MovieGenres_Genres_GenreId1",
-                        column: x => x.GenreId1,
-                        principalTable: "Genres",
+                        name: "FK_MovieGenres_Movies_MovieId",
+                        column: x => x.MovieId,
+                        principalTable: "Movies",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -89,11 +87,6 @@ namespace net_project_Revista.Data.MovieMigrations
                 name: "IX_MovieGenres_GenreId",
                 table: "MovieGenres",
                 column: "GenreId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_MovieGenres_GenreId1",
-                table: "MovieGenres",
-                column: "GenreId1");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Movies_MovieCategoryId",
@@ -107,10 +100,10 @@ namespace net_project_Revista.Data.MovieMigrations
                 name: "MovieGenres");
 
             migrationBuilder.DropTable(
-                name: "Movies");
+                name: "Genres");
 
             migrationBuilder.DropTable(
-                name: "Genres");
+                name: "Movies");
 
             migrationBuilder.DropTable(
                 name: "MovieCategories");

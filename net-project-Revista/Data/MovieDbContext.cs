@@ -10,7 +10,6 @@ namespace net_project_Revista.Data
     public class MovieDbContext : DbContext
     {
         public MovieDbContext(DbContextOptions<MovieDbContext> options) : base(options) { }
-
         public DbSet<Movie> Movies { get; set; }
         public DbSet<Genre> Genres { get; set; }
         public DbSet<MovieCategory> MovieCategories { get; set; }
@@ -28,7 +27,7 @@ namespace net_project_Revista.Data
                 .HasForeignKey(fk => new { fk.MovieId });
 
             modelBuilder.Entity<MovieGenre>()
-                .HasOne(mg => mg.Movie)
+                .HasOne(mg => mg.Genre)
                 .WithMany(g => g.MovieGenres)
                 .HasForeignKey(fk => new { fk.GenreId });
         }
