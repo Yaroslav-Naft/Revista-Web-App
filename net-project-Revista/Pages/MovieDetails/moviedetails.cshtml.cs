@@ -14,41 +14,23 @@ namespace net_project_Revista.Pages.MovieDetails
     {
         private readonly MovieDbContext _db;
 
-        public string Title { get; private set; }
+        public Movie Movie { get; private set; }
+
         public moviedetailsModel(MovieDbContext db)
         {
             _db = db;
         }
 
-        public List<Movie> Movie = new List<Movie>();
 
         public void OnGet()
         {
-            //Movie = _db.Movies.Select(
-            //    m => new Movie
-            //    {
-            //        Title = m.title
-            //    }
-            //    ).ToList();
+            //Title = testMovie.Title;
         }
-        //Need to add Movies testMovie inside Onpost
-
-        //When you press on post from from movies page
-        //it directs you to the onpost of this page
-        public IActionResult OnPost(MovieVM testMovie)
+        public void OnPost(MovieVM testMovie)
         {
-            //if(testMovie?.Id == null)
-            //{
-            //    return RedirectToPage("/Index");
-            //}
-            //Add If statement to redirect to home page
-            //if item id is null
+            Movie = _db.Movies.Where(movie => movie.Id == testMovie.Id).FirstOrDefault();
 
-            //Otherwise if there is an id
-            //redirect to correct page
-            //redirect to page makes you
-            //do the onget method of this pase
-            return RedirectToPage();
+            //return RedirectToPage();
         }
 
     }

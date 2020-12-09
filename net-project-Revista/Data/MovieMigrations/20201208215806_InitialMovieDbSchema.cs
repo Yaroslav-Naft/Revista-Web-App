@@ -47,35 +47,35 @@ namespace net_project_Revista.Data.MovieMigrations
                     MovieId = table.Column<int>(nullable: false),
                     GenreId = table.Column<int>(nullable: true),
                     CategoryId = table.Column<int>(nullable: false),
-                    //MovieCategoryId = table.Column<int>(nullable: true),
-                    //MovieGenreId = table.Column<int>(nullable: true)
-                });
-                //constraints: table =>
-                //{
-                //    table.PrimaryKey("PK_Movies", x => x.Id);
-                //    table.ForeignKey(
-                //        name: "FK_Movies_MovieCategories_MovieCategoryId",
-                //        column: x => x.MovieCategoryId,
-                //        principalTable: "MovieCategories",
-                //        principalColumn: "Id",
-                //        onDelete: ReferentialAction.Restrict);
-                //    table.ForeignKey(
-                //        name: "FK_Movies_MovieGenres_MovieGenreId",
-                //        column: x => x.MovieGenreId,
-                //        principalTable: "MovieGenres",
-                //        principalColumn: "Id",
-                //        onDelete: ReferentialAction.Restrict);
-                //});
+                    MovieCategoryId = table.Column<int>(nullable: true),
+                    MovieGenreId = table.Column<int>(nullable: true)
+                },
+        constraints: table =>
+        {
+            table.PrimaryKey("PK_Movies", x => x.Id);
+            table.ForeignKey(
+                name: "FK_Movies_MovieCategories_MovieCategoryId",
+                column: x => x.MovieCategoryId,
+                principalTable: "MovieCategories",
+                principalColumn: "Id",
+                onDelete: ReferentialAction.Restrict);
+            table.ForeignKey(
+                name: "FK_Movies_MovieGenres_MovieGenreId",
+                column: x => x.MovieGenreId,
+                principalTable: "MovieGenres",
+                principalColumn: "Id",
+                onDelete: ReferentialAction.Restrict);
+        }) ;
 
-            //migrationBuilder.CreateIndex(
-            //    name: "IX_Movies_MovieCategoryId",
-            //    table: "Movies",
-            //    column: "MovieCategoryId");
+            migrationBuilder.CreateIndex(
+                name: "IX_Movies_MovieCategoryId",
+                table: "Movies",
+                column: "MovieCategoryId");
 
-            //migrationBuilder.CreateIndex(
-            //    name: "IX_Movies_MovieGenreId",
-            //    table: "Movies",
-            //    column: "MovieGenreId");
+            migrationBuilder.CreateIndex(
+                name: "IX_Movies_MovieGenreId",
+                table: "Movies",
+                column: "MovieGenreId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
