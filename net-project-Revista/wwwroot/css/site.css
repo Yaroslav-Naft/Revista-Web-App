@@ -24,8 +24,66 @@ a {
     border-color: #1861ac;
 }
 
-/* Login page styles
-/*------------------------------------------------ */
+/*header*/
+.logo {
+    width: 150px;
+    height: auto;
+    padding-bottom: 0;
+}
+
+.fa-user {
+    padding: 10px;
+    color: grey;
+    background-color: lightgrey;
+    border-radius: 50px;
+}
+
+.fa-heart {
+    padding: 10px;
+    color: grey;
+    background-color: lightgrey;
+    border-radius: 50px;
+}
+
+#profile {
+    margin-top: 10px;
+}
+
+#login {
+    margin-top: 10px;
+}
+
+/*footer*/
+footer {
+    background-color: lightgrey;
+}
+
+.copyright-container {
+    background-color: black;
+}
+
+.copyright {
+    color: white;
+}
+
+.footer-heads {
+    margin-bottom: 10px;
+}
+
+aside {
+    text-align: justify;
+    padding-right: 20px;
+}
+
+.footer-rates-nav {
+    list-style-type: none;
+    padding-left: 10px;
+}
+
+.footer-menu-nav {
+    list-style-type: none;
+    padding-left: 10px;
+}
 
 
 
