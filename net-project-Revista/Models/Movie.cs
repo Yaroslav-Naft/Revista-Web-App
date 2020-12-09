@@ -10,7 +10,7 @@ namespace net_project_Revista.Models
         public string Overview { get; private set; }
         public string PosterPath { get; private set; }
         public DateTime ReleaseDate { get; private set; }
-        public string Title { get; private set; }
+        public string Title { get; set; }
         public int MovieId { get; private set; }        
         public int CategoryId { get; private set; }
 

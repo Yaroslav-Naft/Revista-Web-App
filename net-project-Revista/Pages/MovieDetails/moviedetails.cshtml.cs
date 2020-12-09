@@ -29,8 +29,6 @@ namespace net_project_Revista.Pages.MovieDetails
         public void OnPost(MovieVM testMovie)
         {
             Movie = _db.Movies.Where(movie => movie.Id == testMovie.Id).FirstOrDefault();
-
-            //return RedirectToPage();
         }
 
     }
