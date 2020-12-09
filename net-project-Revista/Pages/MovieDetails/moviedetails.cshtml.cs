@@ -21,10 +21,8 @@ namespace net_project_Revista.Pages.MovieDetails
             _db = db;
         }
 
-
         public void OnGet()
         {
-            //Title = testMovie.Title;
         }
         public void OnPost(MovieVM testMovie)
         {

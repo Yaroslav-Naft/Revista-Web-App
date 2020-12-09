@@ -2,7 +2,35 @@
 @model net_project_Revista.Pages.MovieDetails.moviedetailsModel
 
 
+<div class="container">
+    <div>@Model.Movie.Title</div>
 
-<h1>@Model.Movie.Title</h1>
+    <div>Date Released: @Model.Movie.ReleaseDate</div>
 
-<span>Date Relea</span>
+    <div>Overview</div>
+
+    <p>@Model.Movie.Overview</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*Partials that are not working*@
+@*<partial name="_MovieDetailsPartial" />*@
+
+
+@*@{
+    Html.RenderPartial("_MoviePartial");
+}*@
