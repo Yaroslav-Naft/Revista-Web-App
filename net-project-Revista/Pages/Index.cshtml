@@ -29,19 +29,19 @@
             <p>No Products!</p>
         }
     </div>
-</div>*@
+</div>
 
-<form asp-page="/moviedetails" method="post">
-    @*<img class="app-product-thumbnail" src="@Model.Title " />*@
-    @*<input class="app-product-addcart-button" type="submit" value="[ Add To Cart ]" />*@
-    @*<div class="app-product-name">
+@*<form asp-page="/moviedetails" method="post">
+    <img class="app-product-thumbnail" src="@Model.Title " />
+    <input class="app-product-addcart-button" type="submit" value="[ Add To Cart ]" />
+    <div class="app-product-name">
         <span>@Model.Name</span>
-    </div>*@
-    @*<div class="app-product-price">
+    </div>
+    <div class="app-product-price">
         <span>@Model.Price.ToString("C")</span><input type="number" asp-for="@Model.Quantity" name="quantity" />
-    </div>*@
-    <input type="hidden" asp-for="@Model.Id" name="id" />
+    </div>
+    <input type="hidden" asp-for="@Model.MovieIndex.Movies.Title" name="id" />
     <input type="hidden" asp-for="@Model.Title" name="name" />
-    @*<input type="hidden" asp-for="@Model.Price" name="price" />
-    <input type="hidden" asp-for="@Model.PictureUri" name="pictureUri" />*@
-</form>
+    <input type="hidden" asp-for="@Model.Price" name="price" />
+    <input type="hidden" asp-for="@Model.PictureUri" name="pictureUri" />
+</form>*@
