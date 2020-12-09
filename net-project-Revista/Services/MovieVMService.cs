@@ -54,6 +54,7 @@ namespace net_project_Revista.Services
             }).OrderBy(c => c.Text).ToList();
 
             var allItem = new SelectListItem() { Value = null, Text = "All", Selected = true };
+            categories.Insert(0, allItem);
 
             return categories;
         }
