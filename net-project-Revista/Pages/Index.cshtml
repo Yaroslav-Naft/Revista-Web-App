@@ -1,5 +1,15 @@
 ﻿@page
 @model IndexModel
+<section class="app-movie-filters">
+    <div class="container">
+        <form methd="get">
+            <label class="app-movie-label" data-title="category">
+                <select asp-for="@Model.MovieIndex.CategoriesFilterApplied" asp-items="@Model.MovieIndex.Categories" class="app-movie-filter"></select>
+            </label>
+            <input class="app-movie-addcart-button" type="submit" value="Apply" />
+        </form>
+    </div>
+</section>
 
 <div class="album py-5 bg-light">
     <div class="container">
@@ -8,7 +18,7 @@
             <div class="row">
                 @foreach (var movie in Model.MovieIndex.Movies)
                 {
-                    <div class="col-md-4">
+                    <div class="col-md-3">
                         <partial name="_MoviePartial" for="@movie" />
                     </div>
                 }

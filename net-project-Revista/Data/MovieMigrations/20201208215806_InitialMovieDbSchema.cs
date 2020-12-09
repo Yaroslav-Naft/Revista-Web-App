@@ -45,7 +45,7 @@ namespace net_project_Revista.Data.MovieMigrations
                     ReleaseDate = table.Column<DateTime>(nullable: false),
                     Title = table.Column<string>(nullable: true),
                     MovieId = table.Column<int>(nullable: false),
-                    GenreId = table.Column<int>(nullable: false),
+                    GenreId = table.Column<int>(nullable: true),
                     CategoryId = table.Column<int>(nullable: false),
                     //MovieCategoryId = table.Column<int>(nullable: true),
                     //MovieGenreId = table.Column<int>(nullable: true)

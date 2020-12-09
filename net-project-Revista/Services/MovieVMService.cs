@@ -36,6 +36,7 @@ namespace net_project_Revista.Services
                     Id = m.Id,
                     Title = m.Title,
                     Overview = m.Overview,
+                    ReleaseDate = m.ReleaseDate.ToString("MMMM dd, yyyy"),
                     PosterPath = "https://image.tmdb.org/t/p/w500" + m.PosterPath
                 }).ToList(),
                 Categories = GetCategories().ToList()
