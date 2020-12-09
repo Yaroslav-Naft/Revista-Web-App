@@ -2,26 +2,34 @@
 @inject Microsoft.Extensions.Configuration.IConfiguration Configuration
 @model LoginModel
 
-	<div class="wrapper">
-		<form class="form-signin" method="post">
-			<h2 class="form-signin-heading">Login</h2>
-			<p class="email">Email<p>
-				<input type="text" class="form-control" name="username" placeholder="philweier@revista.com" required="" autofocus="" />
-			<p class="password">Password<p>
-				<input type="password" class="form-control" name="password" placeholder="jur@ss1cP@rk1993" required="" />
-				<button class="btn btn-lg btn-light btn-block" type="submit">Login</button>
-				<input type="hidden" name="captcha" id="captchaV3Input" value="" />
-				<br />
-				<button class="btn btn-lg btn-light btn-block" type="submit">Login With Google</button>
-				<br />
-				<button class="btn btn-lg btn-light btn-block" type="submit">Login With Facebook</button>
-				<br />
-				<h3><span>OR</span></h3>
-				<br />
-				<button class="btn btn-lg btn-danger btn-block" type="submit">Register Now</button>
-		</form>
-	</div>
+<div class="wrapper">
+	<form class="form-signin" method="post">
+		<h2 class="form-signin-heading">Login</h2>
+		<p class="email">Email<p>
+			<input type="text" class="form-control" name="username" placeholder="philweier@revista.com" required="" autofocus="" />
+		<p class="password">Password<p>
+			<input type="password" class="form-control" name="password" placeholder="jur@ss1cP@rk1993" required="" />
+			<button class="btn btn-lg btn-light btn-block" type="submit">Login</button>
+			<input type="hidden" name="captcha" id="captchaV3Input" value="" />
+			<br />
+			<button class="btn btn-lg btn-light btn-block" type="submit">Login With Google</button>
+			<br />
+			<button class="btn btn-lg btn-light btn-block" type="submit">Login With Facebook</button>
+			<br />
+			<h3><span>OR</span></h3>
+			<br />
+			<button class="btn btn-lg btn-danger btn-block" type="submit">Register Now</button>
+	</form>
+</div>
 
 @section Scripts {
 	<partial name="_ValidationScriptsPartial" />
+	<script src="https://www.google.com/recaptcha/api.js?render=@Configuration["RecaptchaV3:SiteKey"]"></script>
+	<script>
+    grecaptcha.ready(function() {
+        grecaptcha.execute('@Configuration["RecaptchaV3:SiteKey"]', { action: 'login' }).then(function (token) {
+            $("#captchaV3Input").val(token);
+        });
+    });
+	</script>
 }
