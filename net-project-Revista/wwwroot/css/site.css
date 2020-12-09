@@ -139,6 +139,9 @@ body {
 /* Login / Register page styles
 -------------------------------------------------- */
 
+@import "bourbon";
+
+
 body {
     background: #eee !important;
 }
@@ -198,7 +201,6 @@ input[type="password"] {
 h3 {
     width: 100%;
     text-align: center;
-    border-bottom: 2px solid #000;
     line-height: 0.1em;
     margin: 10px 0 20px;
     margin-top: 60px;
