@@ -1,22 +1,28 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace net_project_Revista.Models
 {
-    public class MovieGenre : BaseEntity
+    public class MovieGenre
     {
+        [Key, Column(Order = 0)]
+        public int MovieId { get; set; }
+        [Key, Column(Order = 1)]
         public int GenreId { get; set; }
-        public string Genre { get; set; }
+        
 
         // navigation properties
-        public virtual ICollection<Movie> GenreMovies { get; set; }
+        public virtual Genre Genre { get; set; }
+        public virtual Movie Movie { get; set; }
 
-        public MovieGenre(int genreId, string genre)
+        public MovieGenre(int genreId, int movieId)
         {
             GenreId = genreId;
-            Genre = genre;
+            MovieId = movieId;
         }
     }
 }

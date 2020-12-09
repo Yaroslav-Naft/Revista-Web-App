@@ -10,8 +10,8 @@ using net_project_Revista.Data;
 namespace net_project_Revista.Data.MovieMigrations
 {
     [DbContext(typeof(MovieDbContext))]
-    [Migration("20201208215806_InitialMovieDbSchema")]
-    partial class InitialMovieDbSchema
+    [Migration("20201209183135_NewMovieSchemaWithGenre")]
+    partial class NewMovieSchemaWithGenre
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -20,6 +20,24 @@ namespace net_project_Revista.Data.MovieMigrations
                 .HasAnnotation("ProductVersion", "3.1.10")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+            modelBuilder.Entity("net_project_Revista.Models.Genre", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("GenreId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Genres");
+                });
 
             modelBuilder.Entity("net_project_Revista.Models.Movie", b =>
                 {
@@ -31,13 +49,7 @@ namespace net_project_Revista.Data.MovieMigrations
                     b.Property<int>("CategoryId")
                         .HasColumnType("int");
 
-                    b.Property<int>("GenreId")
-                        .HasColumnType("int");
-
                     b.Property<int?>("MovieCategoryId")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("MovieGenreId")
                         .HasColumnType("int");
 
                     b.Property<int>("MovieId")
@@ -59,8 +71,6 @@ namespace net_project_Revista.Data.MovieMigrations
 
                     b.HasIndex("MovieCategoryId");
 
-                    b.HasIndex("MovieGenreId");
-
                     b.ToTable("Movies");
                 });
 
@@ -81,18 +91,15 @@ namespace net_project_Revista.Data.MovieMigrations
 
             modelBuilder.Entity("net_project_Revista.Models.MovieGenre", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Genre")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("MovieId")
+                        .HasColumnType("int");
 
                     b.Property<int>("GenreId")
                         .HasColumnType("int");
 
-                    b.HasKey("Id");
+                    b.HasKey("MovieId", "GenreId");
+
+                    b.HasIndex("GenreId");
 
                     b.ToTable("MovieGenres");
                 });
@@ -102,10 +109,21 @@ namespace net_project_Revista.Data.MovieMigrations
                     b.HasOne("net_project_Revista.Models.MovieCategory", "MovieCategory")
                         .WithMany("CategoryMovies")
                         .HasForeignKey("MovieCategoryId");
+                });
 
-                    b.HasOne("net_project_Revista.Models.MovieGenre", null)
-                        .WithMany("GenreMovies")
-                        .HasForeignKey("MovieGenreId");
+            modelBuilder.Entity("net_project_Revista.Models.MovieGenre", b =>
+                {
+                    b.HasOne("net_project_Revista.Models.Genre", "Genre")
+                        .WithMany("MovieGenres")
+                        .HasForeignKey("GenreId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("net_project_Revista.Models.Movie", "Movie")
+                        .WithMany("MovieGenres")
+                        .HasForeignKey("MovieId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }
