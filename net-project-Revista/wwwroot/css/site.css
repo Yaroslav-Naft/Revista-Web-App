@@ -139,8 +139,6 @@ body {
 /* Login / Register page styles
 -------------------------------------------------- */
 
-@import "bourbon";
-
 body {
     background: #eee !important;
 }
@@ -170,9 +168,9 @@ body {
     background-color: #fff;
     border: 1px solid rgba(0,0,0,0.1);
     box-shadow: 10px 10px 5px #aaaaaa;
-    .form-signin-heading, .checkbox
+}
 
-{
+.form-signin-heading {
     margin-bottom: 30px;
     text-align: center;
     font-size: 3em;
@@ -183,13 +181,6 @@ body {
     font-size: 16px;
     height: auto;
     padding: 10px;
-    @include box-sizing(border-box);
-    &:focus
-
-{
-    z-index: 2;
-}
-
 }
 
 input[type="text"] {
@@ -204,8 +195,6 @@ input[type="password"] {
     border-top-right-radius: 0;
 }
 
-}
-
 h3 {
     width: 100%;
     text-align: center;
@@ -216,7 +205,7 @@ h3 {
     margin-bottom: 60px;
 }
 
-    h3 span {
-        background: #fff;
-        padding: 0 100px;
-    }
+h3 span {
+    background: #fff;
+    padding: 0 100px;
+}
