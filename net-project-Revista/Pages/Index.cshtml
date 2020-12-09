@@ -1,15 +1,5 @@
 ﻿@page
 @model IndexModel
-<<<<<<< HEAD
-=======
-<<<<<<< Updated upstream
-@{
-    ViewData["Title"] = "Home page";
-}
-=======
->>>>>>> Stashed changes
-
->>>>>>> master
 
 <div class="container">
     @if (Model.MovieIndex != null && Model.MovieIndex.Movies.Any())
@@ -50,31 +40,4 @@
             }
             </div>
     </div>
-<<<<<<< HEAD
 </div>*@
-=======
-</div>
-
-    
-
-<<<<<<< Updated upstream
-=======
-<div class="container">
-    @if (Model.MovieIndex != null && Model.MovieIndex.Movies.Any())
-    {
-        <div class="row">
-            @foreach (var movie in Model.MovieIndex.Movies)
-            {
-                <div class="col-md-4">
-                    <partial name="_MoviePartial" for="@movie" />
-                </div>
-            }
-        </div>
-    }
-    else
-    {
-        <p>No Products!</p>
-    }
-</div>
->>>>>>> Stashed changes
->>>>>>> master
