@@ -7,29 +7,31 @@ namespace net_project_Revista.Models
 {
     public class Movie : BaseEntity
     {
-        public string Title { get; private set; }
         public string Overview { get; private set; }
-        public DateTime ReleaseDate { get; private set; }
-        public string Genre { get; private set; }
-        public int Runtime { get; private set; }
         public string PosterPath { get; private set; }
-        public string Category { get; private set; }
+        public DateTime ReleaseDate { get; private set; }
+        public string Title { get; private set; }
+        public int MovieId { get; private set; }      
+        public int GenreId { get; private set; }       
+        public int CategoryId { get; private set; }
+
+        public virtual MovieCategory MovieCategory { get; set; }
 
         public Movie(string title,
+            int movieId,
                      string overview,
                      DateTime releaseDate,
-                     string genre,
-                     int runtime,
+                     int genreId,
                      string posterPath,
-                     string category)
+                     int categoryId)
         {
-            Title = title;
+            GenreId = genreId;
+            MovieId = movieId;
             Overview = overview;
-            ReleaseDate = releaseDate;
-            Genre = genre;
-            Runtime = runtime;
             PosterPath = posterPath;
-            Category = category;
+            ReleaseDate = releaseDate;
+            Title = title;                  
+            CategoryId = categoryId;
         }
     }
 }
