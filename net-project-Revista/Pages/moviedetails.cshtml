@@ -1,9 +1,14 @@
 ﻿@page
-@model net_project_Revista.Pages.moviedetailsModel
+@model Models.Movie
+
 @{
 
-
-
-
+    <div>
+        <tr>
+            <td>Movie Title: @Model.Title</td>
+            <td>Movie Category: @Model.Category</td>
+            <td>Movie Id: @Model.MovieId</td>
+        </tr>
+    </div>
 
 }

@@ -4,14 +4,29 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using net_project_Revista.Data;
 using net_project_Revista.Models;
 
 namespace net_project_Revista.Pages
 {
+
     public class moviedetailsModel : PageModel
     {
+        private readonly MovieDbContext _db;
+
+        public moviedetailsModel(MovieDbContext db)
+        {
+            _db = db;
+        }
+
+        public List<Movie> Movie = new List<Movie>();
+
         public void OnGet()
         {
+            
+
+
+
         }
 
         //Need to add Movies testMovie inside Onpost

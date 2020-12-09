@@ -1,5 +1,4 @@
 ﻿@page
-@model IndexModel
 @model Models.Movie
 @{
     ViewData["Title"] = "Home page";
@@ -10,20 +9,17 @@
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
 
-
-
-
 <form asp-page="/moviedetails" method="post">
-    <img class="app-product-thumbnail" src="@Model.PictureUri" />
-    <input class="app-product-addcart-button" type="submit" value="[ Add To Cart ]" />
-    <div class="app-product-name">
+    @*<img class="app-product-thumbnail" src="@Model.Title " />*@
+    @*<input class="app-product-addcart-button" type="submit" value="[ Add To Cart ]" />*@
+    @*<div class="app-product-name">
         <span>@Model.Name</span>
-    </div>
-    <div class="app-product-price">
+    </div>*@
+    @*<div class="app-product-price">
         <span>@Model.Price.ToString("C")</span><input type="number" asp-for="@Model.Quantity" name="quantity" />
-    </div>
+    </div>*@
     <input type="hidden" asp-for="@Model.Id" name="id" />
-    <input type="hidden" asp-for="@Model.Name" name="name" />
-    <input type="hidden" asp-for="@Model.Price" name="price" />
-    <input type="hidden" asp-for="@Model.PictureUri" name="pictureUri" />
+    <input type="hidden" asp-for="@Model.Title" name="name" />
+    @*<input type="hidden" asp-for="@Model.Price" name="price" />
+    <input type="hidden" asp-for="@Model.PictureUri" name="pictureUri" />*@
 </form>
