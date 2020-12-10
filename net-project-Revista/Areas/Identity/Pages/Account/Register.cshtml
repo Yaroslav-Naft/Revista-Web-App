@@ -1,6 +1,12 @@
 ﻿@page
 @model RegisterModel
 
+@{
+    ViewData["Title"] = "Register";
+}
+
+<h1>@ViewData["Title"]</h1>
+
 
 <body>
 	<div class="wrapper">
@@ -17,6 +23,6 @@
 	</div>
 </body>
 
-@section Scripts {
-    <partial name="_ValidationScriptsPartial" />
-}
+    @section Scripts {
+        <partial name="_ValidationScriptsPartial" />
+    }

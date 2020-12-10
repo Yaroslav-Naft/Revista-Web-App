@@ -32,6 +32,7 @@ namespace net_project_Revista
             services.AddDbContext<MovieDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("MovieDbContextConnection")));
+
             services.AddSession();
             services.AddScoped<IMovieVMService, MovieVMService>();
             services.AddScoped(typeof(IBaseRepository<>), typeof(BaseRepository<>));
@@ -60,6 +61,8 @@ namespace net_project_Revista
 
             app.UseAuthentication();
             app.UseAuthorization();
+
+            app.UseSession();
 
             app.UseEndpoints(endpoints =>
             {

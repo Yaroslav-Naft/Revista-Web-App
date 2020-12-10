@@ -10,8 +10,8 @@ namespace net_project_Revista.Models
     public class Movie : BaseEntity
     {
         public string Overview { get; private set; }
-        public string PosterPath { get; private set; }
-        public DateTime ReleaseDate { get; private set; }
+        public string PosterPath { get; set; }
+        public DateTime ReleaseDate { get; set; }
         public string Title { get; private set; }
         public int MovieId { get; private set; }
         public int GenreId { get; private set; }
@@ -20,6 +20,7 @@ namespace net_project_Revista.Models
         // navigation properties
         public virtual ICollection<MovieGenre> MovieGenres { get; set; }
         public virtual MovieCategory MovieCategory { get; set; }
+        public virtual ICollection<FavouriteMovie> FavouriteMovies { get; set; }
 
         public Movie(string title,
                      int movieId,

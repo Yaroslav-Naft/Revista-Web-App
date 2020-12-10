@@ -55,21 +55,15 @@
 
 ![](https://i.imgur.com/ccEW1Ps.png)
 
-
 <br></br>
-
-## Favourite Movies Page
-
-![](https://i.imgur.com/L9SjSD4.png)
 
 ## Detail Page
 
 ![](https://i.imgur.com/76gRYxg.png)
 
+## Favourite Page
 
-
-
-
+![](https://i.imgur.com/bf8eK8f.png)
 
 
 ### ERD:
