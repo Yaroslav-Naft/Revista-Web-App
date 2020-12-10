@@ -20,12 +20,14 @@ namespace net_project_Revista.Pages
         private readonly IMovieVMService _movieVMService;
         private readonly MovieDbContext _db;
         private readonly UserManager<IdentityUser> _userManager;
+        private readonly SignInManager<IdentityUser> _signInManager;
 
-        public IndexModel(IMovieVMService movieVMService, MovieDbContext db, UserManager<IdentityUser> userManager)
+        public IndexModel(IMovieVMService movieVMService, MovieDbContext db, UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager)
         {
             _movieVMService = movieVMService;
             _db = db;
             _userManager = userManager;
+            _signInManager = signInManager;
         }
 
         public Favourite Favourite { get; set; }
@@ -37,9 +39,9 @@ namespace net_project_Revista.Pages
         public void OnGet(MovieIndexVM movieIndex)
         {
             int? favouriteId = HttpContext.Session.GetInt32("favouriteId");
-            bool isLoggedIn = User.Identity.IsAuthenticated;
+            bool isUser = _signInManager.IsSignedIn(User);
 
-            if (favouriteId == null && isLoggedIn)
+            if (isUser && favouriteId == null)
             {
                 string userId = _userManager.FindByNameAsync(User.Identity.Name).Result.Id;
 

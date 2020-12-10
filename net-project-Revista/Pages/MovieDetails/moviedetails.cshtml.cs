@@ -17,15 +17,17 @@ namespace net_project_Revista.Pages.MovieDetails
     {
         private readonly MovieDbContext _db;
         private readonly UserManager<IdentityUser> _userManager;
+        private readonly SignInManager<IdentityUser> _signInManager;
 
         public Favourite Favourite { get; set; }
 
         public Movie Movie { get; private set; }
 
-        public moviedetailsModel(MovieDbContext db, UserManager<IdentityUser> userManager)
+        public moviedetailsModel(MovieDbContext db, UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager)
         {
             _db = db;
             _userManager = userManager;
+            _signInManager = signInManager;
         }
 
         public void OnGet(MovieVM testMovie)
@@ -38,7 +40,7 @@ namespace net_project_Revista.Pages.MovieDetails
         {
           
             int? favouriteId = HttpContext.Session.GetInt32("favouriteId");
-            bool isUser = User.Identity.IsAuthenticated;
+            bool isUser = _signInManager.IsSignedIn(User);
             string userId = null;
 
             if (isUser)

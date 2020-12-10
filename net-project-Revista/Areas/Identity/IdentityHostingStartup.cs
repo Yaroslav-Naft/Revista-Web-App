@@ -21,6 +21,7 @@ namespace net_project_Revista.Areas.Identity
 
                 services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                     .AddEntityFrameworkStores<AuthDbContext>();
+
             });
         }
     }
