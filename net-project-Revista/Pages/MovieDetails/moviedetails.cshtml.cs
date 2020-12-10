@@ -37,8 +37,7 @@ namespace net_project_Revista.Pages.MovieDetails
         }
 
         public void OnPost(MovieVM testMovie)
-        {
-          
+        {          
             int? favouriteId = HttpContext.Session.GetInt32("favouriteId");
             bool isUser = _signInManager.IsSignedIn(User);
             string userId = null;
@@ -64,6 +63,14 @@ namespace net_project_Revista.Pages.MovieDetails
                     .ThenInclude(fm => fm.Movie)
                     .Where(f => f.Id == (int)HttpContext.Session.GetInt32("favouriteId"))
                     .FirstOrDefault();
+
+                if(Favourite.UserId != userId)
+                {
+                    fav = new Favourite(userId, DateTime.Now);
+                    _db.Favourites.Add(fav);
+                    _db.SaveChanges();
+                    favouriteId = fav.Id;
+                }
             }
 
             FavouriteMovie fm;
@@ -80,7 +87,6 @@ namespace net_project_Revista.Pages.MovieDetails
             Movie = _db.Movies.Where(movie => movie.Id == testMovie.Id).FirstOrDefault();
             Movie.PosterPath = "https://image.tmdb.org/t/p/w500" + Movie.PosterPath;
             HttpContext.Session.SetInt32("favouriteId", (int)favouriteId);
-            
         }
 
     }
