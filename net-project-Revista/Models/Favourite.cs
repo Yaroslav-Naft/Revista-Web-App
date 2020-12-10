@@ -10,6 +10,8 @@ namespace net_project_Revista.Models
         public string UserId { get; set; }
         public DateTime CreatedOn { get; set; }
 
+        public virtual ICollection<FavouriteMovie> FavouriteMovies { get; set; }
+
         public Favourite(string userId, DateTime createdOn)
         {
             UserId = userId;

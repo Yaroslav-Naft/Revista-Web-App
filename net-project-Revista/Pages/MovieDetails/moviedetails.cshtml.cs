@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.EntityFrameworkCore;
 using net_project_Revista.Data;
 using net_project_Revista.Models;
 using net_project_Revista.ViewModels;
@@ -16,6 +17,8 @@ namespace net_project_Revista.Pages.MovieDetails
     {
         private readonly MovieDbContext _db;
         private readonly UserManager<IdentityUser> _userManager;
+
+        public Favourite Favourite { get; set; }
 
         public Movie Movie { get; private set; }
 
@@ -42,6 +45,36 @@ namespace net_project_Revista.Pages.MovieDetails
                 userId = _userManager.FindByNameAsync(User.Identity.Name).Result.Id;
             }
 
+            Favourite fav;
+
+            if(favouriteId == null)
+            {
+                fav = new Favourite(userId, DateTime.Now);
+                _db.Favourites.Add(fav);
+                _db.SaveChanges();
+                favouriteId = fav.Id;
+            }
+            else
+            {
+                Favourite = _db.Favourites
+                    .Include(f => f.FavouriteMovies)
+                    .ThenInclude(fm => fm.Movie)
+                    .Where(f => f.Id == (int)HttpContext.Session.GetInt32("favouriteId"))
+                    .FirstOrDefault();
+            }
+
+            FavouriteMovie fm;
+
+            fm = _db.FavouriteMovies.Where(fm => fm.FavouriteId == favouriteId && fm.MovieId == testMovie.Id).FirstOrDefault();
+
+            if(fm == null)
+            {
+                fm = new FavouriteMovie((int)favouriteId, testMovie.Id);
+            }
+
+            _db.SaveChanges();
+            HttpContext.Session.SetInt32("favouriteId", (int)favouriteId);
+            
         }
 
     }

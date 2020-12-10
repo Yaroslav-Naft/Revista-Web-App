@@ -17,6 +17,7 @@ namespace net_project_Revista.Models
         // navigation properties
         public virtual ICollection<MovieGenre> MovieGenres { get; set; }
         public virtual MovieCategory MovieCategory { get; set; }
+        public virtual ICollection<FavouriteMovie> FavouriteMovies { get; set; }
 
         public Movie(string title,
                      int movieId,
