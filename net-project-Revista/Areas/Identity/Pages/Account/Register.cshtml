@@ -1,22 +1,28 @@
 ﻿@page
 @model RegisterModel
 
-
-<body>
-	<div class="wrapper">
-		<form class="form-signin">
-			<h2 class="form-signin-heading">Register</h2>
-			<p class="email">Email<p>
-				<input type="text" class="form-control" name="username" placeholder="yourname@revista.com" required="" autofocus="" />
-			<p class="email">Confirm Email<p>
-				<input type="text" class="form-control" name="username" placeholder="yourname@revista.com" required="" autofocus="" />
-			<p class="password">Password<p>
-				<input type="password" class="form-control" name="password" placeholder="password" required="" />
-				<button class="btn btn-lg btn-danger btn-block" type="submit">Create Account</button>
-		</form>
-	</div>
-</body>
-
-@section Scripts {
-    <partial name="_ValidationScriptsPartial" />
+@{
+    ViewData["Title"] = "Register";
 }
+
+<h1>@ViewData["Title"]</h1>
+
+
+    <body>
+        <div class="wrapper">
+            <form class="form-signin">
+                <h2 class="form-signin-heading">Register</h2>
+                <p class="email">Email<p>
+                    <input type="text" class="form-control" name="username" placeholder="yourname@revista.com" required="" autofocus="" />
+                <p class="email">Confirm Email<p>
+                    <input type="text" class="form-control" name="username" placeholder="yourname@revista.com" required="" autofocus="" />
+                <p class="password">Password<p>
+                    <input type="password" class="form-control" name="password" placeholder="password" required="" />
+                    <button class="btn btn-lg btn-danger btn-block" type="submit">Create Account</button>
+            </form>
+        </div>
+    </body>
+
+    @section Scripts {
+        <partial name="_ValidationScriptsPartial" />
+    }
