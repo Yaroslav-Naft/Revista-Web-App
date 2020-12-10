@@ -1,40 +1,19 @@
 ﻿@page
-@model net_project_Revista.Pages.MovieFavourites.moviefavouritesModel
-
-@*<div class="album p-2 bg-light">
-    <div class="container detailscontainer justify-content-center px-5">
-        <div class="row justify-content-center">
-            <div class="col-sm-12 col-md-6 col-lg-3">
-                <div class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="@Model.PosterPath" alt="Card image cap" />
-                </div>
-            </div>
-            <div class="col-sm-12 col-md-6 col-lg-8 justify-content-left px-4 py-2">
-                <div class="detailsheading">@Model.Movie.Title</div>
-                <div class="releasedate">Date Released: @Model.Movie.ReleaseDate</div>
-                <br />
-                <br />
-                <br />
-                <div class="detailsheading">Overview</div>
-                <br />
-                <p class="detailstext" style="width: 18em;">@Model.Movie.Overview</p>
-            </div>
-        </div>
-    </div>
-</div>*@
-
+@model net_project_Revista.Models.FavouriteMovie
 
 <section class="pro-content favorite-content my-4">
     <div class="container">
         <div class="row">
+
+
             <div class="col-12 col-lg-12 ">
                 <table class="table top-table">
-
+                    
                     <tbody>
 
                         <tr class="d-flex">
                             <td class="col-12 col-lg-2">
-                                <img class="img-fluid" src="@Model.PosterPath" alt="WishList">
+                                <img class="img-fluid" src="@Model.Movie.PosterPath" alt="WishList">
                             </td>
                             <td class="col-12 col-lg-3">
                                 <div class="movie-detail">
@@ -45,7 +24,7 @@
                                 </div>
                             </td>
                             <td class="col-12 col-lg-2 item-release-date">@Model.Movie.ReleaseDate</td>
-                            <td class="col-12 col-lg-2 text-success">In stock</td>
+                            
 
                             <td class="col-12 col-lg-3 align-middle">
                                 <button type="button" class="btn btn-secondary btn-lg " onclick="notificationFavourite();">Remove</button>
