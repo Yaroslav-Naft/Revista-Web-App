@@ -212,7 +212,6 @@ h3 span {
     padding: 0 100px;
 }
 
-
 /*details Page Styling*/
 
 .detailsheading {
@@ -220,7 +219,16 @@ h3 span {
     font-size: 24px;
 }
 
+.releasedate {
+    font-size: 16px;
+}
+
 .detailstext {
     font-weight:bold;
     font-size: 14px;
+}
+
+.detailscontainer {
+    padding-top: 50px;
+    margin-bottom:120px;
 }
