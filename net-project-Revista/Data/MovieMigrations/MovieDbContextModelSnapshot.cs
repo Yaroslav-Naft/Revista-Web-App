@@ -80,6 +80,9 @@ namespace net_project_Revista.Data.MovieMigrations
                     b.Property<int>("CategoryId")
                         .HasColumnType("int");
 
+                    b.Property<int>("GenreId")
+                        .HasColumnType("int");
+
                     b.Property<int?>("MovieCategoryId")
                         .HasColumnType("int");
 
