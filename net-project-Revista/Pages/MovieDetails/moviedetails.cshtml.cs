@@ -20,16 +20,9 @@ namespace net_project_Revista.Pages.MovieDetails
         private readonly SignInManager<IdentityUser> _signInManager;
 
         public Favourite Favourite { get; set; }
-
         public Movie Movie { get; private set; }
 
-<<<<<<< HEAD
         public moviedetailsModel(MovieDbContext db, UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager)
-=======
-        public string PosterPath { get; private set; }
-
-        public moviedetailsModel(MovieDbContext db)
->>>>>>> master
         {
             _db = db;
             _userManager = userManager;
@@ -39,7 +32,6 @@ namespace net_project_Revista.Pages.MovieDetails
         public void OnGet(MovieVM testMovie)
         {
             Movie = _db.Movies.Where(movie => movie.Id == testMovie.Id).FirstOrDefault();
-<<<<<<< HEAD
             Movie.PosterPath = "https://image.tmdb.org/t/p/w500" + Movie.PosterPath;
         }
 
@@ -94,13 +86,6 @@ namespace net_project_Revista.Pages.MovieDetails
             Movie = _db.Movies.Where(movie => movie.Id == testMovie.Id).FirstOrDefault();
             Movie.PosterPath = "https://image.tmdb.org/t/p/w500" + Movie.PosterPath;
             HttpContext.Session.SetInt32("favouriteId", (int)favouriteId);
-=======
-            PosterPath = "https://images.tmdb.org/t/p/w500" + Movie.PosterPath;
-        }
-        public void OnPost()
-        {
-
->>>>>>> master
         }
 
     }
