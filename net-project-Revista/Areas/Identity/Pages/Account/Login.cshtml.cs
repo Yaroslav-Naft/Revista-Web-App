@@ -75,8 +75,16 @@ namespace net_project_Revista.Areas.Identity.Pages.Account
             ReturnUrl = returnUrl;
         }
 
-        public async Task<IActionResult> OnPostAsync(string returnUrl = null)
+        public async Task<IActionResult> OnPostAsync(string captcha, string returnUrl = null)
         {
+            System.Threading.Thread.Sleep(2000);
+
+            if (!await _captchaValidator.IsCaptchaPassedAsync(captcha))
+            {
+                ModelState.AddModelError("captcha", "Captcha validation failed");
+                return Page();
+            }
+
             returnUrl = returnUrl ?? Url.Content("~/");
 
             if (ModelState.IsValid)
