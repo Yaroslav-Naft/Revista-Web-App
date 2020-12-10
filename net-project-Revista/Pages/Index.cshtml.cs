@@ -1,5 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using net_project_Revista.Data;
 using net_project_Revista.Interfaces;
@@ -16,12 +19,16 @@ namespace net_project_Revista.Pages
     {
         private readonly IMovieVMService _movieVMService;
         private readonly MovieDbContext _db;
-       
-        public IndexModel(IMovieVMService movieVMService, MovieDbContext db)
+        private readonly UserManager<IdentityUser> _userManager;
+
+        public IndexModel(IMovieVMService movieVMService, MovieDbContext db, UserManager<IdentityUser> userManager)
         {
             _movieVMService = movieVMService;
             _db = db;
+            _userManager = userManager;
         }
+
+        public Favourite Favourite { get; set; }
 
         public MovieIndexVM MovieIndex = new MovieIndexVM();
 
@@ -29,6 +36,24 @@ namespace net_project_Revista.Pages
 
         public void OnGet(MovieIndexVM movieIndex)
         {
+            int? favouriteId = HttpContext.Session.GetInt32("favouriteId");
+            bool isLoggedIn = User.Identity.IsAuthenticated;
+
+            if (favouriteId == null && isLoggedIn)
+            {
+                string userId = _userManager.FindByNameAsync(User.Identity.Name).Result.Id;
+
+                Favourite = _db.Favourites
+                    .Include(f => f.FavouriteMovies)
+                    .ThenInclude(fm => fm.Movie)
+                    .Where(f => f.UserId == userId)
+                    .FirstOrDefault();
+                if (Favourite != null)
+                {
+                    HttpContext.Session.SetInt32("favouriteId", Favourite.Id);
+                }
+            }
+
             MovieIndex = _movieVMService.GetMoviesVM(movieIndex.CategoriesFilterApplied);
         }
     }
