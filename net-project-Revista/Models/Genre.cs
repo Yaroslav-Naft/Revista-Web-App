@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -13,7 +15,7 @@ namespace net_project_Revista.Models
         // navigation properties
         public virtual ICollection<MovieGenre> MovieGenres { get; set; }
 
-        public Genre(int genreId, string name)
+        public Genre(int genreId, string name) 
         {
             GenreId = genreId;
             Name = name;
