@@ -11,6 +11,7 @@ using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
+using GoogleReCaptcha.V3.Interface;
 
 namespace net_project_Revista.Areas.Identity.Pages.Account
 {
@@ -20,14 +21,17 @@ namespace net_project_Revista.Areas.Identity.Pages.Account
         private readonly UserManager<IdentityUser> _userManager;
         private readonly SignInManager<IdentityUser> _signInManager;
         private readonly ILogger<LoginModel> _logger;
+        private readonly ICaptchaValidator _captchaValidator;
 
         public LoginModel(SignInManager<IdentityUser> signInManager, 
             ILogger<LoginModel> logger,
-            UserManager<IdentityUser> userManager)
+            UserManager<IdentityUser> userManager,
+            ICaptchaValidator captchaValidator)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _logger = logger;
+            _captchaValidator = captchaValidator;
         }
 
         [BindProperty]
