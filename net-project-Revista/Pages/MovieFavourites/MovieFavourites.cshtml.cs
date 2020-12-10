@@ -21,6 +21,9 @@ namespace net_project_Revista.Pages.MovieFavourites
 
         public void OnGet()
         {
+
+
+
         }
 
         public void OnPost(Movie testMovie)
