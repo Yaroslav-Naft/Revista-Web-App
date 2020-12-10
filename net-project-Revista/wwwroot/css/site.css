@@ -45,6 +45,10 @@ a {
     border-radius: 50px;
 }
 
+#register {
+    padding-top: 10px;
+}
+
 #profile {
     margin-top: 10px;
 }

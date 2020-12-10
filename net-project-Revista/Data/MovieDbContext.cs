@@ -14,6 +14,7 @@ namespace net_project_Revista.Data
         public DbSet<Genre> Genres { get; set; }
         public DbSet<MovieCategory> MovieCategories { get; set; }
         public DbSet<MovieGenre> MovieGenres { get; set; }
+        public DbSet<Favourite> Favourites { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

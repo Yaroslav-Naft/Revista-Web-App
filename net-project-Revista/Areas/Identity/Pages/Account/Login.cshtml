@@ -1,25 +1,70 @@
 ﻿@page
 @model LoginModel
 
-	<div class="wrapper">
-		<form class="form-signin">
-			<h2 class="form-signin-heading">Login</h2>
-			<p class="email">Email<p>
-				<input type="text" class="form-control" name="username" placeholder="philweier@revista.com" required="" autofocus="" />
-			<p class="password">Password<p>
-				<input type="password" class="form-control" name="password" placeholder="jur@ss1cP@rk1993" required="" />
-				<button class="btn btn-lg btn-light btn-block" type="submit">Login</button>
-				<br />
-				<button class="btn btn-lg btn-light btn-block" type="submit">Login With Google</button>
-				<br />
-				<button class="btn btn-lg btn-light btn-block" type="submit">Login With Facebook</button>
-				<br />
-				<h3><span>OR</span></h3>
-				<br />
-				<button class="btn btn-lg btn-danger btn-block" type="submit">Register Now</button>
-		</form>
-	</div>
 
-@section Scripts {
-	<partial name="_ValidationScriptsPartial" />
+@{
+    ViewData["Title"] = "Log in";
 }
+
+<h1>@ViewData["Title"]</h1>
+<div class="row">
+    <div class="col-md-4">
+        <section>
+            <form id="account" method="post">
+                <h4>Use a local account to log in.</h4>
+                <hr />
+                <div asp-validation-summary="All" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="Input.Email"></label>
+                    <input asp-for="Input.Email" class="form-control" />
+                    <span asp-validation-for="Input.Email" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Input.Password"></label>
+                    <input asp-for="Input.Password" class="form-control" />
+                    <span asp-validation-for="Input.Password" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <div class="checkbox">
+                        <label asp-for="Input.RememberMe">
+                            <input asp-for="Input.RememberMe" />
+                            @Html.DisplayNameFor(m => m.Input.RememberMe)
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary">Log in</button>
+                </div>
+                <div class="form-group">
+                    <p>
+                        <a id="forgot-password" asp-page="./ForgotPassword">Forgot your password?</a>
+                    </p>
+                    <p>
+                        <a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl">Register as a new user</a>
+                    </p>
+                </div>
+            </form>
+        </section>
+    </div>
+    @*<div class="wrapper">
+        <form class="form-signin">
+            <h2 class="form-signin-heading">Login</h2>
+            <p class="email">Email<p>
+                <input type="text" class="form-control" name="username" placeholder="philweier@revista.com" required="" autofocus="" />
+            <p class="password">Password<p>
+                <input type="password" class="form-control" name="password" placeholder="jur@ss1cP@rk1993" required="" />
+                <button class="btn btn-lg btn-light btn-block" type="submit">Login</button>
+                <br />
+                <button class="btn btn-lg btn-light btn-block" type="submit">Login With Google</button>
+                <br />
+                <button class="btn btn-lg btn-light btn-block" type="submit">Login With Facebook</button>
+                <br />
+                <h3><span>OR</span></h3>
+                <br />
+                <button class="btn btn-lg btn-danger btn-block" type="submit">Register Now</button>
+        </form>
+    </div>*@
+
+    @section Scripts {
+        <partial name="_ValidationScriptsPartial" />
+    }

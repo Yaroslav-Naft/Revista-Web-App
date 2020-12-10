@@ -2,5 +2,14 @@
 @model net_project_Revista.Pages.MovieDetails.moviedetailsModel
 
 
-
-    <h1>@Model.Movie.Title</h1>
+<form asp-page="MovieDetails/moviedetails" method="post">
+    <div class="card mb-4" style="width: 18rem;">
+        <img class="card-img-top" src="@Model.Movie.PosterPath" alt="Card image cap" />
+        <div class="card-body">
+            <h5 class="card-title">@Model.Movie.Title</h5>
+            <p class="card-text">@Model.Movie.ReleaseDate</p>
+            @*<h3 class="card-title">@movie.Runtime</h3>*@
+            <input class="app-movie-addcart-button" type="submit" value="Add To Favourites" />
+        </div>
+    </div>
+</form>

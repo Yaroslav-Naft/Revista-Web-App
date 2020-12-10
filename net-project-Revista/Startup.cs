@@ -58,6 +58,8 @@ namespace net_project_Revista
             app.UseAuthentication();
             app.UseAuthorization();
 
+            app.UseSession();
+
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapRazorPages();
