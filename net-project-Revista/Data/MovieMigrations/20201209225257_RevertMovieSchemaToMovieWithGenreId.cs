@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace net_project_Revista.Data.MovieMigrations
 {
-    public partial class NewMovieSchemaWithGenre : Migration
+    public partial class RevertMovieSchemaToMovieWithGenreId : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -45,6 +45,7 @@ namespace net_project_Revista.Data.MovieMigrations
                     ReleaseDate = table.Column<DateTime>(nullable: false),
                     Title = table.Column<string>(nullable: true),
                     MovieId = table.Column<int>(nullable: false),
+                    GenreId = table.Column<int>(nullable: false),
                     CategoryId = table.Column<int>(nullable: false),
                     MovieCategoryId = table.Column<int>(nullable: true)
                 },
