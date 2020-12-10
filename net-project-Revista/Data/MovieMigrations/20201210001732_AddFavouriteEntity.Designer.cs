@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using net_project_Revista.Data;
 
 namespace net_project_Revista.Data.MovieMigrations
 {
     [DbContext(typeof(MovieDbContext))]
-    partial class MovieDbContextModelSnapshot : ModelSnapshot
+    [Migration("20201210001732_AddFavouriteEntity")]
+    partial class AddFavouriteEntity
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -35,21 +37,6 @@ namespace net_project_Revista.Data.MovieMigrations
                     b.HasKey("Id");
 
                     b.ToTable("Favourites");
-                });
-
-            modelBuilder.Entity("net_project_Revista.Models.FavouriteMovie", b =>
-                {
-                    b.Property<int>("FavouriteId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("MovieId")
-                        .HasColumnType("int");
-
-                    b.HasKey("FavouriteId", "MovieId");
-
-                    b.HasIndex("MovieId");
-
-                    b.ToTable("FavouriteMovies");
                 });
 
             modelBuilder.Entity("net_project_Revista.Models.Genre", b =>
@@ -78,9 +65,6 @@ namespace net_project_Revista.Data.MovieMigrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<int>("CategoryId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("GenreId")
                         .HasColumnType("int");
 
                     b.Property<int?>("MovieCategoryId")
@@ -136,21 +120,6 @@ namespace net_project_Revista.Data.MovieMigrations
                     b.HasIndex("GenreId");
 
                     b.ToTable("MovieGenres");
-                });
-
-            modelBuilder.Entity("net_project_Revista.Models.FavouriteMovie", b =>
-                {
-                    b.HasOne("net_project_Revista.Models.Favourite", "Favourite")
-                        .WithMany("FavouriteMovies")
-                        .HasForeignKey("FavouriteId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("net_project_Revista.Models.Movie", "Movie")
-                        .WithMany("FavouriteMovies")
-                        .HasForeignKey("MovieId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
                 });
 
             modelBuilder.Entity("net_project_Revista.Models.Movie", b =>
