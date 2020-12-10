@@ -23,9 +23,14 @@ namespace net_project_Revista.Pages.MovieFavourites
         public void OnGet(MovieFavVM favouriteMovies)
         {
             //how do you directly get data from database not how you get from a post
+            Movie = _db.FavouriteMovies.Where(movie => movie.FavouriteId == favouriteMovies.Id).FirstOrDefault();
+            //Movie = _db.favouriteMovies
+            //     .Include(f => f.FavouriteMovies)
+            //     .ThenInclude(fm => fm.Movie)
+            //     .Where(f => f.UserId == userId)
+            //     .FirstOrDefault();
 
 
-            Movie = _db.FavouriteMovies.Where(movie => movie.Id == favouriteMovies.Id).FirstOrDefault();
             //var fav = new MovieIndexVM()
             //{
             //    Movies = movies.Select(m => new MovieVM
