@@ -10,8 +10,8 @@ using net_project_Revista.Data;
 namespace net_project_Revista.Data.MovieMigrations
 {
     [DbContext(typeof(MovieDbContext))]
-    [Migration("20201209183135_NewMovieSchemaWithGenre")]
-    partial class NewMovieSchemaWithGenre
+    [Migration("20201209225257_RevertMovieSchemaToMovieWithGenreId")]
+    partial class RevertMovieSchemaToMovieWithGenreId
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -47,6 +47,9 @@ namespace net_project_Revista.Data.MovieMigrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<int>("CategoryId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("GenreId")
                         .HasColumnType("int");
 
                     b.Property<int?>("MovieCategoryId")
