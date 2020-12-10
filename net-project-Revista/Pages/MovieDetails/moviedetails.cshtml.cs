@@ -16,21 +16,21 @@ namespace net_project_Revista.Pages.MovieDetails
 
         public Movie Movie { get; private set; }
 
+        public string PosterPath { get; private set; }
+
         public moviedetailsModel(MovieDbContext db)
         {
             _db = db;
         }
 
-
-        public void OnGet()
-        {
-            //Title = testMovie.Title;
-        }
-        public void OnPost(MovieVM testMovie)
+        public void OnGet(MovieVM testMovie)
         {
             Movie = _db.Movies.Where(movie => movie.Id == testMovie.Id).FirstOrDefault();
+            PosterPath = "https://images.tmdb.org/t/p/w500" + Movie.PosterPath;
+        }
+        public void OnPost()
+        {
 
-            //return RedirectToPage();
         }
 
     }

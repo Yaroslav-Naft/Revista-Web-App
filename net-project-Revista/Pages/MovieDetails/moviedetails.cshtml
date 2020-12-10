@@ -1,6 +1,24 @@
 ﻿@page
 @model net_project_Revista.Pages.MovieDetails.moviedetailsModel
 
-
-
-    <h1>@Model.Movie.Title</h1>
+<div class="album p-2 bg-light">
+    <div class="container detailscontainer justify-content-center px-5">
+        <div class="row justify-content-center">
+            <div class="col-sm-12 col-md-6 col-lg-4">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="@Model.PosterPath" alt="Card image cap" />
+                </div>
+                </div>
+                <div class="col-sm-12 col-md-6 col-lg-8 justify-content-left">
+                    <div class="detailsheading">@Model.Movie.Title</div>
+                    <div class="releasedate">Date Released: @Model.Movie.ReleaseDate</div>
+                    <br />
+                    <br />
+                    <br />
+                    <div class="detailsheading">Overview</div>
+                    <br />
+                    <p class="detailstext" style="width: 18em;">@Model.Movie.Overview</p>
+                </div>
+            </div>
+        </div>
+    </div>
