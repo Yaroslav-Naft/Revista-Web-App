@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using net_project_Revista.Data;
 using net_project_Revista.Models;
+using net_project_Revista.ViewModels;
 
 namespace net_project_Revista.Pages.MovieFavourites
 {
@@ -19,17 +20,30 @@ namespace net_project_Revista.Pages.MovieFavourites
             _db = db;
         }
 
-        public void OnGet()
+        public void OnGet(MovieFavVM favouriteMovies)
         {
+            //how do you directly get data from database not how you get from a post
 
 
-
+            Movie = _db.FavouriteMovies.Where(movie => movie.Id == favouriteMovies.Id).FirstOrDefault();
+            //var fav = new MovieIndexVM()
+            //{
+            //    Movies = movies.Select(m => new MovieVM
+            //    {
+            //        Id = m.Id,
+            //        Title = m.Title,
+            //        Overview = m.Overview,
+            //        ReleaseDate = m.ReleaseDate.ToString("MMMM dd, yyyy"),
+            //        PosterPath = "https://image.tmdb.org/t/p/w500" + m.PosterPath
+            //    }).ToList(),
+            //    Categories = GetCategories().ToList()
+            //};
         }
 
-        public void OnPost(Movie testMovie)
+        public void OnPost()
         {
-            Movie = _db.Movies.Where(movie => movie.Id == testMovie.Id).FirstOrDefault();
-            PosterPath = "https://images.tmdb.org/t/p/w500" + Movie.PosterPath;
+            //Movie = _db.Movies.Where(movie => movie.Id == testMovie.Id).FirstOrDefault();
+            //PosterPath = "https://images.tmdb.org/t/p/w500" + Movie.PosterPath;
         }
 
     }
