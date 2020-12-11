@@ -14,7 +14,6 @@ namespace net_project_Revista.Pages.MovieFavourites
     {
         private readonly net_project_Revista.Data.MovieDbContext _context;
 
-        public string Posterpath { get; set; }
         public _FavouritePartialModel(net_project_Revista.Data.MovieDbContext context)
         {
             _context = context;
@@ -27,10 +26,6 @@ namespace net_project_Revista.Pages.MovieFavourites
             FavouriteMovie = await _context.FavouriteMovies
                 .Include(f => f.Favourite)
                 .Include(f => f.Movie).ToListAsync();
-           
-
-            Posterpath = "https://image.tmdb.org/t/p/w100" ;
-
         }
     }
 }
