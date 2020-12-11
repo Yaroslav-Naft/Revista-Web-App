@@ -1,35 +1,44 @@
 ﻿@page
+@inject Microsoft.Extensions.Configuration.IConfiguration Configuration
 @model LoginModel
 
-<h1>@ViewData["Title"]</h1>
-    <div class="wrapper">
-        <form class="form-signin" method="post">
-            <h2 class="form-signin-heading">Login</h2>
-            <div asp-validation-summary="All" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Input.Email"></label>
-                <input asp-for="Input.Email" class="form-control" />
-                <span asp-validation-for="Input.Email" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Input.Password"></label>
-                <input asp-for="Input.Password" class="form-control" />
-                <span asp-validation-for="Input.Password" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <button type="submit" class="btn btn-lg btn-light btn-block">Log in</button>
-            </div>
-            <br />
-            <button class="btn btn-lg btn-light btn-block" type="submit">Login With Google</button>
-            <br />
-            <button class="btn btn-lg btn-light btn-block" type="submit">Login With Facebook</button>
-            <br />
-            <h3><span>OR</span></h3>
-            <br />
-            <button class="btn btn-lg btn-danger btn-block" type="submit">Register Now</button>
-        </form>
-    </div>
+<div class="wrapper">
+	<form class="form-signin" method="post">
+		<h2 class="form-signin-heading">Login</h2>
+		<div asp-validation-summary="All" class="text-danger"></div>
+		<div class="form-group">
+			<label asp-for="Input.Email"></label>
+			<input asp-for="Input.Email" class="form-control" placeholder="philweier@revista.com" />
+			<span asp-validation-for="Input.Email" class="text-danger"></span>
+		</div>
+		<div class="form-group">
+			<label asp-for="Input.Password"></label>
+			<input asp-for="Input.Password" class="form-control" placeholder="jur@ss1cP@rk1993" />
+			<span asp-validation-for="Input.Password" class="text-danger"></span>
+		</div>
+		<div class="form-group">
+			<button type="submit" class="btn btn-lg btn-light btn-block">Log in</button>
+		</div>
+		<br />
+		<button class="btn btn-lg btn-light btn-block" type="submit">Login With Google</button>
+		<br />
+		<button class="btn btn-lg btn-light btn-block" type="submit">Login With Facebook</button>
+		<br />
+		<h3><span>OR</span></h3>
+		<br />
+		<button class="btn btn-lg btn-danger btn-block" type="submit">Register Now</button>
+		<input type="hidden" name="captcha" id="captchaV3Input" value="" />
+	</form>
+</div>
 
-    @section Scripts {
-        <partial name="_ValidationScriptsPartial" />
-    }
+@section Scripts {
+	<partial name="_ValidationScriptsPartial" />
+	<script src="https://www.google.com/recaptcha/api.js?render=@Configuration["RecaptchaV3:SiteKey"]"></script>
+	<script>
+    grecaptcha.ready(function() {
+        grecaptcha.execute('@Configuration["RecaptchaV3:SiteKey"]', { action: 'login' }).then(function (token) {
+            $("#captchaV3Input").val(token);
+        });
+    });
+	</script>
+}
