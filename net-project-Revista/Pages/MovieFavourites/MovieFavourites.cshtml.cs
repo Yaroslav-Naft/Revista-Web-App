@@ -38,8 +38,6 @@ namespace net_project_Revista.Pages.MovieFavourites
 
         public void OnPost()
         {
-            //Movie = _db.Movies.Where(movie => movie.Id == testMovie.Id).FirstOrDefault();
-            //PosterPath = "https://images.tmdb.org/t/p/w500" + Movie.PosterPath;
         }
 
     }
