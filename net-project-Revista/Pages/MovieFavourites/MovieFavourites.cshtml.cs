@@ -16,6 +16,7 @@ namespace net_project_Revista.Pages.MovieFavourites
     {
         private readonly MovieDbContext _db;
         public Favourite Favourite { get; set; }
+        public string posterpath { get; set; }
         public string PosterPath { get; private set; }
         public moviefavouritesModel(MovieDbContext db)
         {
@@ -31,34 +32,8 @@ namespace net_project_Revista.Pages.MovieFavourites
         .ThenInclude(c => c.Movie)
         .Where(c => c.Id == (int)HttpContext.Session.GetInt32("favouriteId"))
         .FirstOrDefault();
-
-
-
-            //Set the movies variable to a collection
-            FavouriteMoviesList = Favourite.FavouriteMovies;
-
-
-            //how do you directly get data from database not how you get from a post
-            //Movie = _db.FavouriteMovies.Where(a => a.MovieId == 1).Single();
-            //Movie = _db.favouriteMovies
-            //     .Include(f => f.FavouriteMovies)
-            //     .ThenInclude(fm => fm.Movie)
-            //     .Where(f => f.UserId == userId)
-            //     .FirstOrDefault();
-
-
-            //var fav = new MovieIndexVM()
-            //{
-            //    Movies = movies.Select(m => new MovieVM
-            //    {
-            //        Id = m.Id,
-            //        Title = m.Title,
-            //        Overview = m.Overview,
-            //        ReleaseDate = m.ReleaseDate.ToString("MMMM dd, yyyy"),
-            //        PosterPath = "https://image.tmdb.org/t/p/w500" + m.PosterPath
-            //    }).ToList(),
-            //    Categories = GetCategories().ToList()
-            //};
+        //Set the movies variable to a collection
+        FavouriteMoviesList = Favourite.FavouriteMovies;
         }
 
         public void OnPost()
