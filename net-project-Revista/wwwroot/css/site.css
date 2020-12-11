@@ -56,9 +56,30 @@ body {
     border-radius: 50px;
 }
 
+<<<<<<< HEAD
 .fa-heart:hover {
     color: red;
     background-color: pink;
+=======
+#register {
+    /*padding-top: 10px;*/
+}
+
+#profile {
+    margin-top: 10px;
+}
+
+#login {
+    /*margin-top: 10px;*/
+}
+
+
+
+/*banner*/
+
+.card.card-image.banner {
+    margin-bottom: 20px;
+>>>>>>> master
 }
     /*banner*/
     .card.card-image.banner {
