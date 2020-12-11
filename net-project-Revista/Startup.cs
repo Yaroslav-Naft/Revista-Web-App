@@ -27,12 +27,13 @@ namespace net_project_Revista
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddAuthentication().AddFacebook(options =>
+            
+            services.AddAuthentication().AddFacebook(facebookOptions =>
             {
-                options.AppId = Configuration["Authentication:Facebook:AppId"];
-                options.AppSecret = Configuration["Authentication:Facebook:AppSecret"];
-                options.AccessDeniedPath = "/AccessDeniedPathInfo";
+                facebookOptions.AppId = Configuration["Authentication:Facebook:AppId"];
+                facebookOptions.AppSecret = Configuration["Authentication:Facebook:AppSecret"];
             });
+
             services.AddDbContext<MovieDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("MovieDbContextConnection")));
