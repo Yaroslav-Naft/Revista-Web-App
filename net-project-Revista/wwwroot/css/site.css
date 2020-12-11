@@ -11,7 +11,6 @@ a.navbar-brand {
 a {
     color: #0366d6;
 }
-
 .btn-primary {
     color: #fff;
     background-color: #1b6ec2;
@@ -25,6 +24,12 @@ a {
 }
 
 /*header*/
+.nav-item{
+    display: flex;
+    align-items: center;
+}
+
+
 .logo {
     width: 150px;
     height: auto;
@@ -45,25 +50,14 @@ a {
     border-radius: 50px;
 }
 
-#register {
-    padding-top: 10px;
+.fa-heart:hover {
+    color: red;
+    background-color: pink;
 }
-
-#profile {
-    margin-top: 10px;
-}
-
-#login {
-    margin-top: 10px;
-}
-
-
-
-/*banner*/
-
-.card.card-image.banner {
-    margin-bottom: 20px;
-}
+    /*banner*/
+    .card.card-image.banner {
+        margin-bottom: 20px;
+    }
 
 /*body*/
 @media (min-width: 1200px) {
