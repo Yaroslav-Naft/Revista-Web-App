@@ -58,7 +58,7 @@ namespace net_project_Revista.Areas.Identity.Pages.Account
             public bool RememberMe { get; set; }
         }
 
-        public async Task OnGetAsync(string returnUrl = null)
+        public async Task OnGetAsync(string captcha, string returnUrl = null)
         {
             if (!string.IsNullOrEmpty(ErrorMessage))
             {
