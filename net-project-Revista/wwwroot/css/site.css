@@ -54,14 +54,37 @@ a {
 }
 
 #login {
-    margin-top: 10px;
+    margin-top: 2px;
 }
 
 
 
-/*banner*/
+.badge {
+   
+    left: 5px !important;
+    bottom: 18px !important;
+    top: auto !important;
+    height: 16px;
+    width: 18px !important;
+    color: white !important;
+    border-radius: 0 !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    z-index: 99 !important;
+    border-radius: 200px !important;
+    position: relative;
+}
 
-.card.card-image.banner {
+
+.badge-secondary {
+    background-color: red !important;
+}
+
+
+
+    /*banner*/
+    .card.card-image.banner {
     margin-bottom: 20px;
 }
 
