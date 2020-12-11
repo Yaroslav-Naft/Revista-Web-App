@@ -5,31 +5,51 @@
     <div class="container">
         <div class="row">
 
+            <div class="album py-5 bg-light">
+                <div class="container">
+                    @if (Model.Movie != null)
+                    {
+                        @*<div class="row">
+                            @foreach (var movie in)
+                            {
+                                <div class="col-md-3">
+                                    <partial name="_MoviePartial" for="@movie" />
+                                </div>
+                            }
+                        </div>*@
+                    }
+                    else
+                    {
+                        <p>No Products!</p>
+                    }
+                </div>
+            </div>
+
 
             <div class="col-12 col-lg-12 ">
-                <table class="table top-table">                
+                <table class="table top-table">
                     <tbody>
                         <tr class="d-flex">
                             <td class="col-12 col-lg-2">
-                                <img class="img-fluid" src="@Model.Movie.PosterPath" alt="WishList">
+                                <img class="img-fluid" @*src="@Model.Movie.PosterPath"*@ alt="WishList">
                             </td>
                             <td class="col-12 col-lg-3">
                                 <div class="movie-detail">
-                                    <h1 class="movie-category">@Model.Movie.Title</h1>
+                                    <h1 class="movie-category">@*@Model.Movie.Title*@</h1>
                                     <h3>
-                                       @Model.Movie.MovieGenres
+                                        @*@Model.Movie.MovieGenres*@
                                     </h3>
                                 </div>
                             </td>
-                            <td class="col-12 col-lg-2 item-release-date">@Model.Movie.ReleaseDate</td>
-                            
+                            <td class="col-12 col-lg-2 item-release-date">@*@Model.Movie.ReleaseDate*@</td>
+
 
                             <td class="col-12 col-lg-3 align-middle">
                                 <button type="button" class="btn btn-secondary btn-lg " onclick="notificationFavourite();">Remove</button>
                             </td>
 
                         </tr>
-                      
+
                     </tbody>
                 </table>
                 <nav aria-label="navigation">
