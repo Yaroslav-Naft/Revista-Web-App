@@ -12,6 +12,10 @@ a {
     color: #0366d6;
 }
 
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
 
 .btn-primary {
     color: #fff;

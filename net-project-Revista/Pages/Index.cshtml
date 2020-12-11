@@ -6,7 +6,7 @@
             <label class="app-movie-label" data-title="category">
                 <select asp-for="@Model.MovieIndex.CategoriesFilterApplied" asp-items="@Model.MovieIndex.Categories" class="app-movie-filter"></select>
             </label>
-            <input class="app-movie-addcart-button" type="submit" value="Apply" />
+            <button class="btn btn-success" type="submit">Apply</button>
         </form>
     </div>
 </section>
