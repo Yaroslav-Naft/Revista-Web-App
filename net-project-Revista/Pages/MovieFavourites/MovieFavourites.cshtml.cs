@@ -20,8 +20,12 @@ namespace net_project_Revista.Pages.MovieFavourites
             _db = db;
         }
 
-        public void OnGet(MovieFavVM favouriteMovies)
+        public void OnGet()
         {
+            
+
+
+
             //how do you directly get data from database not how you get from a post
             //Movie = _db.FavouriteMovies.Where(a => a.MovieId == 1).Single();
             //Movie = _db.favouriteMovies
