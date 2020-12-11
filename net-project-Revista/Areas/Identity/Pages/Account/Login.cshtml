@@ -19,44 +19,42 @@
 		<div class="form-group">
 			<button type="submit" class="btn btn-lg btn-light btn-block">Log in</button>
 		</div>
-		<br />
-		<button class="btn btn-lg btn-light btn-block" type="submit">Login With Google</button>
-		<br />
-		<button class="btn btn-lg btn-light btn-block" type="submit">Login With Facebook</button>
-		<br />
-		<h3><span>OR</span></h3>
-		<br />
-		<button class="btn btn-lg btn-danger btn-block" type="submit">Register Now</button>
+
 		<input type="hidden" name="captcha" id="captchaV3Input" value="" />
 	</form>
-	<section>
-                <h4>Use another service to log in.</h4>
-                <hr />
-                @{
-                    if ((Model.ExternalLogins?.Count ?? 0) == 0)
-                    {
-                        <div>
-                            <p>
-                                There are no external authentication services configured. See <a href="https://go.microsoft.com/fwlink/?LinkID=532715">this article</a>
-                                for details on setting up this ASP.NET application to support logging in via external services.
-                            </p>
-                        </div>
-                    }
-                    else
-                    {
-                        <form id="external-account" asp-page="./ExternalLogin" asp-route-returnUrl="@Model.ReturnUrl" method="post" class="form-horizontal">
-                            <div>
-                                <p>
-                                    @foreach (var provider in Model.ExternalLogins)
-                                    {
-                                        <button type="submit" class="btn btn-primary" name="provider" value="@provider.Name" title="Log in using your @provider.DisplayName account">@provider.DisplayName</button>
-                                    }
-                                </p>
-                            </div>
-                        </form>
-                    }
-                }
-            </section>
+    <section>
+        <br/>
+        <h4>Use another service to log in.</h4>
+        <hr />
+        @{
+            if ((Model.ExternalLogins?.Count ?? 0) == 0)
+            {
+                <div>
+                    <p>
+                        There are no external authentication services configured. See <a href="https://go.microsoft.com/fwlink/?LinkID=532715">this article</a>
+                        for details on setting up this ASP.NET application to support logging in via external services.
+                    </p>
+                </div>
+            }
+            else
+            {
+                <form id="external-account" asp-page="./ExternalLogin" asp-route-returnUrl="@Model.ReturnUrl" method="post" class="form-horizontal">
+                    <div>
+                        <p>
+                            @foreach (var provider in Model.ExternalLogins)
+                            {
+                                <button type="submit" class="btn btn-primary" name="provider" value="@provider.Name" title="Log in using your @provider.DisplayName account">@provider.DisplayName</button>
+                            }
+                        </p>
+                    </div>
+                </form>
+            }
+        }
+        <br />
+        <h3><span>OR</span></h3>
+        <br />
+        <button class="btn btn-lg btn-danger btn-block" type="submit">Register Now</button>
+    </section>
 </div>
 
 @section Scripts {
