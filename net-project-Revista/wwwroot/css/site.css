@@ -18,15 +18,15 @@ a {
     }
 
 
-a:active hover{
+    a:active hover {
         text-decoration: none;
     }
 
 
-a hover{
-    text-decoration:none;
-    text-decoration-color: red;
-}
+    a hover {
+        text-decoration: none;
+        text-decoration-color: red;
+    }
 
 
 body {
@@ -193,13 +193,10 @@ button.accept-policy {
     height: 100vh;
 }
 
-
-
 /* Login / Register page styles
 -------------------------------------------------- */
 
 @import "bourbon";
-
 
 body {
     background: #eee !important;
@@ -270,10 +267,24 @@ h3 {
     margin-bottom: 60px;
 }
 
-    h3 span {
-        background: #fff;
-        padding: 0 100px;
-    }
+h3 span {
+    background: #fff;
+    padding: 0 100px;
+}
+
+.exlogin-section {
+    padding: 0 50px;
+    margin: 0 50px 25px;
+}
+
+.exlogin-header {
+    text-align: center;
+    font-weight: 500;
+}
+
+.exlogin-btn-container {
+    text-align: center;
+}
 
 /*details Page Styling*/
 
