@@ -96,8 +96,14 @@ body {
 
 
     /*banner*/
-    .card.card-image.banner {
+.card.card-image.banner {
     margin-bottom: 20px;
+    background-image: url(/images/new-bannerRevista2.jpg);
+    background-repeat: no-repeat;
+    height: 317px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /*body*/
