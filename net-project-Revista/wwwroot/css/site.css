@@ -81,10 +81,51 @@ body {
     color: red;
     background-color: pink;
 }
+
+#profile {
+    margin-top: 10px;
+}
+
+#login {
+    margin-top: 2px;
+}
+
+
+
+.badge {
+   
+    left: 5px !important;
+    bottom: 18px !important;
+    top: auto !important;
+    height: 16px;
+    width: 18px !important;
+    color: white !important;
+    border-radius: 0 !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    z-index: 99 !important;
+    border-radius: 200px !important;
+    position: relative;
+}
+
+
+.badge-secondary {
+    background-color: red !important;
+}
+
+
+
     /*banner*/
-    .card.card-image.banner {
-        margin-bottom: 20px;
-    }
+.card.card-image.banner {
+    margin-bottom: 20px;
+    background-image: url(/images/new-bannerRevista2.jpg);
+    background-repeat: no-repeat;
+    height: 317px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
 
 /*body*/
 @media (min-width: 1200px) {
