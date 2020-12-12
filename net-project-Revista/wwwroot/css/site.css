@@ -9,8 +9,25 @@ a.navbar-brand {
 
 /* Provide sufficient contrast against white background */
 a {
-    color: #0366d6;
+    color: black;
 }
+
+    a hover {
+        text-decoration: none;
+        text-decoration-color: red;
+    }
+
+
+a:active hover{
+        text-decoration: none;
+    }
+
+
+a hover{
+    text-decoration:none;
+    text-decoration-color: red;
+}
+
 
 body {
     font-family: 'Open Sans', sans-serif;
@@ -27,7 +44,11 @@ body {
     color: #fff;
     background-color: #1b6ec2;
     border-color: #1861ac;
+    text-decoration: none;
 }
+
+
+
 
 /*header*/
 .nav-item{
