@@ -2,10 +2,9 @@
     <form asp-page="MovieDetails/moviedetails" method="get">
         <div class="card mb-4" style="width: 18rem;">
             <img class="card-img-top" src="@Model.PosterPath" alt="Card image cap" />
-            <div class="card-body">
+            <div class="card-body text-center">
                 <h5 class="card-title">@Model.Title</h5>
                 <p class="card-text">@Model.ReleaseDate</p>
-                @*<h3 class="card-title">@movie.Runtime</h3>*@
                 <button class="btn btn-info" type="submit">See More</button>
             </div>
         </div>
