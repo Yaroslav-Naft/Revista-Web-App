@@ -43,9 +43,11 @@ namespace net_project_Revista.Pages.MovieFavourites
 
         public void OnPost(int id)
         {
-            FavouriteMovie = _db.FavouriteMovies.Where(movie => movie.MovieId == id && movie.FavouriteId == (int)HttpContext.Session.GetInt32("favouriteId")).FirstOrDefault();
-            _db.FavouriteMovies.Remove(FavouriteMovie);
+            FavouriteMovie = _db.FavouriteMovies
+                .Where(movie => movie.MovieId == id && movie.FavouriteId == (int)HttpContext.Session.GetInt32("favouriteId"))
+                .FirstOrDefault();
 
+            _db.FavouriteMovies.Remove(FavouriteMovie);
             _db.SaveChanges();
 
             OnGet();
