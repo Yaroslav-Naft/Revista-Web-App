@@ -13,14 +13,13 @@
                 </div>
                 <div class="col-sm-12 col-md-6 col-lg-8 justify-content-left px-4 py-2">
                     <div class="detailsheading">@Model.Movie.Title</div>
-                    <div class="releasedate">Date Released: @Model.Movie.ReleaseDate</div>
+                    <div class="releasedate">Date Released: @Model.Movie.ReleaseDate.ToString("MMMM dd, yyyy")</div>
                     <br />
                     <br />
                     <br />
                     <div class="detailsheading">Overview</div>
-                    <br />
-                    <p class="detailstext" style="width: 18em;">@Model.Movie.Overview</p>
-                    <button class="btn btn-success" type="submit">Add to Favourites</button>
+                    <p class="detailstext" style="width: 34em;">@Model.Movie.Overview</p>
+                    <button class="btn btn-success" style="margin-top:10px;" type="submit">Add to Favourites</button>
                 </div>
             </div>
         </div>
