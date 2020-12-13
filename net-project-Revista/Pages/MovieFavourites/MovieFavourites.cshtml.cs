@@ -29,7 +29,7 @@ namespace net_project_Revista.Pages.MovieFavourites
 
         public ICollection<FavouriteMovie> FavouriteMoviesList { get; private set; }
 
-        public void OnGet()
+        public void OnGet(string posterPath)
         {
             //Get Favourite movies from database
              Favourite = _db.Favourites
@@ -41,7 +41,7 @@ namespace net_project_Revista.Pages.MovieFavourites
             FavouriteMoviesList = Favourite.FavouriteMovies;
         }
 
-        public void OnPost(int id)
+        public void OnPost(int id, string posterPath)
         {
             FavouriteMovie = _db.FavouriteMovies
                 .Where(movie => movie.MovieId == id && movie.FavouriteId == (int)HttpContext.Session.GetInt32("favouriteId"))
@@ -50,7 +50,7 @@ namespace net_project_Revista.Pages.MovieFavourites
             _db.FavouriteMovies.Remove(FavouriteMovie);
             _db.SaveChanges();
 
-            OnGet();
+            OnGet(posterPath);
         }
 
     }
