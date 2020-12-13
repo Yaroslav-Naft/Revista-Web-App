@@ -17,4 +17,7 @@
             <button type="submit" class="btn btn-secondary btn-lg">Remove</button>
         </td>
     </tr>
+    <input type="hidden" asp-for="@Model.Movie.Id" name="id" />
+    <input type="hidden" asp-for="@Model.Movie.Title" name="title" />
+    <input type="hidden" asp-for="@Model.Movie.PosterPath" name="posterPath" />
 </form>

@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
@@ -12,16 +13,19 @@ using net_project_Revista.ViewModels;
 
 namespace net_project_Revista.Pages.MovieFavourites
 {
-    public class moviefavouritesModel : PageModel
+    [Authorize]
+    public class MovieFavouritesModel : PageModel
     {
         private readonly MovieDbContext _db;
 
-        public moviefavouritesModel(MovieDbContext db)
+        public MovieFavouritesModel(MovieDbContext db)
         {
             _db = db;
         }
 
         public Favourite Favourite { get; set; }
+        public FavouriteMovie FavouriteMovie { get; set; }
+        public int MovieId { get; set; }
 
         public ICollection<FavouriteMovie> FavouriteMoviesList { get; private set; }
 
@@ -37,8 +41,14 @@ namespace net_project_Revista.Pages.MovieFavourites
             FavouriteMoviesList = Favourite.FavouriteMovies;
         }
 
-        public void OnPost()
+        public void OnPost(int id)
         {
+            FavouriteMovie = _db.FavouriteMovies.Where(movie => movie.MovieId == id && movie.FavouriteId == (int)HttpContext.Session.GetInt32("favouriteId")).FirstOrDefault();
+            _db.FavouriteMovies.Remove(FavouriteMovie);
+
+            _db.SaveChanges();
+
+            OnGet();
         }
 
     }
