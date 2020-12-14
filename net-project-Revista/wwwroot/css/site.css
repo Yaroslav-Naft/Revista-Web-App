@@ -338,3 +338,37 @@ p {
     text-align: center;
     font-size: 1.5em;
 }
+
+/*fav page styles
+-------------------------------------------------- */
+
+tr.d-flex {
+    background-color: var(--color-article1-background);
+    align-items: center;
+    border-color: var(--color-border);
+    margin-bottom: 30px;
+}
+
+
+
+.table td, .table th {
+    border-top: none !important;
+}
+
+h1.movie-category {
+    font-weight: bolder;
+}
+
+.favorite-content .top-table tbody tr td {
+    display: flex;
+    justify-content: center;
+    border: none;
+}
+
+
+.favorite-content .top-table tbody tr .item-release-date {
+    color: #ffc107;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bolder;
+    font-size: 1rem;
+}
