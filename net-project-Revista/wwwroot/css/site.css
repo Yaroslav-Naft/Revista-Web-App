@@ -47,7 +47,9 @@ body {
     text-decoration: none;
 }
 
-/*header*/
+/*Header
+-------------------------------------------------- */
+
 .nav-item {
     display: flex;
     align-items: center;
@@ -112,7 +114,9 @@ body {
 
 
 
-/*banner*/
+/*Banner
+-------------------------------------------------- */
+
 .card.card-image.banner {
     margin-bottom: 20px;
     background-image: url(/images/new-bannerRevista2.jpg);
@@ -123,14 +127,18 @@ body {
     margin-right: auto;
 }
 
-/*body*/
+/*Body
+-------------------------------------------------- */
+
 @media (min-width: 1200px) {
     .container {
         max-width: 1319px !important;
     }
 }
 
-/*footer*/
+/*Footer
+-------------------------------------------------- */
+
 footer {
     background-color: lightgrey;
 }
@@ -286,7 +294,8 @@ h3 span {
     text-align: center;
 }
 
-/*details Page Styling*/
+/*Details Page Styling
+-------------------------------------------------- */
 
 .detailsheading {
     font-weight: bold;
@@ -305,5 +314,27 @@ h3 span {
 
 .detailscontainer {
     padding-top: 50px;
-    margin-bottom: 120px;
+    margin-bottom:120px;
+}
+
+/*Two factor Auth page styles
+-------------------------------------------------- */
+
+.col-md-4 {
+    text-align: center;
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+}
+p {
+    text-align: center;
+}
+
+.two-fa {
+    text-align: center;
+}
+
+.auth-code {
+    text-align: center;
+    font-size: 1.5em;
 }
