@@ -20,53 +20,49 @@
             <div class="form-group">
                 <button type="submit" class="btn btn-lg btn-light btn-block">Log in</button>
             </div>
-
             <input type="hidden" name="captcha" id="captchaV3Input" value="" />
-        </form>
-        <div class="container exlogin-container">
-        <section class="exlogin-section">
-            <br />
-            <h4 class="exlogin-header">Use another service to log in.</h4>
-            <hr />
-            @{
-                if ((Model.ExternalLogins?.Count ?? 0) == 0)
-                {
-                    <div>
-                        <p>
-                            There are no external authentication services configured. See <a href="https://go.microsoft.com/fwlink/?LinkID=532715">this article</a>
-                            for details on setting up this ASP.NET application to support logging in via external services.
-                        </p>
-                    </div>
-                }
-                else
-                {
-                    <form id="external-account" asp-page="./ExternalLogin" asp-route-returnUrl="@Model.ReturnUrl" method="post" class="form-horizontal">
-                        <div class="exlogin-btn-container">
-                            @foreach (var provider in Model.ExternalLogins)
-                            {
-                                <button type="submit" class="btn btn-primary exlogin-btn" name="provider" value="@provider.Name" title="Log in using your @provider.DisplayName account">@provider.DisplayName</button>
-                            }
+            <section class="exlogin-section">
+                <br />
+                <h4 class="exlogin-header">Use another service to log in.</h4>
+                <hr />
+                @{
+                    if ((Model.ExternalLogins?.Count ?? 0) == 0)
+                    {
+                        <div>
+                            <p>
+                                There are no external authentication services configured. See <a href="https://go.microsoft.com/fwlink/?LinkID=532715">this article</a>
+                                for details on setting up this ASP.NET application to support logging in via external services.
+                            </p>
                         </div>
-                    </form>
+                    }
+                    else
+                    {
+                        <form id="external-account" asp-page="./ExternalLogin" asp-route-returnUrl="@Model.ReturnUrl" method="post" class="form-horizontal">
+                            <div class="exlogin-btn-container">
+                                @foreach (var provider in Model.ExternalLogins)
+                                {
+                                    <button type="submit" class="btn btn-primary exlogin-btn" name="provider" value="@provider.Name" title="Log in using your @provider.DisplayName account">@provider.DisplayName</button>
+                                }
+                            </div>
+                        </form>
+                    }
                 }
-            }
-            <br />
-            <h3>OR</h3>
-            <br />
-            <a asp-page="/Account/Register"><button class="btn btn-lg btn-danger btn-block register-btn" type="submit">Register Now</button></a>
-        </section>
-        </div>
+                <br />
+                <h3><span>OR</span></h3>
+                <br />
+                <a asp-page="/Account/Register"><button class="btn btn-lg btn-danger btn-block register-btn" type="submit">Register Now</button></a>
+            </section>
+        </form>
     </div>
 </div>
-
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
     <script src="https://www.google.com/recaptcha/api.js?render=@Configuration["RecaptchaV3:SiteKey"]"></script>
     <script>
-    grecaptcha.ready(function() {
-        grecaptcha.execute('@Configuration["RecaptchaV3:SiteKey"]', { action: 'login' }).then(function (token) {
-            $("#captchaV3Input").val(token);
-        });
-    });
+   grecaptcha.ready(function() {
+       grecaptcha.execute('@Configuration["RecaptchaV3:SiteKey"]', { action: 'login' }).then(function (token) {
+           $("#captchaV3Input").val(token);
+       });
+   });
     </script>
 }
