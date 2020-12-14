@@ -29,10 +29,13 @@ namespace net_project_Revista.Pages.MovieDetails
             _signInManager = signInManager;
         }
 
+        public Genre Genre { get; set; }
+
         public void OnGet(MovieVM testMovie)
         {
             Movie = _db.Movies.Where(movie => movie.Id == testMovie.Id).FirstOrDefault();
             Movie.PosterPath = "https://image.tmdb.org/t/p/w500" + Movie.PosterPath;
+            Genre = _db.Genres.Where(genre => genre.GenreId == Movie.GenreId).FirstOrDefault();
         }
 
         public IActionResult OnPost(MovieVM testMovie, string returnUrl = null)
