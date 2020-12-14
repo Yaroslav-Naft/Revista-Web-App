@@ -1,5 +1,5 @@
 ﻿@page
-@model net_project_Revista.Pages.MovieFavourites.moviefavouritesModel
+@model net_project_Revista.Pages.MovieFavourites.MovieFavouritesModel
 
 <section class="pro-content favorite-content my-4">
     <div class="container">
@@ -7,9 +7,16 @@
             <div class="col-12 col-lg-12 ">
                 <table class="table top-table">
                     <tbody>
-                        @foreach (var movie in Model.FavouriteMoviesList)
+                        @if (Model.FavouriteMoviesList.Count > 0)
                         {
-                            <partial name="_FavouritePartial" for="@movie" />
+                            @foreach (var movie in Model.FavouriteMoviesList)
+                            {
+                                <partial name="_FavouritePartial" for="@movie" />
+                            }
+                        }
+                        else
+                        {
+                            <p>No Favourites!</p>
                         }
                     </tbody>
                 </table>
