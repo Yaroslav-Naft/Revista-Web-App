@@ -44,7 +44,6 @@ namespace net_project_Revista.Pages
             if (isUser && favouriteId == null)
             {
                 string userId = _userManager.FindByNameAsync(User.Identity.Name).Result.Id;
-
                 Favourite = _db.Favourites
                     .Include(f => f.FavouriteMovies)
                     .ThenInclude(fm => fm.Movie)
@@ -55,7 +54,19 @@ namespace net_project_Revista.Pages
                     HttpContext.Session.SetInt32("favouriteId", Favourite.Id);
                 }
             }
-
+            else if (isUser && favouriteId != null)
+            {
+                string userId = _userManager.FindByNameAsync(User.Identity.Name).Result.Id;
+                Favourite = _db.Favourites
+                .Include(f => f.FavouriteMovies)
+                .ThenInclude(fm => fm.Movie)
+                .Where(f => f.UserId == userId)
+                .FirstOrDefault();
+                if (Favourite != null)
+                {
+                    HttpContext.Session.SetInt32("favouriteId", Favourite.Id);
+                }
+            }
             MovieIndex = _movieVMService.GetMoviesVM(movieIndex.CategoriesFilterApplied);
         }
     }

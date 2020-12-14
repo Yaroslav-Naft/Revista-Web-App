@@ -9,8 +9,25 @@ a.navbar-brand {
 
 /* Provide sufficient contrast against white background */
 a {
-    color: #0366d6;
+    color: black;
 }
+
+a hover {
+    text-decoration: none;
+    text-decoration-color: red;
+}
+
+
+    a:active hover {
+        text-decoration: none;
+    }
+
+
+    a hover {
+        text-decoration: none;
+        text-decoration-color: red;
+    }
+
 
 body {
     font-family: 'Open Sans', sans-serif;
@@ -27,10 +44,11 @@ body {
     color: #fff;
     background-color: #1b6ec2;
     border-color: #1861ac;
+    text-decoration: none;
 }
 
 /*header*/
-.nav-item{
+.nav-item {
     display: flex;
     align-items: center;
 }
@@ -56,14 +74,54 @@ body {
     border-radius: 50px;
 }
 
-.fa-heart:hover {
-    color: red;
-    background-color: pink;
-}
-    /*banner*/
-    .card.card-image.banner {
-        margin-bottom: 20px;
+    .fa-heart:hover {
+        color: red;
+        background-color: pink;
     }
+
+#profile {
+    margin-top: 10px;
+}
+
+#login {
+    margin-top: 2px;
+}
+
+
+
+.badge {
+    left: 5px !important;
+    bottom: 18px !important;
+    top: auto !important;
+    height: 16px;
+    width: 18px !important;
+    color: white !important;
+    border-radius: 0 !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    z-index: 99 !important;
+    border-radius: 200px !important;
+    position: relative;
+}
+
+
+.badge-secondary {
+    background-color: red !important;
+}
+
+
+
+/*banner*/
+.card.card-image.banner {
+    margin-bottom: 20px;
+    background-image: url(/images/new-bannerRevista2.jpg);
+    background-repeat: no-repeat;
+    height: 317px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
 
 /*body*/
 @media (min-width: 1200px) {
@@ -135,89 +193,105 @@ button.accept-policy {
     height: 100vh;
 }
 
-
-
-    /* Login / Register page styles
+/* Login / Register page styles
 -------------------------------------------------- */
 
-    @import "bourbon";
+@import "bourbon";
 
+body {
+    background: #eee !important;
+}
 
-    body {
-        background: #eee !important;
-    }
+.wrapper {
+    margin-top: 80px;
+    margin-bottom: 80px;
+}
 
-    .wrapper {
-        margin-top: 80px;
-        margin-bottom: 80px;
-    }
+.email {
+    margin-bottom: 10px;
+}
 
-    .email {
-        margin-bottom: 10px;
-    }
+.password {
+    margin-bottom: 10px;
+}
 
-    .password {
-        margin-bottom: 10px;
-    }
+.or {
+    text-align: center;
+}
 
-    .or {
-        text-align: center;
-    }
+.signin {
+    background-color: #fff;
+    border: 1px solid rgba(0,0,0,0.1);
+    box-shadow: 10px 10px 5px #aaaaaa;
+    padding: 15px 35px 45px;
+}
 
-    .form-signin {
-        max-width: 1000px;
-        min-height: 400px;
-        padding: 15px 35px 45px;
-        margin: 0 auto;
-        background-color: #fff;
-        border: 1px solid rgba(0,0,0,0.1);
-        box-shadow: 10px 10px 5px #aaaaaa;
-    }
+.form-signin {
+    max-width: 1000px;
+    min-height: 400px;
+    padding: 15px 35px 45px;
+    margin: 0 auto;
+}
 
-    .form-signin-heading {
-        margin-bottom: 30px;
-        text-align: center;
-        font-size: 3em;
-    }
+.form-signin-heading {
+    margin-bottom: 30px;
+    text-align: center;
+    font-size: 3em;
+}
 
-    .form-control {
-        position: relative;
-        font-size: 16px;
-        height: auto;
-        padding: 10px;
-    }
+.form-control {
+    position: relative;
+    font-size: 16px;
+    height: auto;
+    padding: 10px;
+}
 
-    input[type="text"] {
-        margin-bottom: 30px;
-        border-bottom-left-radius: 0;
-        border-bottom-right-radius: 0;
-    }
+input[type="text"] {
+    margin-bottom: 30px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
 
-    input[type="password"] {
-        margin-bottom: 50px;
-        border-top-left-radius: 0;
-        border-top-right-radius: 0;
-    }
+input[type="password"] {
+    margin-bottom: 50px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
 
-    h3 {
-        width: 100%;
-        text-align: center;
-        line-height: 0.1em;
-        margin: 10px 0 20px;
-        margin-top: 60px;
-        margin-bottom: 60px;
-    }
+h3 {
+    width: 100%;
+    text-align: center;
+    line-height: 0.1em;
+    margin: 10px 0 20px;
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
 
 h3 span {
     background: #fff;
     padding: 0 100px;
 }
 
+.exlogin-section {
+    padding: 0 50px;
+    margin: 0 50px 25px;
+}
+
+.exlogin-header {
+    text-align: center;
+    font-weight: 500;
+}
+
+.exlogin-btn-container {
+    text-align: center;
+}
+
 /*details Page Styling*/
 
 .detailsheading {
-    font-weight:bold;
+    font-weight: bold;
     font-size: 24px;
+    margin-bottom: 7px;
 }
 
 .releasedate {
@@ -225,7 +299,7 @@ h3 span {
 }
 
 .detailstext {
-    font-weight:bold;
+    font-weight: bold;
     font-size: 14px;
 }
 
