@@ -272,14 +272,23 @@ h3 {
     width: 100%;
     text-align: center;
     line-height: 0.1em;
-    margin: 10px 0 20px;
-    margin-top: 60px;
-    margin-bottom: 60px;
+    margin: 10px 0 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
-h3 span {
-    background: #fff;
+/*h3 span {
     padding: 0 100px;
+}*/
+
+hr {
+    border: 10px solid black;
+}
+
+orstyling {
+    padding:0px;
+    font-size:45px;
+    font-weight: bold;
 }
 
 .exlogin-section {

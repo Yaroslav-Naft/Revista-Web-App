@@ -22,9 +22,6 @@
             </div>
             <input type="hidden" name="captcha" id="captchaV3Input" value="" />
             <section class="exlogin-section">
-                <br />
-                <h4 class="exlogin-header">Use another service to log in.</h4>
-                <hr />
                 @{
                     if ((Model.ExternalLogins?.Count ?? 0) == 0)
                     {
@@ -41,16 +38,29 @@
                             <div class="exlogin-btn-container">
                                 @foreach (var provider in Model.ExternalLogins)
                                 {
-                                    <button type="submit" class="btn btn-primary exlogin-btn" name="provider" value="@provider.Name" title="Log in using your @provider.DisplayName account">@provider.DisplayName</button>
+                                    <div class="form-group">
+                                        <button type="submit" class="btn btn-lg btn-block btn-primary exlogin-btn" name="provider" value="@provider.Name" title="Log in using your @provider.DisplayName account"> Log in with @provider.DisplayName</button>
+                                    </div>
                                 }
                             </div>
                         </form>
                     }
                 }
                 <br />
-                <h3><span>OR</span></h3>
+                <div class="container pb-2">
+                    <div class="row">
+                        <div class="col-5"><hr /></div>
+                        <div class="col-2"><div class="orstyling text-center pt-1">OR</div></div>
+                        <div class="col-5"><hr /></div>
+                    </div>
+
+                </div>
+
+
+
+
                 <br />
-                <a asp-page="/Account/Register"><button class="btn btn-lg btn-danger btn-block register-btn" type="submit">Register Now</button></a>
+                <a asp-page="/Account/Register"><button class="btn btn-lg btn-secondary btn-block register-btn" type="submit">Register Now</button></a>
             </section>
         </form>
     </div>
