@@ -112,7 +112,9 @@ body {
     background-color: red !important;
 }
 
-
+.app-movie-filters {
+    margin-top: 50px;
+}
 
 /*Banner
 -------------------------------------------------- */
