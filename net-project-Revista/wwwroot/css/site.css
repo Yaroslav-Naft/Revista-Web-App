@@ -279,6 +279,16 @@ h3 {
     padding: 0 100px;
 }*/
 
+hr {
+    border: 10px solid black;
+}
+
+orstyling {
+    padding:0px;
+    font-size:45px;
+    font-weight: bold;
+}
+
 .exlogin-section {
     padding: 0 50px;
     margin: 0 50px 25px;

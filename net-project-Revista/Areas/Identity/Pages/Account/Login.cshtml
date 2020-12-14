@@ -22,7 +22,6 @@
             </div>
             <input type="hidden" name="captcha" id="captchaV3Input" value="" />
             <section class="exlogin-section">
-                <hr />
                 @{
                     if ((Model.ExternalLogins?.Count ?? 0) == 0)
                     {
@@ -48,7 +47,18 @@
                     }
                 }
                 <br />
-                <h3>OR</h3>
+                <div class="container pb-2">
+                    <div class="row">
+                        <div class="col-5"><hr /></div>
+                        <div class="col-2"><div class="orstyling text-center pt-1">OR</div></div>
+                        <div class="col-5"><hr /></div>
+                    </div>
+
+                </div>
+
+
+
+
                 <br />
                 <a asp-page="/Account/Register"><button class="btn btn-lg btn-secondary btn-block register-btn" type="submit">Register Now</button></a>
             </section>
