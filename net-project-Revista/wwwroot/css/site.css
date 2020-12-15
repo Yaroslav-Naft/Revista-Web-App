@@ -8,6 +8,12 @@ a.navbar-brand {
 }
 
 /* Provide sufficient contrast against white background */
+
+.card {
+    background-color: #cca372;
+}
+
+
 a {
     color: black;
 }
@@ -46,8 +52,7 @@ body {
     border-color: #1861ac;
     text-decoration: none;
 }
-
-/*Header
+/*Header and Nav Styles
 -------------------------------------------------- */
 
 .nav-item {
@@ -86,7 +91,7 @@ body {
 }
 
 #login {
-    margin-top: 2px;
+    color: #cca372;
 }
 
 
@@ -200,7 +205,11 @@ button.accept-policy {
 }
 
 .wrap {
-    height: 100vh;
+    height: 1380vh;
+    background-image: url(../images/hollywood.jpg);
+    background-attachment: fixed;
+    background-size: inherit;
+    background-repeat: round;
 }
 
 /* Login / Register page styles
@@ -230,13 +239,11 @@ body {
 }
 
 .signin {
-    background-color: #fff;
-    border: 1px solid rgba(0,0,0,0.1);
-    box-shadow: 10px 10px 5px #aaaaaa;
     padding: 15px 35px 45px;
 }
 
 .form-signin {
+    background-color: #808080a6;
     max-width: 1000px;
     min-height: 400px;
     padding: 15px 35px 45px;
@@ -275,25 +282,6 @@ h3 {
     margin: 10px 0 10px;
     margin-top: 10px;
     margin-bottom: 10px;
-}
-
-/*h3 span {
-    padding: 0 100px;
-}*/
-
-hr {
-    border: 10px solid black;
-}
-
-orstyling {
-    padding:0px;
-    font-size:45px;
-    font-weight: bold;
-}
-
-.exlogin-section {
-    padding: 0 50px;
-    margin: 0 50px 25px;
 }
 
 .exlogin-header {
