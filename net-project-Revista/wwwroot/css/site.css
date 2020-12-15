@@ -8,6 +8,12 @@ a.navbar-brand {
 }
 
 /* Provide sufficient contrast against white background */
+
+.card {
+    background-color: #cca372;
+}
+
+
 a {
     color: black;
 }
@@ -46,8 +52,7 @@ body {
     border-color: #1861ac;
     text-decoration: none;
 }
-
-/*Header
+/*Header and Nav Styles
 -------------------------------------------------- */
 
 .nav-item {
@@ -86,7 +91,7 @@ body {
 }
 
 #login {
-    margin-top: 2px;
+    color: #cca372;
 }
 
 
@@ -198,7 +203,11 @@ button.accept-policy {
 }
 
 .wrap {
-    height: 100vh;
+    height: 1380vh;
+    background-image: url(../images/hollywood.jpg);
+    background-attachment: fixed;
+    background-size: inherit;
+    background-repeat: round;
 }
 
 /* Login / Register page styles
@@ -235,6 +244,7 @@ body {
 }
 
 .form-signin {
+    background-color: #fff;
     max-width: 1000px;
     min-height: 400px;
     padding: 15px 35px 45px;
