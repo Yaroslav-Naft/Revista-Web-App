@@ -8,6 +8,28 @@
 
 ### Installation Instructions:
 - Add/build to this as small changes are made/created, finalize and refine as you go.
+- To run this app you'll first want to clone the repository into your Visual Studio.
+- Once you've cloned the repository, find the appsettings.json file in the Solution Explorer menu.
+- Under "Connection Strings", title the first connection "MovieDbContextConnection" and name the database RevistaMovieDb.
+- Title the second connection "AuthDbContextConnection" and name the database RevistaAuthDb.
+- Make sure to add your server name to both connections.
+- From the Tools menu, open the Package Manager Console and type the following: Add-Migration InitialAuthSchema -Context MovieDbContext -OutputDir "Areas/Identity/Data/Migrations"
+- Do the same for AuthDbContext: Add-Migration InitialAuthSchema -Context AuthDbContext -OutputDir "Areas/Identity/Data/Migrations"
+- Next, open Microsoft SQL Server Management Studio and connect to your server.
+- Expand the main Databases folder to find your newly created databases named RevistaMovieDb and RevistaAuthDb.
+- In the RevistaMovieDb, expand the tables folder to find dbo.Movies. Right click and Select Top 1000 Rows.
+- Insert the given movie seed data and execute.
+- Back in Visual Studio in appsettings.json, add the following site keys: Facebook/Recaptcha.
+- Save all and run the app.
+- Once the app is running click on Register in the top right hand corner and enter your email, a password, and confirm your password.
+- At the Register Confirmation page, click the confirm your account link to confirm your email.
+- Once your email is confirmed return to the app and click your email address in the top right corner.
+- From the Two-Factor Authentication menu, choose Setup authenticator app.
+- Follow the instructions given by downloading the Google Authenticator to your phone.
+- In the authenticator app, under account type: Revista. Now you may either manually enter the given key highlighted in black or open your camera app to scan the QR code which will ask you to return to the app, and further if you'd like to add the token with the email you registered with. If you scanned the QR code tap "yes". If you entered the key manually tap "add".
+- Enter the code in the authenticator app and select Verify.
+- Next time you login, your account will require a two factor authentication code for extra security.
+- 
 
 ### Function/Non-Functional Requirments:
 - Functional
