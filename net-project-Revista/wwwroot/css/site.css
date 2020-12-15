@@ -371,3 +371,31 @@ h1.movie-category {
     font-weight: bolder;
     font-size: 1rem;
 }
+
+/* Pagination */
+
+.pagination-nav-item {
+    text-align: center;
+    color: white;
+    display: inline-block;
+    padding-bottom: 20px;
+}
+
+.pagination-nav-item a {
+   color: white !important;
+   font-weight: bolder;
+  
+    }
+
+.paginationBlock {
+    padding-bottom: 30px;
+}
+    .pagination-nav-item a:hover {
+    color: darkgrey !important;
+    font-weight: bolder;
+}
+
+.is-disabled {
+    pointer-events: none;
+    opacity: .5;
+}

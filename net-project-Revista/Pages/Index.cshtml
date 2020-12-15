@@ -15,6 +15,7 @@
     <div class="container">
         @if (Model.MovieIndex != null && Model.MovieIndex.Movies.Any())
         {
+            <partial name="_Pagination" for="@Model.MovieIndex.PaginationInfo" />
             <div class="row">
                 @foreach (var movie in Model.MovieIndex.Movies)
                 {
@@ -23,6 +24,7 @@
                     </div>
                 }
             </div>
+            <partial name="_Pagination"for="@Model.MovieIndex.PaginationInfo" />
         }
         else
         {

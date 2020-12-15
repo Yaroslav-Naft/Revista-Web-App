@@ -1,0 +1,20 @@
+﻿@model ViewModels.PaginationInfoVM
+@{
+    var previous = Context.Request.Query.ToDictionary(x=>x.Key, x=> x.Value.ToString());
+    if (previous.ContainsKey("pageIndex"))
+        previous.Remove("pageIndex");
+    previous.Add("pageIndex", (Model.PageIndex - 1).ToString());
+
+    var next = Context.Request.Query.ToDictionary(x => x.Key, x => x.Value.ToString());
+    if (next.ContainsKey("pageIndex"))
+        next.Remove("pageIndex");
+    next.Add("pageIndex", (Model.PageIndex + 1).ToString());
+ }
+
+<div class="paginationBlock row">
+    <div class="pagination-nav-item col -md-4"><a class="@Model.Previuos" asp-all-route-data="previous">Previous</a></div>
+    <div class="pagination-nav-item col -md-4">
+        <span>Showing @Model.ItemsPerPage. of @Model.TotalItems items - Page @(Model.PageIndex + 1)-@Model.TotalPages</span>
+    </div>
+    <div class="pagination-nav-item col -md-4"><a class="@Model.Next" asp-all-route-data="next">Next</a></div>
+</div>

@@ -17,7 +17,7 @@ namespace net_project_Revista.Pages
 {
     public class IndexModel : PageModel
     {
-        const int ITEMS_PER_PAGE = 5;
+        const int ITEMS_PER_PAGE = 8;
         private readonly IMovieVMService _movieVMService;
         private readonly MovieDbContext _db;
         private readonly UserManager<IdentityUser> _userManager;
