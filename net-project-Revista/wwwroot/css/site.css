@@ -117,7 +117,9 @@ body {
     background-color: red !important;
 }
 
-
+.app-movie-filters {
+    margin-top: 50px;
+}
 
 /*Banner
 -------------------------------------------------- */
@@ -280,19 +282,9 @@ h3 {
     width: 100%;
     text-align: center;
     line-height: 0.1em;
-    margin: 10px 0 20px;
-    margin-top: 60px;
-    margin-bottom: 60px;
-}
-
-h3 span {
-    background: #fff;
-    padding: 0 100px;
-}
-
-.exlogin-section {
-    padding: 0 50px;
-    margin: 0 50px 25px;
+    margin: 10px 0 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .exlogin-header {
@@ -347,4 +339,38 @@ p {
 .auth-code {
     text-align: center;
     font-size: 1.5em;
+}
+
+/*fav page styles
+-------------------------------------------------- */
+
+tr.d-flex {
+    background-color: var(--color-article1-background);
+    align-items: center;
+    border-color: var(--color-border);
+    margin-bottom: 30px;
+}
+
+
+
+.table td, .table th {
+    border-top: none !important;
+}
+
+h1.movie-category {
+    font-weight: bolder;
+}
+
+.favorite-content .top-table tbody tr td {
+    display: flex;
+    justify-content: center;
+    border: none;
+}
+
+
+.favorite-content .top-table tbody tr .item-release-date {
+    color: #ffc107;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bolder;
+    font-size: 1rem;
 }

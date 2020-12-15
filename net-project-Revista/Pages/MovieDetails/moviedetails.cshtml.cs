@@ -29,21 +29,29 @@ namespace net_project_Revista.Pages.MovieDetails
             _signInManager = signInManager;
         }
 
+        public Genre Genre { get; set; }
+
         public void OnGet(MovieVM testMovie)
         {
             Movie = _db.Movies.Where(movie => movie.Id == testMovie.Id).FirstOrDefault();
             Movie.PosterPath = "https://image.tmdb.org/t/p/w500" + Movie.PosterPath;
+            Genre = _db.Genres.Where(genre => genre.GenreId == Movie.GenreId).FirstOrDefault();
         }
 
-        public void OnPost(MovieVM testMovie)
+        public IActionResult OnPost(MovieVM testMovie, string returnUrl = null)
         {          
             int? favouriteId = HttpContext.Session.GetInt32("favouriteId");
             bool isUser = _signInManager.IsSignedIn(User);
             string userId = null;
+            returnUrl = returnUrl ?? Url.Content("/Identity/Account/Login");
 
             if (isUser)
             {
                 userId = _userManager.FindByNameAsync(User.Identity.Name).Result.Id;
+            }
+            else
+            {
+                return LocalRedirect(returnUrl);
             }
 
             Favourite fav;
@@ -86,6 +94,8 @@ namespace net_project_Revista.Pages.MovieDetails
             Movie = _db.Movies.Where(movie => movie.Id == testMovie.Id).FirstOrDefault();
             Movie.PosterPath = "https://image.tmdb.org/t/p/w500" + Movie.PosterPath;
             HttpContext.Session.SetInt32("favouriteId", (int)favouriteId);
+
+            return RedirectToPage();
         }
 
     }
