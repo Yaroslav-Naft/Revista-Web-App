@@ -239,14 +239,11 @@ body {
 }
 
 .signin {
-    background-color: #fff;
-    border: 1px solid rgba(0,0,0,0.1);
-    box-shadow: 10px 10px 5px #aaaaaa;
     padding: 15px 35px 45px;
 }
 
 .form-signin {
-    background-color: #fff;
+    background-color: #808080a6;
     max-width: 1000px;
     min-height: 400px;
     padding: 15px 35px 45px;
