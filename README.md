@@ -28,7 +28,7 @@
 - Follow the instructions given by downloading the Google Authenticator to your phone.
 - In the authenticator app, under account type: Revista. Now you may either manually enter the given key highlighted in black or open your camera app to scan the QR code which will ask you to return to the app, and further if you'd like to add the token with the email you registered with. If you scanned the QR code tap "yes". If you entered the key manually tap "add".
 - Enter the code in the authenticator app and select Verify.
-- Next time you login, your account will require a two factor authentication code for extra security.
+- Next time you login, your account will require a two factor authentication code for extra security. Just open the authenticator app and copy down the code when asked at log in.
 - 
 
 ### Function/Non-Functional Requirments:
