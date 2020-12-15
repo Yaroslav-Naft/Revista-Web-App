@@ -14,6 +14,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Identity.UI.Services;
 
 namespace net_project_Revista
 {
@@ -44,6 +45,8 @@ namespace net_project_Revista
             services.AddScoped<IMovieVMService, MovieVMService>();
             services.AddScoped(typeof(IBaseRepository<>), typeof(BaseRepository<>));
 			services.AddHttpClient<ICaptchaValidator, GoogleReCaptchaValidator>();
+            services.AddTransient<IEmailSender, EmailSender>();
+            services.Configure<EmailSenderOptions>(Configuration);
             services.AddRazorPages();
         }
 
