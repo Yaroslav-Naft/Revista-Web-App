@@ -1,37 +1,41 @@
 ﻿@page
 @model net_project_Revista.Pages.MovieDetails.moviedetailsModel
 
-
 <form asp-page="MovieDetails/moviedetails" method="post">
-    <div class="album p-2 bg-light">
-        <div class="container detailscontainer justify-content-center px-5">
-            <div class="row justify-content-center">
-                <div class="col-sm-12 col-md-6 col-lg-3">
-                    <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="@Model.Movie.PosterPath" alt="Card image cap" />
-                    </div>
+    <div class="section-wrapper">
+        <section class="movie-detail-section">
+            <div class="movie-poster">
+                <img src=@Model.Movie.PosterPath alt="poster" />
+            </div>
+            <div class="movie-info">
+                <div class="movie-title">
+                    <h3>@Model.Movie.Title</h3>
                 </div>
-                <div class="col-sm-12 col-md-6 col-lg-8 justify-content-left px-4 py-2">
-                    <div class="detailsheading">@Model.Movie.Title</div>
-                    <div class="releasedate">Date Released: @Model.Movie.ReleaseDate.ToString("MMMM dd, yyyy")</div>
-                    <div class="genre">
-                        Genre:
+                <div class="movie-genre-and-date">
+                    <h6><span class="descriptor">Release Date: </span>@Model.Movie.ReleaseDate.ToString("MMMM dd, yyyy")</h6>
+                    <h6>
+                        <span class="descriptor">Genre(s): </span>
                         @foreach (var genre in Model.AllGenreNames)
                         {
                             if (genre != null)
                             {
-                               @genre;
+                                @genre;
                             }
                         }
+                    </h6>
+                </div>
+                <div class="movie-overview">
+                    <div class="overview-header">
+                        <h4>Overview</h4>
                     </div>
-                    <br />
-                    <br />
-                    <br />
-                    <div class="detailsheading">Overview</div>
-                    <p class="detailstext" style="width: 34em;">@Model.Movie.Overview</p>
+                    <div class="overview-content">
+                        <p>@Model.Movie.Overview</p>
+                    </div>
+                </div>
+                <div class="add-to-favourites">
                     <button class="btn btn-success" style="margin-top:10px;" type="submit">Add to Favourites</button>
                 </div>
             </div>
-        </div>
+        </section>
     </div>
 </form>
