@@ -42,11 +42,20 @@ namespace net_project_Revista.Pages.MovieDetails
             Genre = _db.Genres.Where(genre => genre.GenreId == Movie.GenreId).FirstOrDefault();
             AllGenres = _db.MovieGenres.Where(genre => genre.MovieId == Movie.MovieId).ToList();
 
-            foreach(MovieGenre mg in AllGenres)
+            for(var i = 0; i < AllGenres.Count; i++)
             {
-                string name;
-                Genre = _db.Genres.Where(genre => genre.GenreId == mg.GenreId).FirstOrDefault();
-                name = Genre.Name;
+                string name = null;
+                Genre = _db.Genres.Where(genre => genre.GenreId == AllGenres[i].GenreId).FirstOrDefault();
+
+                if(i == AllGenres.Count - 1)
+                {
+                    name = Genre.Name;
+                }
+                else
+                {
+                    name = Genre.Name + ", ";
+                }
+
                 AllGenreNames.Add(name);
             }
         }
