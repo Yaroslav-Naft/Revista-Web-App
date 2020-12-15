@@ -1,5 +1,9 @@
 {
   "dependencies": {
+    "mssql2": {
+      "type": "mssql",
+      "connectionId": "MovieDbContextConnection"
+    },
     "mssql1": {
       "type": "mssql",
       "connectionId": "AuthDbContextConnection"
