@@ -205,7 +205,6 @@ button.accept-policy {
 }
 
 .wrap {
-    height: 1380vh;
     background-image: url(../images/hollywood.jpg);
     background-attachment: fixed;
     background-size: inherit;
