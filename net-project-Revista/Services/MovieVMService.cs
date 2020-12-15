@@ -20,14 +20,23 @@ namespace net_project_Revista.Services
             _categoryRepo = categoryRepo;
         }
 
-        public MovieIndexVM GetMoviesVM(int? categoryId)
+        public MovieIndexVM GetMoviesVM(int pageIndex, int itemsPerPage, int? categoryId)
         {
             IQueryable<Movie> movies = _movieRepo.GetAll();
 
             if(categoryId != null)
             {
                 movies = movies.Where(m => m.CategoryId == categoryId);
+
             }
+
+            else
+            {
+                //implement pagination AFTER filtering and sorting
+                movies = movies.Skip(pageIndex * itemsPerPage).Take(itemsPerPage);
+
+            }
+
 
             var vm = new MovieIndexVM()
             {

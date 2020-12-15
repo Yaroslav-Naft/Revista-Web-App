@@ -9,7 +9,7 @@ namespace net_project_Revista.Interfaces
 {
     public interface IMovieVMService
     {
-        MovieIndexVM GetMoviesVM(int? categoryId);
+        MovieIndexVM GetMoviesVM(int pageIndex, int itemsPerPage, int? categoryId);
         IEnumerable<SelectListItem> GetCategories();
     }
 }
