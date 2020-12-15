@@ -375,6 +375,20 @@ h1.movie-category {
 /*Email/Registration Confirmatiom page styles
 -------------------------------------------------- */
 
-.register-info{
+
+.register-container {
+    background-color: #808080a6;
     padding: 10px;
+    margin-top: 50px;
+}
+
+.register-title {
+    text-align: center;
+    padding: 20px 10px 10px;
+}
+
+.register-info {
+    padding: 10px;
+    padding-bottom: 70px;
+    margin-bottom: 100px;
 }
