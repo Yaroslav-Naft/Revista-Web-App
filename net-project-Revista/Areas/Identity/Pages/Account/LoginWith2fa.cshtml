@@ -3,7 +3,7 @@
 @{
     ViewData["Title"] = "Two-factor authentication";
 }
-
+<div class="form-signin">
 	<div class="two-factor-container">
 		<h1 class="two-fa">@ViewData["Title"]</h1>
 		<hr />
@@ -37,7 +37,7 @@
 			<a id="recovery-code-login" asp-page="./LoginWithRecoveryCode" asp-route-returnUrl="@Model.ReturnUrl">log in with a recovery code</a>.
 		</p>
 	</div>
-
+</div>
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
