@@ -60,12 +60,13 @@ namespace net_project_Revista.Pages.MovieDetails
             }
         }
 
-        public void OnPost(MovieVM testMovie, string returnUrl = null)
+        public IActionResult OnPost(MovieVM testMovie, string returnUrl = null, string favUrl = null)
         {          
             int? favouriteId = HttpContext.Session.GetInt32("favouriteId");
             bool isUser = _signInManager.IsSignedIn(User);
             string userId = null;
             returnUrl = returnUrl ?? Url.Content("/Identity/Account/Login");
+            favUrl = favUrl ?? Url.Content("/MovieFavourites/MovieFavourites");
 
             if (isUser)
             {
@@ -73,7 +74,7 @@ namespace net_project_Revista.Pages.MovieDetails
             }
             else
             {
-                return;
+                return LocalRedirect(returnUrl);
             }
 
             Favourite fav;
@@ -115,7 +116,7 @@ namespace net_project_Revista.Pages.MovieDetails
             _db.SaveChanges();
             HttpContext.Session.SetInt32("favouriteId", (int)favouriteId);
 
-            OnGet(testMovie);
+            return LocalRedirect(favUrl);
         }
 
     }
