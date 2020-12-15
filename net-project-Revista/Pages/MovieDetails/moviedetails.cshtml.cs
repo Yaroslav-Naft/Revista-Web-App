@@ -30,20 +30,43 @@ namespace net_project_Revista.Pages.MovieDetails
         }
 
         public Genre Genre { get; set; }
+        public List<MovieGenre> AllGenres { get; set; }
+        public List<String> AllGenreNames { get; set; }
 
         public void OnGet(MovieVM testMovie)
         {
+            AllGenreNames = new List<string>();
+           
             Movie = _db.Movies.Where(movie => movie.Id == testMovie.Id).FirstOrDefault();
             Movie.PosterPath = "https://image.tmdb.org/t/p/w500" + Movie.PosterPath;
             Genre = _db.Genres.Where(genre => genre.GenreId == Movie.GenreId).FirstOrDefault();
+            AllGenres = _db.MovieGenres.Where(genre => genre.MovieId == Movie.MovieId).ToList();
+
+            for(var i = 0; i < AllGenres.Count; i++)
+            {
+                string name = null;
+                Genre = _db.Genres.Where(genre => genre.GenreId == AllGenres[i].GenreId).FirstOrDefault();
+
+                if(i == AllGenres.Count - 1)
+                {
+                    name = Genre.Name;
+                }
+                else
+                {
+                    name = Genre.Name + ", ";
+                }
+
+                AllGenreNames.Add(name);
+            }
         }
 
-        public IActionResult OnPost(MovieVM testMovie, string returnUrl = null)
+        public IActionResult OnPost(MovieVM testMovie, string returnUrl = null, string favUrl = null)
         {          
             int? favouriteId = HttpContext.Session.GetInt32("favouriteId");
             bool isUser = _signInManager.IsSignedIn(User);
             string userId = null;
             returnUrl = returnUrl ?? Url.Content("/Identity/Account/Login");
+            favUrl = favUrl ?? Url.Content("/MovieFavourites/MovieFavourites");
 
             if (isUser)
             {
@@ -91,11 +114,9 @@ namespace net_project_Revista.Pages.MovieDetails
             }
 
             _db.SaveChanges();
-            Movie = _db.Movies.Where(movie => movie.Id == testMovie.Id).FirstOrDefault();
-            Movie.PosterPath = "https://image.tmdb.org/t/p/w500" + Movie.PosterPath;
             HttpContext.Session.SetInt32("favouriteId", (int)favouriteId);
 
-            return RedirectToPage();
+            return LocalRedirect(favUrl);
         }
 
     }

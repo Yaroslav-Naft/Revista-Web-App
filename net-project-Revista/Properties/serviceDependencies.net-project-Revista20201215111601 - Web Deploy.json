@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "mssql2": {
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.Sql/servers/net-project-revistadbserver/databases/net-project-Revista_db",
+      "type": "mssql.azure",
+      "connectionId": "MovieDbContextConnection",
+      "secretStore": "AzureAppSettings"
+    },
+    "mssql1": {
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.Sql/servers/net-project-revistadbserver/databases/net-project-Revista_db",
+      "type": "mssql.azure",
+      "connectionId": "AuthDbContextConnection",
+      "secretStore": "AzureAppSettings"
+    }
+  }
+}
