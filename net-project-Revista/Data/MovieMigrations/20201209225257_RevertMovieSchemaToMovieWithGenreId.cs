@@ -70,18 +70,6 @@ namespace net_project_Revista.Data.MovieMigrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_MovieGenres", x => new { x.MovieId, x.GenreId });
-                    table.ForeignKey(
-                        name: "FK_MovieGenres_Genres_GenreId",
-                        column: x => x.GenreId,
-                        principalTable: "Genres",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_MovieGenres_Movies_MovieId",
-                        column: x => x.MovieId,
-                        principalTable: "Movies",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
