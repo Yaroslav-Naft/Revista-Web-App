@@ -27,7 +27,14 @@ namespace net_project_Revista.Services
 
             if(categoryId != null)
             {
-                movies = movies.Where(m => m.CategoryId == categoryId);
+                movies = movies.Where(m => m.CategoryId == categoryId); 
+           
+            }
+
+            else
+            {
+                //implement pagination AFTER filtering and sorting
+                movies = movies.Skip(pageIndex * itemsPerPage).Take(itemsPerPage);
             }
 
             else
