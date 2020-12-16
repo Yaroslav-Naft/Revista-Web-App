@@ -1,18 +1,33 @@
-# .Net Project
+#### .Net Project
 
-### Name:
-- Revista
+<div align="center">
 
-### Description:
-- An online movie database website using a movie api where a user can register for an account, log in to view movies by category, and add or remove chosen movies to a favourites page.
+## :popcorn::popcorn::popcorn: Revista :popcorn::popcorn::popcorn:
 
-### Installation Instructions:
+##### Thelma Palma, Anthony Chan, Nick Charvat, Yaroslav Naftulyev, Chris Bayne
+
+</div>
+
+<br>
+
+### App Description:
+- An online movie database website using a movie api where a user can register for an account to login to rate, favourite, and review movies.
+
+
+<details open>
+<summary>Installation Instructions</summary>
+<br>
 - To run this app you'll first want to clone the repository into your Visual Studio.
+<br>
 - Once you've cloned the repository, find the appsettings.json file in the Solution Explorer menu.
 - Under "Connection Strings", title the first connection "MovieDbContextConnection" and name the database RevistaMovieDb.
+<br>
 - Title the second connection "AuthDbContextConnection" and name the database RevistaAuthDb.
+<br>
 - Make sure to add your server name to both connections.
+<br>
 - Your appsetting connections should look like the following:
+<br><br>
 
 `"ConnectionStrings": {
         "MovieDbContextConnection": "Server=[YOUR-SERVER-NAME-HERE];Database=RevistaMovieDb;Trusted_Connection=True;MultipleActiveResultSets=true",
@@ -29,6 +44,10 @@
 - Expand the main Databases folder to find your newly created databases named RevistaMovieDb and RevistaAuthDb.
 - In the RevistaMovieDb, expand the tables folder to find dbo.Movies. Right click and Select Top 1000 Rows.
 - Insert the following movie seed data and execute.
+<br>
+<details>
+<summary>SEED DATA</summary>
+
 ```
 -- Popular
 
@@ -310,6 +329,10 @@ INSERT INTO MovieGenres(MovieId,GenreId) VALUES (530079,14);
 INSERT INTO MovieGenres(MovieId,GenreId) VALUES (508442,14);
 ```
 
+</details>
+<br>
+
+
 - Follow the link below to create your own Google Recaptcha Site and Secret keys to add to the appsettings file.
 - In the 'Label' input field, add 'RevistaV3'.
 - Select the 'reCAPTCHA v3' type.
@@ -318,7 +341,7 @@ INSERT INTO MovieGenres(MovieId,GenreId) VALUES (508442,14);
 
 [Google Recaptcha](https://www.google.com/recaptcha/admin/create)
 
-- Follow the link below to create your own Facebook AppId and Secret 
+- Follow the link below to create your own Facebook AppId and Secret Key. 
 - Click into MyApps.
 - Click on Create an App.
 - Choose the 'Build Connected Experience' option.
@@ -368,16 +391,9 @@ INSERT INTO MovieGenres(MovieId,GenreId) VALUES (508442,14);
 - After you've registered as a new user and logged in to your account, you're free to browse through the movies to pick your favourites from the list by clicking "See More" on the individual movie cards.
 - Once on a movies' details page, you can click to add it to your favourites.
 - Your favourite movies can be found by clicking the heart icon in the top right corner.
-- On the favourites page all the movies you've selected to save as favourites will be listed and you may remove them if you choose to.
-- Feel free to click around the movie selection page to select specific categories of movies from the drop down list and go page by page through
-what is offered.
-- When you are finished you can click the Logout button in the top right hand corner to end your session.
+- On the favourites page all the movies you've selected to save as favourites will be listed and you may remove them if you choose to. 
 
-### Viewing the App on Azure
-
-The app can be viewed on azure with the following link:
-https://net-project-revista20201215111601.azurewebsites.net/
-
+</details>
 
 ### Function/Non-Functional Requirments:
 - Functional
@@ -385,9 +401,11 @@ https://net-project-revista20201215111601.azurewebsites.net/
         - Register/Login
     - Database
         - API 
-    - Individual movie pages including info (Title, release date, genre, and overview etc.)
+    - Individual movie pages including info (Title, release date, genre etc.)
 - Non-Functional
-    - Login with Facebook
+    - Social aspect that allows the user to follow other users and 
+    - The ability to share to other social media
+    - Login with Google, Facebook, Github etc.
 
 ### Must haves:
 - Home page
@@ -399,21 +417,21 @@ https://net-project-revista20201215111601.azurewebsites.net/
 - Comment/Review text box with submit button
 - A favourite button to add specific movies to your profile
 - On individual movie pages, a link to the trailer of the movie
-- Social aspect that allows the user to follow other users
-- The ability to share to other social media
 ### Feature List:
 - Ability to filter by category/genre via dropdown list
-- Favourite button on each movie information page
-- A Favourites page that includes the favourite movie chosen by the user
-- Navigation bar to switch to user home/favourites/logout
+- Favourite button on each movie card
+- A profile page that includes the favourites chosen by the user
+- Navigation bar to switch to user home/profile/logout
 - Register page
-    - Email
-    - Password/Confirm password
+    - Confirm email
 - Login page
-    - Google Authentication (V3 AND Two-Factor)
+    - Authentication (V2 or V3 or Two Factor)
 - Logout button
 
 <hr> 
+
+### Revista Prototypes:
+<a href="#">Prototype</a>
 
 ## Home Page
 
