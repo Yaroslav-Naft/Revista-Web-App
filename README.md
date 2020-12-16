@@ -4,7 +4,7 @@
 - Revista
 
 ### Description:
-- An online movie database website using a movie api where a user can register for an account to login to rate, favourite, and review movies.
+- An online movie database website using a movie api where a user can register for an account, log in to view movies by category, and add or remove chosen movies to a favourites page.
 
 ### Installation Instructions:
 - To run this app you'll first want to clone the repository into your Visual Studio.
@@ -368,7 +368,10 @@ INSERT INTO MovieGenres(MovieId,GenreId) VALUES (508442,14);
 - After you've registered as a new user and logged in to your account, you're free to browse through the movies to pick your favourites from the list by clicking "See More" on the individual movie cards.
 - Once on a movies' details page, you can click to add it to your favourites.
 - Your favourite movies can be found by clicking the heart icon in the top right corner.
-- On the favourites page all the movies you've selected to save as favourites will be listed and you may remove them if you choose to. 
+- On the favourites page all the movies you've selected to save as favourites will be listed and you may remove them if you choose to.
+- Feel free to click around the movie selection page to select specific categories of movies from the drop down list and go page by page through
+what is offered.
+- When you are finished you can click the Logout button in the top right hand corner to end your session.
 
 ### Viewing the App on Azure
 
@@ -400,19 +403,17 @@ https://net-project-revista20201215111601.azurewebsites.net/
 - On individual movie pages, a link to the trailer of the movie
 ### Feature List:
 - Ability to filter by category/genre via dropdown list
-- Favourite button on each movie card
-- A profile page that includes the favourites chosen by the user
-- Navigation bar to switch to user home/profile/logout
+- Favourite button on each movie information page
+- A Favourites page that includes the favourite movie chosen by the user
+- Navigation bar to switch to user home/favourites/logout
 - Register page
-    - Confirm email
+    - Email
+    - Password/Confirm password
 - Login page
-    - Authentication (V2 or V3 or Two Factor)
+    - Google Authentication (V3 AND Two-Factor)
 - Logout button
 
 <hr> 
-
-### Revista Prototypes:
-<a href="#">Prototype</a>
 
 ## Home Page
 
