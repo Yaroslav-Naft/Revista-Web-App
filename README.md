@@ -400,12 +400,7 @@ INSERT INTO MovieGenres(MovieId,GenreId) VALUES (508442,14);
 what is offered.
 - When you are finished you can click the Logout button in the top right hand corner to end your session.
 
-### Viewing the App on Azure
-
-The app can be viewed on azure with the following link:
-https://net-project-revista20201215111601.azurewebsites.net/
 </details>
-<br>
 
 ### Functional Requirments:
 - Home page with User Auth
@@ -457,6 +452,15 @@ https://net-project-revista20201215111601.azurewebsites.net/
     - Confirm password
 6. Logging In
     - Google Authentication (V3 and Two-Factor)
+
+<br>
+
+### Viewing the App on Azure
+
+The app can be viewed on azure with the following link:
+https://net-project-revista20201215111601.azurewebsites.net/
+</details>
+<br>
 
 <hr> 
 
