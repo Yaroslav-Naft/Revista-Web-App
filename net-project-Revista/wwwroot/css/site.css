@@ -149,6 +149,8 @@ body {
 
 footer {
     background-color: lightgrey;
+    position: relative;
+    bottom: -200px
 }
 
 .copyright-container {
@@ -484,4 +486,26 @@ h3 {
         padding: 10px;
         padding-bottom: 70px;
         margin-bottom: 100px;
+    }
+
+    .no-favourites-row {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .no-favourites-content {
+        font-size: 2em;
+        font-weight: bold;
+        color: #cca372;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 80%;
+        height: 350px;
+    }
+
+    .back {
+        margin: 20px;
     }
