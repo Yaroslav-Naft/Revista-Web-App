@@ -399,6 +399,7 @@ INSERT INTO MovieGenres(MovieId,GenreId) VALUES (508442,14);
 
 </details>
 <br>
+
 ### Functional Requirments:
 - Home page with User Auth
     - Register/Login
