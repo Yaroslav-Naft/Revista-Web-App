@@ -149,6 +149,8 @@ body {
 
 footer {
     background-color: lightgrey;
+    position: relative;
+    bottom: -200px
 }
 
 .copyright-container {
