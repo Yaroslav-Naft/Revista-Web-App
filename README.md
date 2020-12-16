@@ -1,3 +1,5 @@
+# .Net Project
+
 ### Name:
 - Revista
 
@@ -308,13 +310,25 @@ INSERT INTO MovieGenres(MovieId,GenreId) VALUES (530079,14);
 INSERT INTO MovieGenres(MovieId,GenreId) VALUES (508442,14);
 ```
 
+- Follow the link below to create your own Google Recaptcha Site and Secret keys to add to the appsettings file.
+- In the 'Label' input field, add 'RevistaV3'.
+- Select the 'reCAPTCHA v3' type.
+- In the "Domains" input field, add 'RevistaV3', make sure to include your email address under the Owners header, and to accept the recaptcha terms of service.
+- Once you click Sumbit you will be brought to your generated Site and Secret keys. Copy paste them into your appsettings file.
+
+[Google Recaptcha](https://www.google.com/recaptcha/admin/create)
+
+
+- Follow the link below to create your own Facebook AppId and Secret key.
+
+
 - Back in Visual Studio in appsettings.json, add the following site keys for Facebook and Google Recaptcha.
 
 ```
 {
     "ConnectionStrings": {
-        "MovieDbContextConnection": "Server=CHRISBAYNE65B0\\SQLEXPRESS;Database=RevistaMovieDb;Trusted_Connection=True;MultipleActiveResultSets=true",
-        "AuthDbContextConnection": "Server=CHRISBAYNE65B0\\SQLEXPRESS;Database=RevistaAuthDb;Trusted_Connection=True;MultipleActiveResultSets=true"
+        "MovieDbContextConnection": "Server=[YOUR-SERVER-NAME-HERE];Database=RevistaMovieDb;Trusted_Connection=True;MultipleActiveResultSets=true",
+        "AuthDbContextConnection": "Server=[YOUR-SERVER-NAME-HERE];Database=RevistaAuthDb;Trusted_Connection=True;MultipleActiveResultSets=true"
     },
 
     "Logging": {
@@ -326,12 +340,12 @@ INSERT INTO MovieGenres(MovieId,GenreId) VALUES (508442,14);
     },
 "Authentication": {
         "Facebook": {
-            "AppId": "474972780140917",
-            "AppSecret": "81d5503d1da64230bc5f74261eadb4ba"
+            "AppId": "[YOUR_OWN_APP_ID_HERE]",
+            "AppSecret": "[YOUR_OWN_APP_SECRET_KEY_HERE]"
         }
     },
-    "RecaptchaV3:SiteKey": "6Ld8pgEaAAAAALtRui8bkV7w3w5agIdsOmivV0eu",
-    "googleReCaptcha:SecretKey": "6Ld8pgEaAAAAAI-DRv5NtV1soVqOinSc3m7at7lV",
+    "RecaptchaV3:SiteKey": "[YOUR_OWN_SITE_KEY_HERE]",
+    "googleReCaptcha:SecretKey": "[YOUR_OWN_SECRET_KEY_HERE]",
     "AllowedHosts": "*"
 }
 ```
