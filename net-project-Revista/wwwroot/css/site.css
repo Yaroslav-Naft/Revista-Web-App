@@ -12,6 +12,8 @@ a.navbar-brand {
 .card {
     background-color: #cca372;
     border: 1px solid #cca372;
+    display: flex !important;
+    justify-content: center !important;
 }
 
 
