@@ -469,15 +469,16 @@ INSERT INTO MovieGenres(MovieId,GenreId) VALUES (508442,14);
 
 <br></br>
 
-## Detail Page
+## Details Page
 
 ![](https://i.imgur.com/76gRYxg.png)
 
-## Favourite Page
+## Favourites Page
 
 ![](https://i.imgur.com/bf8eK8f.png)
 
-### ERD:
+## ERD
+
 <img src="assets/Revista_ERD.png" alt="Revista ERD"/>
 
 </div>
