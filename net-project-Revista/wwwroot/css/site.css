@@ -462,30 +462,38 @@ h1.movie-category {
         padding: 20px 10px 10px;
     }
 
-    .register-info {
-        padding: 10px;
-        padding-bottom: 70px;
-        margin-bottom: 100px;
-    }
+.register-info {
+    padding: 10px;
+    padding-bottom: 70px;
+    margin-bottom: 100px;
+}
 
-    .no-favourites-row {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
 
-    .no-favourites-content {
-        font-size: 2em;
-        font-weight: bold;
-        color: #cca372;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        width: 80%;
-        height: 350px;
-    }
 
-    .back {
-        margin: 20px;
-    }
+/* Pagination */
+
+.pagination-nav-item {
+    text-align: center;
+    color: white;
+    display: inline-block;
+    padding-bottom: 20px;
+}
+
+.pagination-nav-item a {
+    color: white !important;
+    font-weight: bolder;
+}
+
+.paginationBlock {
+    padding-bottom: 30px;
+}
+
+.pagination-nav-item a:hover {
+    color: darkgrey !important;
+    font-weight: bolder;
+}
+
+.is-disabled {
+    pointer-events: none;
+    opacity: .5;
+}

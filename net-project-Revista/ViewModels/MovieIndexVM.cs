@@ -11,5 +11,6 @@ namespace net_project_Revista.ViewModels
         public List<MovieVM> Movies { get; set; }
         public List<SelectListItem> Categories { get; set; }
         public int? CategoriesFilterApplied { get; set; }
+        public PaginationInfoVM PaginationInfo { get; set; }
     }
 }

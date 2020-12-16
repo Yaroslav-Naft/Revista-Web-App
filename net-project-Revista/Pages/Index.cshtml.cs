@@ -17,6 +17,7 @@ namespace net_project_Revista.Pages
 {
     public class IndexModel : PageModel
     {
+        const int ITEMS_PER_PAGE = 8;
         private readonly IMovieVMService _movieVMService;
         private readonly MovieDbContext _db;
         private readonly UserManager<IdentityUser> _userManager;
@@ -36,7 +37,7 @@ namespace net_project_Revista.Pages
 
         public ICollection<Movie> Movies { get; private set; }
 
-        public void OnGet(MovieIndexVM movieIndex)
+        public void OnGet(MovieIndexVM movieIndex, int? pageIndex)
         {
             int? favouriteId = HttpContext.Session.GetInt32("favouriteId");
             bool isUser = _signInManager.IsSignedIn(User);
@@ -67,7 +68,7 @@ namespace net_project_Revista.Pages
                     HttpContext.Session.SetInt32("favouriteId", Favourite.Id);
                 }
             }
-            MovieIndex = _movieVMService.GetMoviesVM(movieIndex.CategoriesFilterApplied);
+            MovieIndex = _movieVMService.GetMoviesVM(pageIndex ?? 0, ITEMS_PER_PAGE, movieIndex.CategoriesFilterApplied);
         }
     }
 }
