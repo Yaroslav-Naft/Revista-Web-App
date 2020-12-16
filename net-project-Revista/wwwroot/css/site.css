@@ -415,12 +415,12 @@ h3 {
     /*fav page styles
 -------------------------------------------------- */
 
-    tr.d-flex {
-        background-color: var(--color-article1-background);
-        align-items: center;
-        border-color: var(--color-border);
-        margin-bottom: 30px;
-    }
+tr.d-flex {
+    background-color: #383535!important;
+    align-items: center;
+    border-color: var(--color-border);
+    margin: 10% 0;
+}
 
 
 
@@ -428,9 +428,10 @@ h3 {
         border-top: none !important;
     }
 
-    h1.movie-category {
-        font-weight: bolder;
-    }
+h1.movie-category {
+    color: #cca372;
+    font-weight: bolder;
+}
 
     .favorite-content .top-table tbody tr td {
         display: flex;
