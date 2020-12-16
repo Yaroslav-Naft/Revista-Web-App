@@ -313,16 +313,22 @@ INSERT INTO MovieGenres(MovieId,GenreId) VALUES (508442,14);
 - Follow the link below to create your own Google Recaptcha Site and Secret keys to add to the appsettings file.
 - In the 'Label' input field, add 'RevistaV3'.
 - Select the 'reCAPTCHA v3' type.
-- In the "Domains" input field, add 'RevistaV3', make sure to include your email address under the Owners header, and to accept the recaptcha terms of service.
-- Once you click Submit you will be brought to your generated Site and Secret keys. Copy paste them into your appsettings file.
+- In the "Domains" input field, add 'RevistaV3', make sure to include your email address under the Owners header, and accept the recaptcha terms of service.
+- Once you click Sumbit you will be brought to your generated Site and Secret keys. Copy paste them into your appsettings file.
 
 [Google Recaptcha](https://www.google.com/recaptcha/admin/create)
 
+- Follow the link below to create your own Facebook AppId and Secret 
+- Click into MyApps.
+- Click on Create an App.
+- Choose the 'Build Connected Experience' option.
+- In the input fields, **Phil** in the required information ;)
+- On the side menu go into Settings and choose 'Basic'.
+- Your AppId and Key should then be generated for you to copy paste into your appsettings file.
 
-- Follow the link below to create your own Facebook AppId and Secret key.
 
-
-- Back in Visual Studio in appsettings.json, add the following site keys for Facebook and Google Recaptcha.
+[Facebook for Developers](https://developers.facebook.com/)
+- Back in Visual Studio in `appsettings.json`, add the following site keys for Facebook and Google Recaptcha.
 
 ```
 {
@@ -421,16 +427,7 @@ INSERT INTO MovieGenres(MovieId,GenreId) VALUES (508442,14);
 ![](https://i.imgur.com/bf8eK8f.png)
 
 
-### ERD:
-<img src="assets/Revista_ERD.png" alt="Revista ERD"/>
-
 <hr>
-
-Note: This is a group assignment so please nominate ONE person to accept the assignment first and create your team so that others can join after and have access to the shared repository.
-
-In your assigned teams, you will build a Web Application using a Microsoft SQL Server Database, Identity Authentication, a .NET Core backend, and either Server-Side rendered views (Razor Pages or MVC) OR Web API with Client-Side rendered views.
-
-You can decide on the project within your group or consult with Phil to be provided with an idea for an application. As long as it is legal, appropriate for our academic setting, and agreed upon by your group by Monday Dec. 7th 11am PST.
 
 
 ## Design Requirements
