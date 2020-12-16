@@ -385,11 +385,9 @@ https://net-project-revista20201215111601.azurewebsites.net/
         - Register/Login
     - Database
         - API 
-    - Individual movie pages including info (Title, release date, genre etc.)
+    - Individual movie pages including info (Title, release date, genre, and overview etc.)
 - Non-Functional
-    - Social aspect that allows the user to follow other users and 
-    - The ability to share to other social media
-    - Login with Google, Facebook, Github etc.
+    - Login with Facebook
 
 ### Must haves:
 - Home page
@@ -401,6 +399,8 @@ https://net-project-revista20201215111601.azurewebsites.net/
 - Comment/Review text box with submit button
 - A favourite button to add specific movies to your profile
 - On individual movie pages, a link to the trailer of the movie
+- Social aspect that allows the user to follow other users
+- The ability to share to other social media
 ### Feature List:
 - Ability to filter by category/genre via dropdown list
 - Favourite button on each movie information page
