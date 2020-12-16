@@ -15,6 +15,8 @@
 <strong>App Description: </strong>
 An online movie database website using a movie api where <br> a user can register for an account to login to rate, favourite, and review movies.
 
+<br>
+
 
 <details>
 <summary>Detailed Installation Instructions Here</summary>
@@ -396,46 +398,63 @@ INSERT INTO MovieGenres(MovieId,GenreId) VALUES (508442,14);
 - On the favourites page all the movies you've selected to save as favourites will be listed and you may remove them if you choose to. 
 
 </details>
+<br>
+### Functional Requirments:
+- Home page with User Auth
+    - Register/Login
+- Database
+    - API 
+- Individual movie pages including 
+    - Title
+    - Release date
+    - Genre
+    - Overview 
 
-### Function/Non-Functional Requirments:
-- Functional
-    - Home page with User Auth
-        - Register/Login
-    - Database
-        - API 
-    - Individual movie pages including info (Title, release date, genre etc.)
-- Non-Functional
-    - Social aspect that allows the user to follow other users and 
-    - The ability to share to other social media
-    - Login with Google, Facebook, Github etc.
+
+
+### Non-Functional Requirments:
+- Social aspect that allows the user to follow other users and 
+- The ability to share to other social media
+- Login Facebook
+
 
 ### Must haves:
 - Home page
+    - Logo home button
     - Register
     - Login
+    - Logout
 - Movie selection page
+    - Each movie has a 'See More' information button
+- Favourites page
+    - Each movie information page has an 'Add to Favourites' button
 
 ### Nice to haves:
 - Comment/Review text box with submit button
-- A favourite button to add specific movies to your profile
 - On individual movie pages, a link to the trailer of the movie
+
 ### Feature List:
-- Ability to filter by category/genre via dropdown list
-- Favourite button on each movie card
-- A profile page that includes the favourites chosen by the user
-- Navigation bar to switch to user home/profile/logout
-- Register page
+1. Ability to filter by category via a dropdown list
+2. Favourite button on each movie card
+3. A favourites page that includes the favourite movies chosen by the user
+4. Navigation bar to switch to
+    - Home (Logo)
+    - Favourites (Heart icon)
+    - User settings (link displayed as email address)
+    - Logout
+5. Register page
+    - Email
     - Confirm email
-- Login page
-    - Authentication (V2 or V3 or Two Factor)
-- Logout button
+    - Password
+    - Confirm password
+6. Logging In
+    - Google Authentication (V3 and Two-Factor)
 
 <hr> 
 
-### Revista Prototypes:
-<a href="#">Prototype</a>
+## Prototypes:
 
-## Home Page
+### Home Page
 
 ![](https://i.imgur.com/EXNfkNS.png)
 
