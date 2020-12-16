@@ -19,9 +19,9 @@ a {
     color: black;
 }
 
-a hover {
+a:hover {
     text-decoration: none;
-    text-decoration-color: red;
+    color: lightgrey;
 }
 
 
@@ -148,17 +148,22 @@ body {
 -------------------------------------------------- */
 
 footer {
-    background-color: lightgrey;
-    position: relative;
-    bottom: -200px
+        background-color: #383535;
+/**/ position: relative;
+    color: #cca372;
 }
 
+    footer a {
+        color: white;
+    }
+
 .copyright-container {
-    background-color: black;
+    background-color: #383535;
 }
 
 .copyright {
     color: white;
+    color: #cca372;
 }
 
 .footer-heads {
@@ -298,30 +303,6 @@ h3 {
 /*Details Page Styling
 -------------------------------------------------- */
 
-/*.detailsheading {
-    font-weight: bold;
-    font-size: 24px;
-    margin-bottom: 7px;
-}
-
-.releasedate {
-    font-size: 16px;
-}
-
-.detailstext {
-    font-weight: bold;
-    font-size: 14px;
-}
-
-.detailscontainer {
-    padding: 50px;
-    margin-bottom:120px;
-}
-
-.details-content {
-    margin: 10px;
-}*/
-
 .section-wrapper {
     display: flex;
     justify-content: center;
@@ -332,12 +313,10 @@ h3 {
     min-width: 100vh;
     display: flex;
     flex-direction: row;
-/*    align-content: space-between;
-*/    padding: 100px 20px;
+    padding: 100px 20px;
     background-color: #383535;
     color: white;
-/*    margin: 75px 0;
-*/    flex-wrap: wrap;
+    flex-wrap: wrap;
 }
 
 @media only screen and (max-width: 900px) {
