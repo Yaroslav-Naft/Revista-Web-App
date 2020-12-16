@@ -16,13 +16,16 @@
                         }
                         else
                         {
-                            <tr class="no-favourites-row">
-                                <td class="no-favourites-content">
-                                    No Favourites!
-                                </td>
-                            </tr>
-                        }
-                    </tbody>
+                            <form asp-page="/Index" method="get">
+                                <tr class="no-favourites-row">
+                                    <td class="no-favourites-content">
+                                        No Favourites!
+                                        <button class="btn btn-info back" type="submit">Back</button>
+                                    </td>
+                                </tr>
+                            </form>
+                                }
+                        </tbody>
                 </table>
             </div>
         </div>
