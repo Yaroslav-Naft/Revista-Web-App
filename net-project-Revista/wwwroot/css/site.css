@@ -149,6 +149,8 @@ body {
 
 footer {
     background-color: lightgrey;
+    position: relative;
+    bottom: -200px
 }
 
 .copyright-container {
@@ -296,7 +298,7 @@ h3 {
 /*Details Page Styling
 -------------------------------------------------- */
 
-.detailsheading {
+/*.detailsheading {
     font-weight: bold;
     font-size: 24px;
     margin-bottom: 7px;
@@ -312,80 +314,173 @@ h3 {
 }
 
 .detailscontainer {
-    padding-top: 50px;
+    padding: 50px;
     margin-bottom:120px;
 }
 
-/*Two factor Auth page styles
--------------------------------------------------- */
+.details-content {
+    margin: 10px;
+}*/
 
-.col-md-4 {
-    text-align: center;
-    display: inline-block;
-    margin-left: auto;
-    margin-right: auto;
-}
-p {
-    text-align: center;
-}
-
-.two-fa {
-    text-align: center;
-}
-
-.auth-code {
-    text-align: center;
-    font-size: 1.5em;
-}
-
-/*fav page styles
--------------------------------------------------- */
-
-tr.d-flex {
-    background-color: var(--color-article1-background);
-    align-items: center;
-    border-color: var(--color-border);
-    margin-bottom: 30px;
-}
-
-
-
-.table td, .table th {
-    border-top: none !important;
-}
-
-h1.movie-category {
-    font-weight: bolder;
-}
-
-.favorite-content .top-table tbody tr td {
+.section-wrapper {
     display: flex;
     justify-content: center;
-    border: none;
+    align-items: center;
 }
 
-
-.favorite-content .top-table tbody tr .item-release-date {
-    color: #ffc107;
-    font-family: 'Open Sans', sans-serif;
-    font-weight: bolder;
-    font-size: 1rem;
+.movie-detail-section {
+    min-width: 100vh;
+    display: flex;
+    flex-direction: row;
+/*    align-content: space-between;
+*/    padding: 100px 20px;
+    background-color: #383535;
+    color: white;
+/*    margin: 75px 0;
+*/    flex-wrap: wrap;
 }
 
-/*Email/Registration Confirmatiom page styles
+@media only screen and (max-width: 900px) {
+    .movie-detail-section {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        margin: 0;
+    }
+
+    .movie-title{
+        margin: 30px 0;
+    }
+}
+
+.movie-detail-section .btn {
+    margin-top: 20px;
+}
+
+.movie-poster img {
+    border-radius: .25rem;
+    height: 400px;
+}
+.movie-overview {
+    padding: 20px 0;
+}
+
+.movie-overview  .overview-header {
+    padding-bottom: 8px;
+    font-weight: bold;
+}
+
+.overview-content p {
+    text-align: left;
+}
+
+.movie-info {
+    width: 50%;
+    text-align: left;
+    padding: 0 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+    .movie-info  .descriptor {
+        font-weight: bold;
+    }
+
+@media only screen and (max-width: 600px) {
+    .movie-info {
+        width: 100%;
+    }
+}
+
+    .movie-title {
+        text-align: left;
+        font-size: 30px;
+        display: flex;
+        flex-direction: row;
+        padding-bottom: 8px;
+    }
+
+        .movie-title h3 {
+            font-weight: bold;
+        }
+
+        .movie-title h4 {
+            margin: 0 10px;
+        }
+
+    /*Two factor Auth page styles
+-------------------------------------------------- */
+    .col-md-4 {
+        text-align: center;
+        display: inline-block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    p {
+        text-align: center;
+    }
+
+    .two-fa {
+        text-align: center;
+    }
+
+    .auth-code {
+        text-align: center;
+        font-size: 1.5em;
+    }
+
+    /*fav page styles
+-------------------------------------------------- */
+
+    tr.d-flex {
+        background-color: var(--color-article1-background);
+        align-items: center;
+        border-color: var(--color-border);
+        margin-bottom: 30px;
+    }
+
+
+
+    .table td, .table th {
+        border-top: none !important;
+    }
+
+    h1.movie-category {
+        font-weight: bolder;
+    }
+
+    .favorite-content .top-table tbody tr td {
+        display: flex;
+        justify-content: center;
+        border: none;
+    }
+
+
+    .favorite-content .top-table tbody tr .item-release-date {
+        color: #ffc107;
+        font-family: 'Open Sans', sans-serif;
+        font-weight: bolder;
+        font-size: 1rem;
+    }
+
+    /*Email/Registration Confirmatiom page styles
 -------------------------------------------------- */
 
 
-.register-container {
-    background-color: #808080a6;
-    padding: 10px;
-    margin-top: 50px;
-}
+    .register-container {
+        background-color: #808080a6;
+        padding: 10px;
+        margin-top: 50px;
+    }
 
-.register-title {
-    text-align: center;
-    padding: 20px 10px 10px;
-}
+    .register-title {
+        text-align: center;
+        padding: 20px 10px 10px;
+    }
 
 .register-info {
     padding: 10px;
