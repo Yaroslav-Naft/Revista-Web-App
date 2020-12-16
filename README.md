@@ -458,7 +458,7 @@ what is offered.
 ### Viewing the App on Azure
 
 The app can be viewed on azure with the following link:
-https://net-project-revista20201215111601.azurewebsites.net/
+<a href="https://net-project-revista20201215111601.azurewebsites.net/">Revista on Azure</a>
 </details>
 <br>
 
