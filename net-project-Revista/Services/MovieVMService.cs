@@ -23,7 +23,7 @@ namespace net_project_Revista.Services
         public MovieIndexVM GetMoviesVM(int pageIndex, int itemsPerPage, int? categoryId)
         {
             IQueryable<Movie> movies = _movieRepo.GetAll();
-            int totalItems = movies.Count();
+          
 
             if(categoryId != null)
             {
@@ -31,17 +31,8 @@ namespace net_project_Revista.Services
            
             }
 
-            else
-            {
-                //implement pagination AFTER filtering and sorting
-                movies = movies.Skip(pageIndex * itemsPerPage).Take(itemsPerPage);
-            }
-
-            else
-            {
-                //implement pagination AFTER filtering and sorting
-                movies = movies.Skip(pageIndex * itemsPerPage).Take(itemsPerPage);
-            }
+            int totalItems = movies.Count();
+            movies = movies.Skip(pageIndex * itemsPerPage).Take(itemsPerPage);
 
             var vm = new MovieIndexVM()
             {
