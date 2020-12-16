@@ -558,3 +558,30 @@ h6 .descriptor {
         pointer-events: none;
         opacity: .5;
     }
+
+
+/*Privacy page styles
+-------------------------------------------------- */
+
+.privacy-container {
+    background-color: #808080a6;
+    padding: 10px;
+    margin-top: 50px;
+}
+
+.privacy-title {
+    text-align: center;
+    padding: 20px 10px 10px;
+}
+
+.privacy-info {
+
+    padding: 20px 10px;
+    margin-bottom: 15px;
+}
+
+.deletion-info {
+    padding: 10px;
+    padding-bottom: 70px;
+    margin-bottom: 100px;
+}
