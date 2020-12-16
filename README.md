@@ -455,6 +455,10 @@ INSERT INTO MovieGenres(MovieId,GenreId) VALUES (508442,14);
 
 ## Prototypes:
 
+
+<div align="center">
+
+
 ### Home Page
 
 ![](https://i.imgur.com/EXNfkNS.png)
@@ -473,6 +477,8 @@ INSERT INTO MovieGenres(MovieId,GenreId) VALUES (508442,14);
 
 ![](https://i.imgur.com/bf8eK8f.png)
 
+
+</div>
 
 <hr>
 
