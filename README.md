@@ -13,6 +13,7 @@
 <div align="center">
 
 <strong>App Description: </strong>
+<br>
 An online movie database website using a movie api where a user can register for an account to login to rate, favourite, and review movies.
 
 </div>
