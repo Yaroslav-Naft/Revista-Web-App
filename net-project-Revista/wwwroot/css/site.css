@@ -146,238 +146,248 @@ body {
     }
 }
 
-/*Footer
--------------------------------------------------- */
-
-footer {
-        background-color: #383535;
-/**/ position: relative;
-    color: #cca372;
-}
-
-    footer a {
-        color: white;
-    }
-
-.copyright-container {
-    background-color: #383535;
-}
-
-.copyright {
-    color: white;
-    color: #cca372;
-}
-
-.footer-heads {
-    margin-bottom: 10px;
-}
-
-aside {
-    text-align: justify;
-    padding: 20px 10px 40px;
-}
-
-.footer-rates-nav {
-    list-style-type: none;
-    padding: 20px 10px 40px;
-}
-
-.footer-menu-nav {
-    list-style-type: none;
-    padding: 20px 10px 40px;
-}
-
-html {
-    font-size: 14px;
-}
-
-@media (min-width: 768px) {
-    html {
-        font-size: 16px;
-    }
-}
-
-.border-top {
-    border-top: 1px solid #e5e5e5;
-}
-
-.border-bottom {
-    border-bottom: 1px solid #e5e5e5;
-}
-
-.box-shadow {
-    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
-}
-
-button.accept-policy {
-    font-size: 1rem;
-    line-height: inherit;
-}
-
-.wrap {
-    background-image: url(../images/hollywood.jpg);
-    background-attachment: fixed;
-    background-size: inherit;
-    background-repeat: round;
-}
-
-/* Login / Register page styles
--------------------------------------------------- */
-
-@import "bourbon";
-
-body {
-    background: #eee !important;
-}
-
-.wrapper {
-    margin-top: 80px;
-    margin-bottom: 80px;
-}
-
-.email {
-    margin-bottom: 10px;
-}
-
-.password {
-    margin-bottom: 10px;
-}
-
-.or {
-    text-align: center;
-}
-
-.signin {
-    padding: 15px 35px 45px;
-}
-
-.form-signin {
-    background-color: #808080a6;
-    max-width: 1000px;
-    min-height: 400px;
-    padding: 15px 35px 45px;
-    margin: 0 auto;
-}
-
-.form-signin-heading {
-    margin-bottom: 30px;
-    text-align: center;
-    font-size: 3em;
-}
-
-.form-control {
-    position: relative;
-    font-size: 16px;
-    height: auto;
-    padding: 10px;
-}
-
-input[type="text"] {
-    margin-bottom: 30px;
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-}
-
-input[type="password"] {
-    margin-bottom: 50px;
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-}
-
-h3 {
-    width: 100%;
-    text-align: center;
-    line-height: 0.1em;
-    margin: 10px 0 10px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-
-.exlogin-header {
-    text-align: center;
-    font-weight: 500;
-}
-
-.exlogin-btn-container {
-    text-align: center;
-}
-
-/*Details Page Styling
--------------------------------------------------- */
-
-.section-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 10% 0;
-}
-
-.movie-detail-section {
-    min-width: 100vh;
-    display: flex;
-    flex-direction: row;
-    padding: 100px 20px;
-    background-color: #383535;
-    color: white;
-    flex-wrap: wrap;
-}
-
-@media only screen and (max-width: 900px) {
-    .movie-detail-section {
+@media only screen and (max-width: 768px) {
+    .movies-partial {
         display: flex;
-        flex-direction: column;
         justify-content: center;
         align-items: center;
+    }
+}
+
+    /*Footer
+-------------------------------------------------- */
+
+    footer {
+        background-color: #383535;
+        /**/ position: relative;
+        color: #cca372;
+    }
+
+        footer a {
+            color: white;
+        }
+
+    .copyright-container {
+        background-color: #383535;
+    }
+
+    .copyright {
+        color: white;
+        color: #cca372;
+    }
+
+    .footer-heads {
+        margin-bottom: 10px;
+    }
+
+    aside {
+        text-align: justify;
+        padding: 20px 10px 40px;
+    }
+
+    .footer-rates-nav {
+        list-style-type: none;
+        padding: 20px 10px 40px;
+    }
+
+    .footer-menu-nav {
+        list-style-type: none;
+        padding: 20px 10px 40px;
+    }
+
+    html {
+        font-size: 14px;
+    }
+
+    @media (min-width: 768px) {
+        html {
+            font-size: 16px;
+        }
+    }
+
+    .border-top {
+        border-top: 1px solid #e5e5e5;
+    }
+
+    .border-bottom {
+        border-bottom: 1px solid #e5e5e5;
+    }
+
+    .box-shadow {
+        box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+    }
+
+    button.accept-policy {
+        font-size: 1rem;
+        line-height: inherit;
+    }
+
+    .wrap {
+        background-image: url(../images/hollywood.jpg);
+        background-attachment: fixed;
+        background-size: inherit;
+        background-repeat: round;
+    }
+
+    /* Login / Register page styles
+-------------------------------------------------- */
+
+    @import "bourbon";
+
+    body {
+        background: #eee !important;
+    }
+
+    .wrapper {
+        margin-top: 80px;
+        margin-bottom: 80px;
+    }
+
+    .email {
+        margin-bottom: 10px;
+    }
+
+    .password {
+        margin-bottom: 10px;
+    }
+
+    .or {
+        text-align: center;
+    }
+
+    .signin {
+        padding: 15px 35px 45px;
+    }
+
+    .form-signin {
+        background-color: #808080a6;
+        max-width: 1000px;
+        min-height: 400px;
+        padding: 15px 35px 45px;
+        margin: 0 auto;
+    }
+
+    .form-signin-heading {
+        margin-bottom: 30px;
+        text-align: center;
+        font-size: 3em;
+    }
+
+    .form-control {
+        position: relative;
+        font-size: 16px;
+        height: auto;
+        padding: 10px;
+    }
+
+    input[type="text"] {
+        margin-bottom: 30px;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+
+    input[type="password"] {
+        margin-bottom: 50px;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+    }
+
+    h3 {
         width: 100%;
-        margin: 0;
+        text-align: center;
+        line-height: 0.1em;
+        margin: 10px 0 10px;
+        margin-top: 10px;
+        margin-bottom: 10px;
     }
 
-    .movie-title {
-        margin: 30px 0;
+    .exlogin-header {
+        text-align: center;
+        font-weight: 500;
     }
 
-}
+    .exlogin-btn-container {
+        text-align: center;
+    }
 
-h6 .descriptor {
-    color: #cca372 !important;
-}
+    /*Details Page Styling
+-------------------------------------------------- */
 
-.movie-detail-section .btn {
-    margin-top: 20px;
-}
+    .section-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 10% 0;
+    }
 
-.movie-poster img {
-    border-radius: .25rem;
-    height: 400px;
-}
-.movie-overview {
-    padding: 20px 0;
-}
-.movie-title .subheader {
-    color: #cca372 !important;
-}
+    .movie-detail-section {
+        min-width: 100vh;
+        display: flex;
+        flex-direction: row;
+        padding: 100px 20px;
+        background-color: #383535;
+        color: white;
+        flex-wrap: wrap;
+    }
+
+    @media only screen and (max-width: 900px) {
+        .movie-detail-section {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            margin: 0;
+        }
+
+        .movie-title {
+            margin: 30px 0;
+        }
+    }
+
+    h6 .descriptor {
+        color: #cca372 !important;
+    }
+
+    .movie-detail-section .btn {
+        margin-top: 20px;
+    }
+
+    .movie-poster img {
+        border-radius: .25rem;
+        height: 400px;
+    }
+
+    .movie-overview {
+        padding: 20px 0;
+    }
+
+    .movie-title .subheader {
+        color: #cca372 !important;
+    }
+
     .movie-overview .overview-header {
         color: #cca372 !important;
         padding-bottom: 8px;
         font-weight: bold;
     }
 
-.overview-content p {
-    text-align: left;
-}
-
-.movie-info {
-    width: 50%;
-    text-align: left;
-    padding: 0 40px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-    .movie-info  .descriptor {
-        font-weight: bold;
+    .overview-content p {
+        text-align: left;
     }
+
+    .movie-info {
+        width: 50%;
+        text-align: left;
+        padding: 0 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+        .movie-info .descriptor {
+            font-weight: bold;
+        }
 
     @media only screen and (max-width: 600px) {
         .movie-info {
@@ -435,8 +445,8 @@ h6 .descriptor {
     }
 
     td.left {
-        display: flex!important;
-        justify-content: flex-start!important;
+        display: flex !important;
+        justify-content: flex-start !important;
         padding-left: 2%;
     }
 
@@ -446,16 +456,17 @@ h6 .descriptor {
         padding-right: 2%;
     }
 
-@media only screen and (max-width: 600px) {
-    tr.fav-movies {
-        display: flex;
-        flex-direction: column;
+    @media only screen and (max-width: 600px) {
+        tr.fav-movies {
+            display: flex;
+            flex-direction: column;
+        }
+
+        td.right {
+            display: flex !important;
+            justify-content: center !important;
+        }
     }
-    td.right {
-        display: flex !important;
-        justify-content: center !important;
-    }
-}
 
     .table td, .table th {
         border-top: none !important;
@@ -562,28 +573,27 @@ h6 .descriptor {
     }
 
 
-/*Privacy page styles
+    /*Privacy page styles
 -------------------------------------------------- */
 
-.privacy-container {
-    background-color: #808080a6;
-    padding: 10px;
-    margin-top: 50px;
-}
+    .privacy-container {
+        background-color: #808080a6;
+        padding: 10px;
+        margin-top: 50px;
+    }
 
-.privacy-title {
-    text-align: center;
-    padding: 20px 10px 10px;
-}
+    .privacy-title {
+        text-align: center;
+        padding: 20px 10px 10px;
+    }
 
-.privacy-info {
+    .privacy-info {
+        padding: 20px 10px;
+        margin-bottom: 15px;
+    }
 
-    padding: 20px 10px;
-    margin-bottom: 15px;
-}
-
-.deletion-info {
-    padding: 10px;
-    padding-bottom: 70px;
-    margin-bottom: 100px;
-}
+    .deletion-info {
+        padding: 10px;
+        padding-bottom: 70px;
+        margin-bottom: 100px;
+    }
