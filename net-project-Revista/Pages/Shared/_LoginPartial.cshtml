@@ -6,10 +6,10 @@
 <ul class="navbar-nav">
     @if (SignInManager.IsSignedIn(User))
     {
-        <li class="nav-item">
+        <li class="nav-item justify-content-center">
             <a id="manage" style="color: #cca372" class="nav-link nav-text" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hello @UserManager.GetUserName(User)!</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item justify-content-center">
             <form id="logoutForm" class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Page("/Index", new { area = "" })">
                 <button id="logout" style="color: #cca372" type="submit" class="nav-link btn btn-link">Logout</button>
             </form>
@@ -18,7 +18,7 @@
         @*<li class="nav-item">
             <a class="nav-link text-dark" id="user-icon"><i class="fas fa-user fa-2x"></i></a>
         </li>*@
-        <li class="nav-item">
+        <li class="nav-item justify-content-center">
             <a asp-page="MovieFavourites/MovieFavourites" class="nav-link text-dark" id="favorite-icon"><i class="fas fa-heart fa-2x"></i>
            
             </a>
@@ -28,10 +28,10 @@
     }
     else
     {
-        <li class="nav-item">
+        <li class="nav-item justify-content-center">
             <a class="nav-link" style="color: #cca372" id="register" asp-area="Identity" asp-page="/Account/Register">Register</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item justify-content-center">
             <a class="nav-link" style="color: #cca372" id="login" asp-area="Identity" asp-page="/Account/Login">Login</a>
         </li>
     }
