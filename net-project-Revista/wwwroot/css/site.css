@@ -307,6 +307,7 @@ h3 {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 10% 0;
 }
 
 .movie-detail-section {
@@ -329,9 +330,13 @@ h3 {
         margin: 0;
     }
 
-    .movie-title{
+    .movie-title {
         margin: 30px 0;
     }
+
+        .movie-title h3 {
+            color: #cca372;
+        }
 }
 
 .movie-detail-section .btn {
@@ -368,11 +373,11 @@ h3 {
         font-weight: bold;
     }
 
-@media only screen and (max-width: 600px) {
-    .movie-info {
-        width: 100%;
+    @media only screen and (max-width: 600px) {
+        .movie-info {
+            width: 100%;
+        }
     }
-}
 
     .movie-title {
         text-align: left;
@@ -415,23 +420,53 @@ h3 {
     /*fav page styles
 -------------------------------------------------- */
 
-tr.d-flex {
-    background-color: #383535!important;
-    align-items: center;
-    border-color: var(--color-border);
-    margin: 10% 0;
+    tr.fav-movies {
+        display: flex;
+        justify-content: space-between;
+        background-color: #383535;
+        align-items: center;
+        margin: 5% 0;
+    }
+
+    td.left {
+        display: flex!important;
+        justify-content: flex-start!important;
+        padding-left: 2%;
+    }
+
+    td.right {
+        display: flex !important;
+        justify-content: flex-end !important;
+        padding-right: 2%;
+    }
+
+@media only screen and (max-width: 600px) {
+    tr.fav-movies {
+        display: flex;
+        flex-direction: column;
+    }
+    td.right {
+        display: flex !important;
+        justify-content: center !important;
+    }
 }
-
-
 
     .table td, .table th {
         border-top: none !important;
     }
 
-h1.movie-category {
-    color: #cca372;
-    font-weight: bolder;
-}
+    .img-fluid {
+        height: 200px;
+    }
+
+    h1.movie-category {
+        padding: 0 10%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #cca372;
+        font-weight: bolder;
+    }
 
     .favorite-content .top-table tbody tr td {
         display: flex;
@@ -447,27 +482,27 @@ h1.movie-category {
         font-size: 1rem;
     }
 
-.no-favourites-row {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+    .no-favourites-row {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 
-.no-favourites-content {
-    font-size: 2em;
-    font-weight: bold;
-    color: #cca372;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    width: 80%;
-    height: 350px;
-}
+    .no-favourites-content {
+        font-size: 2em;
+        font-weight: bold;
+        color: #cca372;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 80%;
+        height: 350px;
+    }
 
-.back {
-    margin: 20px;
-}
+    .back {
+        margin: 20px;
+    }
 
     /*Email/Registration Confirmatiom page styles
 -------------------------------------------------- */
@@ -484,38 +519,38 @@ h1.movie-category {
         padding: 20px 10px 10px;
     }
 
-.register-info {
-    padding: 10px;
-    padding-bottom: 70px;
-    margin-bottom: 100px;
-}
+    .register-info {
+        padding: 10px;
+        padding-bottom: 70px;
+        margin-bottom: 100px;
+    }
 
 
 
-/* Pagination */
+    /* Pagination */
 
-.pagination-nav-item {
-    text-align: center;
-    color: white;
-    display: inline-block;
-    padding-bottom: 20px;
-}
+    .pagination-nav-item {
+        text-align: center;
+        color: white;
+        display: inline-block;
+        padding-bottom: 20px;
+    }
 
-.pagination-nav-item a {
-    color: white !important;
-    font-weight: bolder;
-}
+        .pagination-nav-item a {
+            color: white !important;
+            font-weight: bolder;
+        }
 
-.paginationBlock {
-    padding-bottom: 30px;
-}
+    .paginationBlock {
+        padding-bottom: 30px;
+    }
 
-.pagination-nav-item a:hover {
-    color: darkgrey !important;
-    font-weight: bolder;
-}
+    .pagination-nav-item a:hover {
+        color: darkgrey !important;
+        font-weight: bolder;
+    }
 
-.is-disabled {
-    pointer-events: none;
-    opacity: .5;
-}
+    .is-disabled {
+        pointer-events: none;
+        opacity: .5;
+    }
