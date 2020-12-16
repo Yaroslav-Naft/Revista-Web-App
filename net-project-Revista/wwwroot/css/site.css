@@ -447,6 +447,28 @@ h1.movie-category {
         font-size: 1rem;
     }
 
+.no-favourites-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.no-favourites-content {
+    font-size: 2em;
+    font-weight: bold;
+    color: #cca372;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 80%;
+    height: 350px;
+}
+
+.back {
+    margin: 20px;
+}
+
     /*Email/Registration Confirmatiom page styles
 -------------------------------------------------- */
 
