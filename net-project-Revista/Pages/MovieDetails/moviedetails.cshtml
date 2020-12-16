@@ -9,7 +9,7 @@
             </div>
             <div class="movie-info">
                 <div class="movie-title">
-                    <h3>@Model.Movie.Title</h3>
+                    <h3 class="subheader">@Model.Movie.Title</h3>
                 </div>
                 <div class="movie-genre-and-date">
                     <h6><span class="descriptor">Release Date: </span>@Model.Movie.ReleaseDate.ToString("MMMM dd, yyyy")</h6>
@@ -29,7 +29,7 @@
                         <h4>Overview</h4>
                     </div>
                     <div class="overview-content">
-                        <p>@Model.Movie.Overview</p>
+                        @Model.Movie.Overview
                     </div>
                 </div>
                 <div class="add-to-favourites">
