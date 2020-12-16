@@ -10,12 +10,15 @@
 
 <br>
 
-### App Description:
-- An online movie database website using a movie api where a user can register for an account to login to rate, favourite, and review movies.
+<div align="center">
 
+<strong>App Description: </strong>
+An online movie database website using a movie api where a user can register for an account to login to rate, favourite, and review movies.
 
-<details open>
-<summary>Installation Instructions</summary>
+</div>
+
+<details>
+<summary>Detailed Installation Instructions Here</summary>
 <br>
 - To run this app you'll first want to clone the repository into your Visual Studio.
 <br>
