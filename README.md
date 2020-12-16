@@ -424,10 +424,6 @@ INSERT INTO MovieGenres(MovieId,GenreId) VALUES (508442,14);
 ### ERD:
 <img src="assets/Revista_ERD.png" alt="Revista ERD"/>
 
-### Extra Notes
-- Keep branch naming conventions simple
-    - initials-issuenumber-branchname
-
 <hr>
 
 Note: This is a group assignment so please nominate ONE person to accept the assignment first and create your team so that others can join after and have access to the shared repository.
