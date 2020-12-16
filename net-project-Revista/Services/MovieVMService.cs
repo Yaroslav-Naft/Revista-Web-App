@@ -20,14 +20,19 @@ namespace net_project_Revista.Services
             _categoryRepo = categoryRepo;
         }
 
-        public MovieIndexVM GetMoviesVM(int? categoryId)
+        public MovieIndexVM GetMoviesVM(int pageIndex, int itemsPerPage, int? categoryId)
         {
             IQueryable<Movie> movies = _movieRepo.GetAll();
+          
 
             if(categoryId != null)
             {
-                movies = movies.Where(m => m.CategoryId == categoryId);
+                movies = movies.Where(m => m.CategoryId == categoryId); 
+           
             }
+
+            int totalItems = movies.Count();
+            movies = movies.Skip(pageIndex * itemsPerPage).Take(itemsPerPage);
 
             var vm = new MovieIndexVM()
             {
@@ -39,9 +44,18 @@ namespace net_project_Revista.Services
                     ReleaseDate = m.ReleaseDate.ToString("MMMM dd, yyyy"),
                     PosterPath = "https://image.tmdb.org/t/p/w500" + m.PosterPath
                 }).ToList(),
-                Categories = GetCategories().ToList()
+                Categories = GetCategories().ToList(),
+                PaginationInfo = new PaginationInfoVM()
+                {
+                    PageIndex = pageIndex,
+                    ItemsPerPage = movies.Count(),
+                    TotalItems = totalItems,
+                    TotalPages = int.Parse(Math.Ceiling((decimal)totalItems /itemsPerPage).ToString())
+                }
             };
 
+            vm.PaginationInfo.Previuos = vm.PaginationInfo.PageIndex == 0 ? "is-disabled" : "";
+            vm.PaginationInfo.Next = vm.PaginationInfo.PageIndex == vm.PaginationInfo.TotalPages - 1? "is-disabled" : "";
             return vm;
         }
 
