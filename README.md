@@ -396,7 +396,14 @@ INSERT INTO MovieGenres(MovieId,GenreId) VALUES (508442,14);
 - Once on a movies' details page, you can click to add it to your favourites.
 - Your favourite movies can be found by clicking the heart icon in the top right corner.
 - On the favourites page all the movies you've selected to save as favourites will be listed and you may remove them if you choose to. 
+- Feel free to click around the movie selection page to select specific categories of movies from the drop down list and go page by page through
+what is offered.
+- When you are finished you can click the Logout button in the top right hand corner to end your session.
 
+### Viewing the App on Azure
+
+The app can be viewed on azure with the following link:
+https://net-project-revista20201215111601.azurewebsites.net/
 </details>
 <br>
 
