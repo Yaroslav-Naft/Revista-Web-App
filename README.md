@@ -314,7 +314,7 @@ INSERT INTO MovieGenres(MovieId,GenreId) VALUES (508442,14);
 - In the 'Label' input field, add 'RevistaV3'.
 - Select the 'reCAPTCHA v3' type.
 - In the "Domains" input field, add 'RevistaV3', make sure to include your email address under the Owners header, and to accept the recaptcha terms of service.
-- Once you click Sumbit you will be brought to your generated Site and Secret keys. Copy paste them into your appsettings file.
+- Once you click Submit you will be brought to your generated Site and Secret keys. Copy paste them into your appsettings file.
 
 [Google Recaptcha](https://www.google.com/recaptcha/admin/create)
 
@@ -423,10 +423,6 @@ INSERT INTO MovieGenres(MovieId,GenreId) VALUES (508442,14);
 
 ### ERD:
 <img src="assets/Revista_ERD.png" alt="Revista ERD"/>
-
-### Extra Notes
-- Keep branch naming conventions simple
-    - initials-issuenumber-branchname
 
 <hr>
 
