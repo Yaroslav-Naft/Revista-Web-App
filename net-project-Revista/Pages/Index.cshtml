@@ -24,11 +24,15 @@
                     </div>
                 }
             </div>
-            <partial name="_Pagination"for="@Model.MovieIndex.PaginationInfo" />
+            <partial name="_Pagination" for="@Model.MovieIndex.PaginationInfo" />
         }
         else
         {
-            <p>No Products!</p>
+            <div class="no-favourites-row">
+                <div class="no-favourites-content">
+                    No Movies!
+                </div>
+            </div>
         }
     </div>
 </div>
