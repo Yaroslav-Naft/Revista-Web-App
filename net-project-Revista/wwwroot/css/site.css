@@ -19,9 +19,9 @@ a {
     color: black;
 }
 
-a hover {
+a:hover {
     text-decoration: none;
-    text-decoration-color: red;
+    color: lightgrey;
 }
 
 
@@ -148,17 +148,22 @@ body {
 -------------------------------------------------- */
 
 footer {
-    background-color: lightgrey;
-    position: relative;
-    bottom: -200px
+        background-color: #383535;
+/**/ position: relative;
+    color: #cca372;
 }
 
+    footer a {
+        color: white;
+    }
+
 .copyright-container {
-    background-color: black;
+    background-color: #383535;
 }
 
 .copyright {
     color: white;
+    color: #cca372;
 }
 
 .footer-heads {
@@ -298,46 +303,21 @@ h3 {
 /*Details Page Styling
 -------------------------------------------------- */
 
-/*.detailsheading {
-    font-weight: bold;
-    font-size: 24px;
-    margin-bottom: 7px;
-}
-
-.releasedate {
-    font-size: 16px;
-}
-
-.detailstext {
-    font-weight: bold;
-    font-size: 14px;
-}
-
-.detailscontainer {
-    padding: 50px;
-    margin-bottom:120px;
-}
-
-.details-content {
-    margin: 10px;
-}*/
-
 .section-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 10% 0;
 }
 
 .movie-detail-section {
     min-width: 100vh;
     display: flex;
     flex-direction: row;
-/*    align-content: space-between;
-*/    padding: 100px 20px;
+    padding: 100px 20px;
     background-color: #383535;
     color: white;
-/*    margin: 75px 0;
-*/    flex-wrap: wrap;
+    flex-wrap: wrap;
 }
 
 @media only screen and (max-width: 900px) {
@@ -350,9 +330,14 @@ h3 {
         margin: 0;
     }
 
-    .movie-title{
+    .movie-title {
         margin: 30px 0;
     }
+
+}
+
+h6 .descriptor {
+    color: #cca372 !important;
 }
 
 .movie-detail-section .btn {
@@ -366,11 +351,14 @@ h3 {
 .movie-overview {
     padding: 20px 0;
 }
-
-.movie-overview  .overview-header {
-    padding-bottom: 8px;
-    font-weight: bold;
+.movie-title .subheader {
+    color: #cca372 !important;
 }
+    .movie-overview .overview-header {
+        color: #cca372 !important;
+        padding-bottom: 8px;
+        font-weight: bold;
+    }
 
 .overview-content p {
     text-align: left;
@@ -389,11 +377,11 @@ h3 {
         font-weight: bold;
     }
 
-@media only screen and (max-width: 600px) {
-    .movie-info {
-        width: 100%;
+    @media only screen and (max-width: 600px) {
+        .movie-info {
+            width: 100%;
+        }
     }
-}
 
     .movie-title {
         text-align: left;
@@ -436,20 +424,51 @@ h3 {
     /*fav page styles
 -------------------------------------------------- */
 
-    tr.d-flex {
-        background-color: var(--color-article1-background);
+    tr.fav-movies {
+        display: flex;
+        justify-content: space-between;
+        background-color: #383535;
         align-items: center;
-        border-color: var(--color-border);
-        margin-bottom: 30px;
+        margin: 5% 0;
     }
 
+    td.left {
+        display: flex!important;
+        justify-content: flex-start!important;
+        padding-left: 2%;
+    }
 
+    td.right {
+        display: flex !important;
+        justify-content: flex-end !important;
+        padding-right: 2%;
+    }
+
+@media only screen and (max-width: 600px) {
+    tr.fav-movies {
+        display: flex;
+        flex-direction: column;
+    }
+    td.right {
+        display: flex !important;
+        justify-content: center !important;
+    }
+}
 
     .table td, .table th {
         border-top: none !important;
     }
 
+    .img-fluid {
+        height: 200px;
+    }
+
     h1.movie-category {
+        padding: 0 10%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #cca372;
         font-weight: bolder;
     }
 
@@ -467,6 +486,28 @@ h3 {
         font-size: 1rem;
     }
 
+    .no-favourites-row {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .no-favourites-content {
+        font-size: 2em;
+        font-weight: bold;
+        color: #cca372;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 80%;
+        height: 350px;
+    }
+
+    .back {
+        margin: 20px;
+    }
+
     /*Email/Registration Confirmatiom page styles
 -------------------------------------------------- */
 
@@ -482,38 +523,38 @@ h3 {
         padding: 20px 10px 10px;
     }
 
-.register-info {
-    padding: 10px;
-    padding-bottom: 70px;
-    margin-bottom: 100px;
-}
+    .register-info {
+        padding: 10px;
+        padding-bottom: 70px;
+        margin-bottom: 100px;
+    }
 
 
 
-/* Pagination */
+    /* Pagination */
 
-.pagination-nav-item {
-    text-align: center;
-    color: white;
-    display: inline-block;
-    padding-bottom: 20px;
-}
+    .pagination-nav-item {
+        text-align: center;
+        color: white;
+        display: inline-block;
+        padding-bottom: 20px;
+    }
 
-.pagination-nav-item a {
-    color: white !important;
-    font-weight: bolder;
-}
+        .pagination-nav-item a {
+            color: white !important;
+            font-weight: bolder;
+        }
 
-.paginationBlock {
-    padding-bottom: 30px;
-}
+    .paginationBlock {
+        padding-bottom: 30px;
+    }
 
-.pagination-nav-item a:hover {
-    color: darkgrey !important;
-    font-weight: bolder;
-}
+    .pagination-nav-item a:hover {
+        color: darkgrey !important;
+        font-weight: bolder;
+    }
 
-.is-disabled {
-    pointer-events: none;
-    opacity: .5;
-}
+    .is-disabled {
+        pointer-events: none;
+        opacity: .5;
+    }
