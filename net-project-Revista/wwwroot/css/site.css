@@ -65,7 +65,7 @@ body {
 .logo {
     width: 150px;
     height: auto;
-    padding-bottom: 0;
+    margin: 40px 0 0 60px;
 }
 
 .fa-user {
