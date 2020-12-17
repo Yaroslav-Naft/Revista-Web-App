@@ -457,6 +457,8 @@ what is offered.
 
 ### Viewing the App on Azure
 
+Revista has been deployed to Azure as an App Service. For database storage, it is utilizing an Azure SQL Server Database.
+
 The app can be viewed on azure with the following link:
 <a href="https://net-project-revista20201215111601.azurewebsites.net/">Revista on Azure</a>
 </details>
